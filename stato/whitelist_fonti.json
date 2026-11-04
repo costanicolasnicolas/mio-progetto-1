@@ -1,6 +1,6 @@
 {
   "_descrizione": "Whitelist unica delle fonti del sistema J.A.R.V.I.S. Letta dall'hook .claude/hooks/domain_allowlist.py per WebFetch e WebSearch. Una voce senza percorso (es. normattiva.it) vale anche per i sottodomini; una voce con percorso (es. reddit.com/r/Avvocati) vale solo per quel percorso.",
-  "_versione": "2026-11-04b",
+  "_versione": "2026-11-04c",
   "italia": {
     "friday": {
       "ufficiali": [
@@ -38,7 +38,7 @@
         "groups.google.com/g/legalit",
         "avvocato.it",
         "lextime.it",
-        "forumiuris.it",
+        "laleggepertutti.it",
         "reddit.com/r/Avvocati",
         "studiocataldi.it"
       ]
@@ -68,7 +68,7 @@
         "ilsole24ore.com"
       ],
       "forum": [
-        "forum.commercialistatelematico.com",
+        "commercialistatelematico.com",
         "fiscoetasse.com/forum",
         "reddit.com/r/commercialisti",
         "mysolution.it",
@@ -89,14 +89,12 @@
         "wolterskluwer.it",
         "ilsole24ore.com",
         "commercialistatelematico.com",
-        "amministrazioneefinanza.it",
         "aptus.ai",
         "orizzontideldirittocommerciale.it",
         "riviste.paviauniversitypress.it",
         "rirea.it",
         "aidea.it",
         "sidea.it",
-        "aideagiovani.it",
         "francoangeli.it",
         "egeaonline.it"
       ],
@@ -114,7 +112,7 @@
         "consob.it",
         "bancaditalia.it",
         "corteconti.it",
-        "anac.it",
+        "anticorruzione.it",
         "assonime.it",
         "confindustria.it",
         "abi.it",
@@ -124,7 +122,7 @@
         "rivista231.it",
         "aiiaweb.it",
         "aodv231.it",
-        "ocri.it",
+        "composizionenegoziata.camcom.it",
         "codicedellacrisi.it",
         "ilcaso.it"
       ],
@@ -132,7 +130,7 @@
         "rivista231.it",
         "aiiaweb.it",
         "aodv231.it",
-        "forum.commercialistatelematico.com",
+        "commercialistatelematico.com",
         "reddit.com/r/commercialisti"
       ]
     },
@@ -229,7 +227,7 @@
       ],
       "contabilita_revisione": [
         "ibr-ire.be",
-        "iec-iab.be"
+        "itaa.be"
       ],
       "forum": [
         "itaa.be"
@@ -240,7 +238,7 @@
       "legge_corti": [
         "dv.parliament.bg",
         "constcourt.bg",
-        "sac.government.bg",
+        "sac.bg",
         "brra.bg"
       ],
       "fisco": [
@@ -282,7 +280,7 @@
         "porezna-uprava.hr"
       ],
       "contabilita_revisione": [
-        "hrk.hr"
+        "revizorska-komora.hr"
       ],
       "forum": [
         "rrif.hr"
@@ -334,7 +332,7 @@
         "vero.fi"
       ],
       "contabilita_revisione": [
-        "audit.fi",
+        "tilintarkastajat.fi",
         "tilisanomat.fi"
       ],
       "forum": [
@@ -457,7 +455,7 @@
       "legge_corti": [
         "legilux.public.lu",
         "justice.public.lu",
-        "lbr.public.lu"
+        "lbr.lu"
       ],
       "fisco": [
         "impotsdirects.public.lu"
@@ -480,7 +478,7 @@
         "cfr.gov.mt"
       ],
       "contabilita_revisione": [
-        "maltaccountancyboard.gov.mt",
+        "accountancyboard.gov.mt",
         "miamalta.org"
       ],
       "forum": [
@@ -607,7 +605,7 @@
         "fu.gov.si"
       ],
       "contabilita_revisione": [
-        "sirs.si"
+        "si-revizija.si"
       ],
       "forum": [
         "si-revizija.si"
@@ -626,7 +624,7 @@
       ],
       "contabilita_revisione": [
         "icac.gob.es",
-        "revisores.org"
+        "icjce.es"
       ],
       "forum": [
         "aedaf.es"
@@ -709,14 +707,14 @@
         ]
       },
       {
-        "dominio": "ccbe.org",
+        "dominio": "ccbe.eu",
         "descrizione": "Consiglio degli Ordini Forensi Europei",
         "agenti": [
           "friday"
         ]
       },
       {
-        "dominio": "accountancyeurope.eu/network",
+        "dominio": "accountancyeurope.eu",
         "descrizione": "Accountancy Europe network",
         "agenti": [
           "karen",
@@ -748,7 +746,7 @@
       "infocamere.it",
       "consiglionazionaleforense.it",
       "governo.it",
-      "dfp.gov.it",
+      "aib.it",
       "europa.eu",
       "echr.coe.int",
       "oecd.org",
@@ -764,21 +762,14 @@
       "philippoulaw.com",
       "costituzionesocieta.it",
       "onelegale.wolterskluwer.it",
-      "taxnews.bloombergtax.com",
+      "news.bloombergtax.com",
       "thomsonreuters.com",
       "linkedin.com",
       "taxdome.com"
     ]
   },
-  "da_verificare": {
-    "nota": "Domini che rispondono in modo anomalo al controllo del 2026-11-04: usabili, ma la fonte vale al massimo VERIFICATO PARZIALMENTE finché non è confermata.",
-    "domini": [
-      "forumiuris.it",
-      "mof.gov.cy/tax"
-    ]
-  },
   "_sostituzioni_2026-11-04": {
-    "nota": "Domini non raggiungibili o inesistenti al controllo del 2026-11-04, sostituiti con fonti verificate (raggiungibili, con titolo della pagina corrispondente all'ente).",
+    "nota": "Domini inesistenti, irraggiungibili o che puntano a un sito diverso dall'ente atteso (dominio in vendita, parcheggiato o riutilizzato), sostituiti il 2026-11-04 con fonti verificate: raggiungibili e con titolo della pagina corrispondente all'ente.",
     "mappa": {
       "rivistoodc.eu": [
         "orizzontideldirittocommerciale.it"
@@ -885,7 +876,117 @@
       ],
       "kibr.org.pl": [
         "pibr.org.pl"
+      ],
+      "hrk.hr": [
+        "revizorska-komora.hr"
+      ],
+      "audit.fi": [
+        "tilintarkastajat.fi"
+      ],
+      "sirs.si": [
+        "si-revizija.si"
+      ],
+      "ocri.it": [
+        "composizionenegoziata.camcom.it"
+      ],
+      "revisores.org": [
+        "icjce.es"
+      ],
+      "anac.it": [
+        "anticorruzione.it"
+      ],
+      "sac.government.bg": [
+        "sac.bg"
+      ],
+      "ccbe.org": [
+        "ccbe.eu"
+      ],
+      "taxnews.bloombergtax.com": [
+        "news.bloombergtax.com"
+      ],
+      "lbr.public.lu": [
+        "lbr.lu"
+      ],
+      "maltaccountancyboard.gov.mt": [
+        "accountancyboard.gov.mt"
+      ],
+      "iec-iab.be": [
+        "itaa.be"
+      ],
+      "aideagiovani.it": [
+        "aidea.it"
+      ],
+      "amministrazioneefinanza.it": [
+        "ipsoa.it"
+      ],
+      "forum.commercialistatelematico.com": [
+        "commercialistatelematico.com"
+      ],
+      "accountancyeurope.eu/network": [
+        "accountancyeurope.eu"
+      ],
+      "forumiuris.it": [
+        "laleggepertutti.it"
+      ],
+      "dfp.gov.it": [
+        "aib.it"
       ]
     }
-  }
+  },
+  "accesso_limitato": {
+    "nota": "Siti verificati come esistenti il 2026-11-04 ma che bloccano o rifiutano le richieste automatiche (protezione anti-bot, blocco geografico, certificato incompleto, accesso riservato). Restano in whitelist: se WebFetch fallisce non riprovare e usa un'altra fonte della whitelist (Rapid Resolution Tipo 1).",
+    "domini": [
+      "aade.gr",
+      "accountancyboard.gov.mt",
+      "assonime.it",
+      "at.gov.lv",
+      "bailii.org",
+      "bundesfinanzministerium.de",
+      "ccr.ro",
+      "cfr.gov.mt",
+      "cro.ie",
+      "datacvr.virk.dk",
+      "dati.igsg.cnr.it",
+      "e-justice.europa.eu",
+      "e-seimas.lrs.lt",
+      "hoejesteret.dk",
+      "icpac.org.cy",
+      "infogreffe.fr",
+      "italgiure.giustizia.it",
+      "italgiure.giustizia.it/sncase",
+      "judiciary.mt",
+      "lat.lt",
+      "legifrance.gouv.fr",
+      "legislatie.just.ro",
+      "linkedin.com",
+      "lrkt.lt",
+      "mof.gov.cy/tax",
+      "nap.bg",
+      "njt.hu",
+      "notariato.it",
+      "nsud.sk",
+      "oecd.org",
+      "oecd.org/tax",
+      "onelegale.it",
+      "onrc.ro",
+      "raadvanstate.nl",
+      "registrucentras.lt",
+      "registry.mt",
+      "revisionelegale.mef.gov.it",
+      "rirea.it",
+      "ris.bka.gv.at",
+      "scj.ro",
+      "sede.agenciatributaria.gob.es",
+      "sn.pl",
+      "taxdome.com",
+      "tribunalconstitucional.es",
+      "trybunal.gov.pl",
+      "ur.gov.lv",
+      "us-rs.si",
+      "vid.gov.lv",
+      "vmi.lt",
+      "wolterskluwer.it"
+    ]
+  },
+  "_verifica": "Tutte le voci controllate il 2026-11-04 (raggiungibilità e titolo della pagina)."
 }
