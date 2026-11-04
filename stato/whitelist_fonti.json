@@ -1,6 +1,6 @@
 {
   "_descrizione": "Whitelist unica delle fonti del sistema J.A.R.V.I.S. Letta dall'hook .claude/hooks/domain_allowlist.py per WebFetch e WebSearch. Una voce senza percorso (es. normattiva.it) vale anche per i sottodomini; una voce con percorso (es. reddit.com/r/Avvocati) vale solo per quel percorso.",
-  "_versione": "2026-11-04",
+  "_versione": "2026-11-04b",
   "italia": {
     "friday": {
       "ufficiali": [
@@ -16,7 +16,7 @@
         "parlamento.it",
         "camera.it",
         "senato.it",
-        "dfp.aib.it"
+        "aib.it"
       ],
       "banche_dati": [
         "dejure.it",
@@ -26,7 +26,7 @@
         "leggiditalia.it",
         "dirittoegiustizia.it",
         "giustamm.it",
-        "rivistoodc.eu",
+        "orizzontideldirittocommerciale.it",
         "diritto24.ilsole24ore.com",
         "latribuna.it",
         "diritto.it",
@@ -50,7 +50,7 @@
         "mef.gov.it",
         "cortedicassazione.it",
         "normattiva.it",
-        "giurisprudenzaimposte.it",
+        "finanze.gov.it",
         "corteconti.it"
       ],
       "banche_dati": [
@@ -63,7 +63,7 @@
         "commercialisti.it",
         "fondazionenazionalecommercialisti.it",
         "assonime.it",
-        "rivistadidirittotributario.it",
+        "rivistadirittotributario.it",
         "dati.igsg.cnr.it",
         "ilsole24ore.com"
       ],
@@ -72,7 +72,7 @@
         "fiscoetasse.com/forum",
         "reddit.com/r/commercialisti",
         "mysolution.it",
-        "antonimisiani.it"
+        "eutekne.info"
       ]
     },
     "karen": {
@@ -91,7 +91,7 @@
         "commercialistatelematico.com",
         "amministrazioneefinanza.it",
         "aptus.ai",
-        "rivistoodc.eu",
+        "orizzontideldirittocommerciale.it",
         "riviste.paviauniversitypress.it",
         "rirea.it",
         "aidea.it",
@@ -123,7 +123,7 @@
       "compliance_crisi": [
         "rivista231.it",
         "aiiaweb.it",
-        "complianceaziendale.com",
+        "aodv231.it",
         "ocri.it",
         "codicedellacrisi.it",
         "ilcaso.it"
@@ -131,7 +131,7 @@
       "forum": [
         "rivista231.it",
         "aiiaweb.it",
-        "complianceaziendale.com",
+        "aodv231.it",
         "forum.commercialistatelematico.com",
         "reddit.com/r/commercialisti"
       ]
@@ -152,7 +152,7 @@
         "camera.it",
         "senato.it",
         "parlamento.it",
-        "dfp.aib.it"
+        "aib.it"
       ],
       "verifica_dottrina": [
         "dejure.it",
@@ -161,7 +161,7 @@
         "foroitaliano.it",
         "dirittoegiustizia.it",
         "giustamm.it",
-        "rivistoodc.eu",
+        "orizzontideldirittocommerciale.it",
         "diritto.it"
       ],
       "forum": [
@@ -210,10 +210,10 @@
         "bmf.gv.at"
       ],
       "contabilita_revisione": [
-        "kwt.at"
+        "ksw.or.at"
       ],
       "forum": [
-        "forum.raiffeisenbank.at"
+        "ksw.or.at"
       ]
     },
     "BE": {
@@ -232,7 +232,7 @@
         "iec-iab.be"
       ],
       "forum": [
-        "accountantsforum.be"
+        "itaa.be"
       ]
     },
     "BG": {
@@ -250,7 +250,7 @@
         "ides.bg"
       ],
       "forum": [
-        "forum.bapio.bg"
+        "trudipravo.bg"
       ]
     },
     "CY": {
@@ -267,7 +267,7 @@
         "icpac.org.cy"
       ],
       "forum": [
-        "cyprusaccountantsforum.com"
+        "cysec.gov.cy"
       ]
     },
     "HR": {
@@ -285,7 +285,7 @@
         "hrk.hr"
       ],
       "forum": [
-        "forum.hgk.hr"
+        "rrif.hr"
       ]
     },
     "DK": {
@@ -302,7 +302,7 @@
         "fsr.dk"
       ],
       "forum": [
-        "debat.fsr.dk"
+        "erhvervsstyrelsen.dk"
       ]
     },
     "EE": {
@@ -319,7 +319,7 @@
         "audiitorkogu.ee"
       ],
       "forum": [
-        "foorum.raamatupidaja.ee"
+        "raamatupidaja.ee"
       ]
     },
     "FI": {
@@ -338,7 +338,7 @@
         "tilisanomat.fi"
       ],
       "forum": [
-        "keskustelu.taloushallintoliitto.fi"
+        "taloushallintoliitto.fi"
       ]
     },
     "FR": {
@@ -354,10 +354,11 @@
       ],
       "contabilita_revisione": [
         "cncc.fr",
-        "csnaef.fr"
+        "experts-comptables.fr",
+        "h2a-france.org"
       ],
       "forum": [
-        "forum.experts-comptables.fr"
+        "compta-online.com"
       ]
     },
     "DE": {
@@ -377,7 +378,7 @@
         "wpk.de"
       ],
       "forum": [
-        "forum.datev.de"
+        "bstbk.de"
       ]
     },
     "GR": {
@@ -385,7 +386,7 @@
       "legge_corti": [
         "et.gr",
         "areiospagos.gr",
-        "adjudstice.gr",
+        "adjustice.gr",
         "businessportal.gr"
       ],
       "fisco": [
@@ -395,7 +396,7 @@
         "elte.org.gr"
       ],
       "forum": [
-        "forum.taxheaven.gr"
+        "taxheaven.gr"
       ]
     },
     "IE": {
@@ -412,7 +413,7 @@
         "charteredaccountants.ie"
       ],
       "forum": [
-        "ask.cpaireland.ie"
+        "cpaireland.ie"
       ]
     },
     "LV": {
@@ -430,7 +431,7 @@
         "lzra.lv"
       ],
       "forum": [
-        "forum.lzra.lv"
+        "lvportals.lv"
       ]
     },
     "LT": {
@@ -448,7 +449,7 @@
         "lar.lt"
       ],
       "forum": [
-        "forum.lda.lt"
+        "lar.lt"
       ]
     },
     "LU": {
@@ -465,7 +466,7 @@
         "ire.lu"
       ],
       "forum": [
-        "forum.odc.lu"
+        "oec.lu"
       ]
     },
     "MT": {
@@ -483,7 +484,7 @@
         "miamalta.org"
       ],
       "forum": [
-        "forum.miamalta.org"
+        "miamalta.org"
       ]
     },
     "NL": {
@@ -501,7 +502,7 @@
         "nba.nl"
       ],
       "forum": [
-        "forum.accountant.nl"
+        "accountant.nl"
       ]
     },
     "PL": {
@@ -516,10 +517,10 @@
         "podatki.gov.pl"
       ],
       "contabilita_revisione": [
-        "kibr.org.pl"
+        "pibr.org.pl"
       ],
       "forum": [
-        "forum.kibr.org.pl"
+        "forum.gofin.pl"
       ]
     },
     "PT": {
@@ -537,7 +538,7 @@
         "oroc.pt"
       ],
       "forum": [
-        "forum.occ.pt"
+        "occ.pt"
       ]
     },
     "CZ": {
@@ -555,7 +556,7 @@
         "kacr.cz"
       ],
       "forum": [
-        "forum.komora.cz"
+        "kdpcr.cz"
       ]
     },
     "RO": {
@@ -573,7 +574,7 @@
         "cafr.ro"
       ],
       "forum": [
-        "forum.cafr.ro"
+        "aspaas.gov.ro"
       ]
     },
     "SK": {
@@ -591,7 +592,7 @@
         "skau.sk"
       ],
       "forum": [
-        "forum.skau.sk"
+        "udva.sk"
       ]
     },
     "SI": {
@@ -609,7 +610,7 @@
         "sirs.si"
       ],
       "forum": [
-        "forum.sirs.si"
+        "si-revizija.si"
       ]
     },
     "ES": {
@@ -628,7 +629,7 @@
         "revisores.org"
       ],
       "forum": [
-        "foro.economistas.es"
+        "aedaf.es"
       ]
     },
     "SE": {
@@ -664,7 +665,7 @@
         "mkvk.hu"
       ],
       "forum": [
-        "forum.mkvk.hu"
+        "mkvk.hu"
       ]
     }
   },
@@ -770,52 +771,121 @@
     ]
   },
   "da_verificare": {
-    "nota": "Domini inseriti su richiesta ma non verificati: non è stato possibile raggiungerli dalla sessione di installazione e potrebbero non esistere o essere errati. Un dominio inesistente oggi potrebbe essere registrato da terzi domani: verificarli e correggerli o rimuoverli.",
+    "nota": "Domini che rispondono in modo anomalo al controllo del 2026-11-04: usabili, ma la fonte vale al massimo VERIFICATO PARZIALMENTE finché non è confermata.",
     "domini": [
-      "rivistoodc.eu",
-      "dfp.aib.it",
-      "dgt.mef.gov.it",
-      "giurisprudenzaimposte.it",
-      "rivistadidirittotributario.it",
-      "antonimisiani.it",
-      "alumni.pwc.it",
-      "complianceaziendale.com",
-      "ocri.it",
-      "codicedellacrisi.it",
-      "forogiurisprudenzacptp.blogspot.com",
       "forumiuris.it",
-      "lextime.it",
-      "forum.laleggepertutti.it",
-      "mof.gov.cy/tax",
-      "adjudstice.gr",
-      "csnaef.fr",
-      "forum.raiffeisenbank.at",
-      "accountantsforum.be",
-      "forum.bapio.bg",
-      "ides.bg",
-      "cyprusaccountantsforum.com",
-      "forum.hgk.hr",
-      "debat.fsr.dk",
-      "foorum.raamatupidaja.ee",
-      "keskustelu.taloushallintoliitto.fi",
-      "forum.experts-comptables.fr",
-      "forum.datev.de",
-      "forum.taxheaven.gr",
-      "ask.cpaireland.ie",
-      "forum.lzra.lv",
-      "forum.lda.lt",
-      "forum.odc.lu",
-      "forum.miamalta.org",
-      "forum.accountant.nl",
-      "forum.kibr.org.pl",
-      "forum.occ.pt",
-      "forum.komora.cz",
-      "forum.cafr.ro",
-      "forum.skau.sk",
-      "forum.sirs.si",
-      "foro.economistas.es",
-      "forum.far.se",
-      "forum.mkvk.hu"
+      "mof.gov.cy/tax"
     ]
+  },
+  "_sostituzioni_2026-11-04": {
+    "nota": "Domini non raggiungibili o inesistenti al controllo del 2026-11-04, sostituiti con fonti verificate (raggiungibili, con titolo della pagina corrispondente all'ente).",
+    "mappa": {
+      "rivistoodc.eu": [
+        "orizzontideldirittocommerciale.it"
+      ],
+      "rivistadidirittotributario.it": [
+        "rivistadirittotributario.it"
+      ],
+      "antonimisiani.it": [
+        "eutekne.info"
+      ],
+      "dfp.aib.it": [
+        "aib.it"
+      ],
+      "complianceaziendale.com": [
+        "aodv231.it"
+      ],
+      "giurisprudenzaimposte.it": [
+        "finanze.gov.it"
+      ],
+      "forum.raiffeisenbank.at": [
+        "ksw.or.at"
+      ],
+      "accountantsforum.be": [
+        "itaa.be"
+      ],
+      "forum.bapio.bg": [
+        "trudipravo.bg"
+      ],
+      "cyprusaccountantsforum.com": [
+        "cysec.gov.cy"
+      ],
+      "forum.hgk.hr": [
+        "rrif.hr"
+      ],
+      "debat.fsr.dk": [
+        "erhvervsstyrelsen.dk"
+      ],
+      "foorum.raamatupidaja.ee": [
+        "raamatupidaja.ee"
+      ],
+      "keskustelu.taloushallintoliitto.fi": [
+        "taloushallintoliitto.fi"
+      ],
+      "csnaef.fr": [
+        "experts-comptables.fr",
+        "h2a-france.org"
+      ],
+      "forum.experts-comptables.fr": [
+        "compta-online.com"
+      ],
+      "forum.datev.de": [
+        "bstbk.de"
+      ],
+      "adjudstice.gr": [
+        "adjustice.gr"
+      ],
+      "forum.taxheaven.gr": [
+        "taxheaven.gr"
+      ],
+      "ask.cpaireland.ie": [
+        "cpaireland.ie"
+      ],
+      "forum.lzra.lv": [
+        "lvportals.lv"
+      ],
+      "forum.lda.lt": [
+        "lar.lt"
+      ],
+      "forum.odc.lu": [
+        "oec.lu"
+      ],
+      "forum.miamalta.org": [
+        "miamalta.org"
+      ],
+      "forum.accountant.nl": [
+        "accountant.nl"
+      ],
+      "forum.kibr.org.pl": [
+        "forum.gofin.pl"
+      ],
+      "forum.occ.pt": [
+        "occ.pt"
+      ],
+      "forum.komora.cz": [
+        "kdpcr.cz"
+      ],
+      "forum.cafr.ro": [
+        "aspaas.gov.ro"
+      ],
+      "forum.skau.sk": [
+        "udva.sk"
+      ],
+      "forum.sirs.si": [
+        "si-revizija.si"
+      ],
+      "foro.economistas.es": [
+        "aedaf.es"
+      ],
+      "forum.mkvk.hu": [
+        "mkvk.hu"
+      ],
+      "kwt.at": [
+        "ksw.or.at"
+      ],
+      "kibr.org.pl": [
+        "pibr.org.pl"
+      ]
+    }
   }
 }
