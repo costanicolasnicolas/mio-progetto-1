@@ -1,0 +1,821 @@
+{
+  "_descrizione": "Whitelist unica delle fonti del sistema J.A.R.V.I.S. Letta dall'hook .claude/hooks/domain_allowlist.py per WebFetch e WebSearch. Una voce senza percorso (es. normattiva.it) vale anche per i sottodomini; una voce con percorso (es. reddit.com/r/Avvocati) vale solo per quel percorso.",
+  "_versione": "2026-11-04",
+  "italia": {
+    "friday": {
+      "ufficiali": [
+        "normattiva.it",
+        "gazzettaufficiale.it",
+        "cortecostituzionale.it",
+        "cortedicassazione.it",
+        "giustizia-amministrativa.it",
+        "corteconti.it",
+        "italgiure.giustizia.it",
+        "notariato.it",
+        "registroimprese.it",
+        "parlamento.it",
+        "camera.it",
+        "senato.it",
+        "dfp.aib.it"
+      ],
+      "banche_dati": [
+        "dejure.it",
+        "onelegale.it",
+        "pluris-cedam.utetgiuridica.it",
+        "foroitaliano.it",
+        "leggiditalia.it",
+        "dirittoegiustizia.it",
+        "giustamm.it",
+        "rivistoodc.eu",
+        "diritto24.ilsole24ore.com",
+        "latribuna.it",
+        "diritto.it",
+        "altalex.com",
+        "filodiritto.com"
+      ],
+      "forum": [
+        "forum.laleggepertutti.it",
+        "groups.google.com/g/legalit",
+        "avvocato.it",
+        "lextime.it",
+        "forumiuris.it",
+        "reddit.com/r/Avvocati",
+        "studiocataldi.it"
+      ]
+    },
+    "edith": {
+      "ufficiali": [
+        "agenziaentrate.gov.it",
+        "dgt.mef.gov.it",
+        "mef.gov.it",
+        "cortedicassazione.it",
+        "normattiva.it",
+        "giurisprudenzaimposte.it",
+        "corteconti.it"
+      ],
+      "banche_dati": [
+        "ilfisco.it",
+        "fiscooggi.it",
+        "fiscoetasse.com",
+        "commercialistatelematico.com",
+        "ipsoa.it",
+        "wolterskluwer.it",
+        "commercialisti.it",
+        "fondazionenazionalecommercialisti.it",
+        "assonime.it",
+        "rivistadidirittotributario.it",
+        "dati.igsg.cnr.it",
+        "ilsole24ore.com"
+      ],
+      "forum": [
+        "forum.commercialistatelematico.com",
+        "fiscoetasse.com/forum",
+        "reddit.com/r/commercialisti",
+        "mysolution.it",
+        "antonimisiani.it"
+      ]
+    },
+    "karen": {
+      "ufficiali": [
+        "fondazioneoic.eu",
+        "consob.it",
+        "bancaditalia.it",
+        "commercialisti.it",
+        "fondazionenazionalecommercialisti.it",
+        "odcec.mi.it"
+      ],
+      "banche_dati": [
+        "ipsoa.it",
+        "wolterskluwer.it",
+        "ilsole24ore.com",
+        "commercialistatelematico.com",
+        "amministrazioneefinanza.it",
+        "aptus.ai",
+        "rivistoodc.eu",
+        "riviste.paviauniversitypress.it",
+        "rirea.it",
+        "aidea.it",
+        "sidea.it",
+        "aideagiovani.it",
+        "francoangeli.it",
+        "egeaonline.it"
+      ],
+      "forum": [
+        "commercialistatelematico.com",
+        "community.qonto.com",
+        "alumni.pwc.it",
+        "reddit.com/r/italiapersonalfinance"
+      ]
+    },
+    "vision": {
+      "ufficiali": [
+        "revisionelegale.mef.gov.it",
+        "commercialisti.it",
+        "consob.it",
+        "bancaditalia.it",
+        "corteconti.it",
+        "anac.it",
+        "assonime.it",
+        "confindustria.it",
+        "abi.it",
+        "borsaitaliana.it"
+      ],
+      "compliance_crisi": [
+        "rivista231.it",
+        "aiiaweb.it",
+        "complianceaziendale.com",
+        "ocri.it",
+        "codicedellacrisi.it",
+        "ilcaso.it"
+      ],
+      "forum": [
+        "rivista231.it",
+        "aiiaweb.it",
+        "complianceaziendale.com",
+        "forum.commercialistatelematico.com",
+        "reddit.com/r/commercialisti"
+      ]
+    },
+    "ultron": {
+      "ufficiali_corti": [
+        "cortecostituzionale.it",
+        "cortedicassazione.it",
+        "giustizia-amministrativa.it",
+        "corteconti.it",
+        "curia.europa.eu",
+        "hudoc.echr.coe.int",
+        "italgiure.giustizia.it",
+        "italgiure.giustizia.it/sncase",
+        "giurisprudenzadelleimprese.it",
+        "normattiva.it",
+        "gazzettaufficiale.it",
+        "camera.it",
+        "senato.it",
+        "parlamento.it",
+        "dfp.aib.it"
+      ],
+      "verifica_dottrina": [
+        "dejure.it",
+        "onelegale.it",
+        "pluris-cedam.utetgiuridica.it",
+        "foroitaliano.it",
+        "dirittoegiustizia.it",
+        "giustamm.it",
+        "rivistoodc.eu",
+        "diritto.it"
+      ],
+      "forum": [
+        "forogiurisprudenzacptp.blogspot.com",
+        "lextime.it",
+        "groups.google.com/g/legalit",
+        "avvocato.it",
+        "reddit.com/r/Avvocati"
+      ]
+    }
+  },
+  "ue": {
+    "_mappa_agenti": {
+      "legge_corti": [
+        "friday",
+        "ultron"
+      ],
+      "fisco": [
+        "edith"
+      ],
+      "contabilita_revisione": [
+        "karen",
+        "vision"
+      ],
+      "forum": [
+        "friday",
+        "edith",
+        "karen",
+        "vision",
+        "ultron"
+      ]
+    },
+    "IT": {
+      "paese": "Italia",
+      "nota": "vedi sezione 'italia'"
+    },
+    "AT": {
+      "paese": "Austria",
+      "legge_corti": [
+        "ris.bka.gv.at",
+        "vfgh.gv.at",
+        "ogh.gv.at",
+        "justiz.gv.at"
+      ],
+      "fisco": [
+        "bmf.gv.at"
+      ],
+      "contabilita_revisione": [
+        "kwt.at"
+      ],
+      "forum": [
+        "forum.raiffeisenbank.at"
+      ]
+    },
+    "BE": {
+      "paese": "Belgio",
+      "legge_corti": [
+        "justitie.belgium.be",
+        "const-court.be",
+        "juridat.be",
+        "kbopub.economie.fgov.be"
+      ],
+      "fisco": [
+        "finances.belgium.be"
+      ],
+      "contabilita_revisione": [
+        "ibr-ire.be",
+        "iec-iab.be"
+      ],
+      "forum": [
+        "accountantsforum.be"
+      ]
+    },
+    "BG": {
+      "paese": "Bulgaria",
+      "legge_corti": [
+        "dv.parliament.bg",
+        "constcourt.bg",
+        "sac.government.bg",
+        "brra.bg"
+      ],
+      "fisco": [
+        "nap.bg"
+      ],
+      "contabilita_revisione": [
+        "ides.bg"
+      ],
+      "forum": [
+        "forum.bapio.bg"
+      ]
+    },
+    "CY": {
+      "paese": "Cipro",
+      "legge_corti": [
+        "cylaw.org",
+        "supremecourt.gov.cy",
+        "companies.gov.cy"
+      ],
+      "fisco": [
+        "mof.gov.cy/tax"
+      ],
+      "contabilita_revisione": [
+        "icpac.org.cy"
+      ],
+      "forum": [
+        "cyprusaccountantsforum.com"
+      ]
+    },
+    "HR": {
+      "paese": "Croazia",
+      "legge_corti": [
+        "nn.hr",
+        "usud.hr",
+        "vsrh.hr",
+        "sudreg.pravosudje.hr"
+      ],
+      "fisco": [
+        "porezna-uprava.hr"
+      ],
+      "contabilita_revisione": [
+        "hrk.hr"
+      ],
+      "forum": [
+        "forum.hgk.hr"
+      ]
+    },
+    "DK": {
+      "paese": "Danimarca",
+      "legge_corti": [
+        "retsinformation.dk",
+        "hoejesteret.dk",
+        "datacvr.virk.dk"
+      ],
+      "fisco": [
+        "skat.dk"
+      ],
+      "contabilita_revisione": [
+        "fsr.dk"
+      ],
+      "forum": [
+        "debat.fsr.dk"
+      ]
+    },
+    "EE": {
+      "paese": "Estonia",
+      "legge_corti": [
+        "riigiteataja.ee",
+        "riigikohus.ee",
+        "ariregister.rik.ee"
+      ],
+      "fisco": [
+        "emta.ee"
+      ],
+      "contabilita_revisione": [
+        "audiitorkogu.ee"
+      ],
+      "forum": [
+        "foorum.raamatupidaja.ee"
+      ]
+    },
+    "FI": {
+      "paese": "Finlandia",
+      "legge_corti": [
+        "finlex.fi",
+        "korkeinoikeus.fi",
+        "kho.fi",
+        "ytj.fi"
+      ],
+      "fisco": [
+        "vero.fi"
+      ],
+      "contabilita_revisione": [
+        "audit.fi",
+        "tilisanomat.fi"
+      ],
+      "forum": [
+        "keskustelu.taloushallintoliitto.fi"
+      ]
+    },
+    "FR": {
+      "paese": "Francia",
+      "legge_corti": [
+        "legifrance.gouv.fr",
+        "conseil-constitutionnel.fr",
+        "courdecassation.fr",
+        "infogreffe.fr"
+      ],
+      "fisco": [
+        "impots.gouv.fr"
+      ],
+      "contabilita_revisione": [
+        "cncc.fr",
+        "csnaef.fr"
+      ],
+      "forum": [
+        "forum.experts-comptables.fr"
+      ]
+    },
+    "DE": {
+      "paese": "Germania",
+      "legge_corti": [
+        "gesetze-im-internet.de",
+        "bundesverfassungsgericht.de",
+        "bundesgerichtshof.de",
+        "handelsregister.de"
+      ],
+      "fisco": [
+        "bundesfinanzministerium.de",
+        "bzst.de"
+      ],
+      "contabilita_revisione": [
+        "idw.de",
+        "wpk.de"
+      ],
+      "forum": [
+        "forum.datev.de"
+      ]
+    },
+    "GR": {
+      "paese": "Grecia",
+      "legge_corti": [
+        "et.gr",
+        "areiospagos.gr",
+        "adjudstice.gr",
+        "businessportal.gr"
+      ],
+      "fisco": [
+        "aade.gr"
+      ],
+      "contabilita_revisione": [
+        "elte.org.gr"
+      ],
+      "forum": [
+        "forum.taxheaven.gr"
+      ]
+    },
+    "IE": {
+      "paese": "Irlanda",
+      "legge_corti": [
+        "irishstatutebook.ie",
+        "supremecourt.ie",
+        "cro.ie"
+      ],
+      "fisco": [
+        "revenue.ie"
+      ],
+      "contabilita_revisione": [
+        "charteredaccountants.ie"
+      ],
+      "forum": [
+        "ask.cpaireland.ie"
+      ]
+    },
+    "LV": {
+      "paese": "Lettonia",
+      "legge_corti": [
+        "likumi.lv",
+        "satv.tiesa.gov.lv",
+        "at.gov.lv",
+        "ur.gov.lv"
+      ],
+      "fisco": [
+        "vid.gov.lv"
+      ],
+      "contabilita_revisione": [
+        "lzra.lv"
+      ],
+      "forum": [
+        "forum.lzra.lv"
+      ]
+    },
+    "LT": {
+      "paese": "Lituania",
+      "legge_corti": [
+        "e-seimas.lrs.lt",
+        "lrkt.lt",
+        "lat.lt",
+        "registrucentras.lt"
+      ],
+      "fisco": [
+        "vmi.lt"
+      ],
+      "contabilita_revisione": [
+        "lar.lt"
+      ],
+      "forum": [
+        "forum.lda.lt"
+      ]
+    },
+    "LU": {
+      "paese": "Lussemburgo",
+      "legge_corti": [
+        "legilux.public.lu",
+        "justice.public.lu",
+        "lbr.public.lu"
+      ],
+      "fisco": [
+        "impotsdirects.public.lu"
+      ],
+      "contabilita_revisione": [
+        "ire.lu"
+      ],
+      "forum": [
+        "forum.odc.lu"
+      ]
+    },
+    "MT": {
+      "paese": "Malta",
+      "legge_corti": [
+        "legislation.mt",
+        "judiciary.mt",
+        "registry.mt"
+      ],
+      "fisco": [
+        "cfr.gov.mt"
+      ],
+      "contabilita_revisione": [
+        "maltaccountancyboard.gov.mt",
+        "miamalta.org"
+      ],
+      "forum": [
+        "forum.miamalta.org"
+      ]
+    },
+    "NL": {
+      "paese": "Paesi Bassi",
+      "legge_corti": [
+        "wetten.overheid.nl",
+        "hogeraad.nl",
+        "raadvanstate.nl",
+        "kvk.nl"
+      ],
+      "fisco": [
+        "belastingdienst.nl"
+      ],
+      "contabilita_revisione": [
+        "nba.nl"
+      ],
+      "forum": [
+        "forum.accountant.nl"
+      ]
+    },
+    "PL": {
+      "paese": "Polonia",
+      "legge_corti": [
+        "dziennikustaw.gov.pl",
+        "trybunal.gov.pl",
+        "sn.pl",
+        "krs-online.com.pl"
+      ],
+      "fisco": [
+        "podatki.gov.pl"
+      ],
+      "contabilita_revisione": [
+        "kibr.org.pl"
+      ],
+      "forum": [
+        "forum.kibr.org.pl"
+      ]
+    },
+    "PT": {
+      "paese": "Portogallo",
+      "legge_corti": [
+        "dre.pt",
+        "tribunalconstitucional.pt",
+        "stj.pt",
+        "portaldasfinancas.gov.pt"
+      ],
+      "fisco": [
+        "portaldasfinancas.gov.pt"
+      ],
+      "contabilita_revisione": [
+        "oroc.pt"
+      ],
+      "forum": [
+        "forum.occ.pt"
+      ]
+    },
+    "CZ": {
+      "paese": "Repubblica Ceca",
+      "legge_corti": [
+        "e-sbirka.cz",
+        "usoud.cz",
+        "nsoud.cz",
+        "or.justice.cz"
+      ],
+      "fisco": [
+        "financnisprava.cz"
+      ],
+      "contabilita_revisione": [
+        "kacr.cz"
+      ],
+      "forum": [
+        "forum.komora.cz"
+      ]
+    },
+    "RO": {
+      "paese": "Romania",
+      "legge_corti": [
+        "legislatie.just.ro",
+        "ccr.ro",
+        "scj.ro",
+        "onrc.ro"
+      ],
+      "fisco": [
+        "anaf.ro"
+      ],
+      "contabilita_revisione": [
+        "cafr.ro"
+      ],
+      "forum": [
+        "forum.cafr.ro"
+      ]
+    },
+    "SK": {
+      "paese": "Slovacchia",
+      "legge_corti": [
+        "slov-lex.sk",
+        "concourt.sk",
+        "nsud.sk",
+        "orsr.sk"
+      ],
+      "fisco": [
+        "financnasprava.sk"
+      ],
+      "contabilita_revisione": [
+        "skau.sk"
+      ],
+      "forum": [
+        "forum.skau.sk"
+      ]
+    },
+    "SI": {
+      "paese": "Slovenia",
+      "legge_corti": [
+        "pisrs.si",
+        "us-rs.si",
+        "sodisce.si",
+        "ajpes.si"
+      ],
+      "fisco": [
+        "fu.gov.si"
+      ],
+      "contabilita_revisione": [
+        "sirs.si"
+      ],
+      "forum": [
+        "forum.sirs.si"
+      ]
+    },
+    "ES": {
+      "paese": "Spagna",
+      "legge_corti": [
+        "boe.es",
+        "tribunalconstitucional.es",
+        "poderjudicial.es",
+        "registradores.org"
+      ],
+      "fisco": [
+        "sede.agenciatributaria.gob.es"
+      ],
+      "contabilita_revisione": [
+        "icac.gob.es",
+        "revisores.org"
+      ],
+      "forum": [
+        "foro.economistas.es"
+      ]
+    },
+    "SE": {
+      "paese": "Svezia",
+      "legge_corti": [
+        "riksdagen.se",
+        "hogstadomstolen.se",
+        "hogstaforvaltningsdomstolen.se",
+        "bolagsverket.se"
+      ],
+      "fisco": [
+        "skatteverket.se"
+      ],
+      "contabilita_revisione": [
+        "far.se"
+      ],
+      "forum": [
+        "forum.far.se"
+      ]
+    },
+    "HU": {
+      "paese": "Ungheria",
+      "legge_corti": [
+        "njt.hu",
+        "hunconcourt.hu",
+        "kuria.hu",
+        "e-cegjegyzek.hu"
+      ],
+      "fisco": [
+        "nav.gov.hu"
+      ],
+      "contabilita_revisione": [
+        "mkvk.hu"
+      ],
+      "forum": [
+        "forum.mkvk.hu"
+      ]
+    }
+  },
+  "sovranazionali": {
+    "istituzioni_ue": {
+      "agenti": [
+        "friday",
+        "edith",
+        "karen",
+        "vision",
+        "ultron"
+      ],
+      "domini": [
+        "eur-lex.europa.eu",
+        "curia.europa.eu",
+        "hudoc.echr.coe.int",
+        "e-justice.europa.eu"
+      ]
+    },
+    "fisco_contabilita_globale": {
+      "agenti": [
+        "edith",
+        "karen",
+        "vision",
+        "ultron"
+      ],
+      "domini": [
+        "oecd.org/tax",
+        "ibfd.org",
+        "efrag.org",
+        "ifrs.org",
+        "accountancyeurope.eu"
+      ]
+    },
+    "forum_europei": [
+      {
+        "dominio": "cfe-eutax.org",
+        "descrizione": "Confédération Fiscale Européenne",
+        "agenti": [
+          "edith"
+        ]
+      },
+      {
+        "dominio": "ccbe.org",
+        "descrizione": "Consiglio degli Ordini Forensi Europei",
+        "agenti": [
+          "friday"
+        ]
+      },
+      {
+        "dominio": "accountancyeurope.eu/network",
+        "descrizione": "Accountancy Europe network",
+        "agenti": [
+          "karen",
+          "vision"
+        ]
+      },
+      {
+        "dominio": "ec.europa.eu/taxation_customs",
+        "descrizione": "Commissione UE, fiscalità e dogane",
+        "agenti": [
+          "edith"
+        ]
+      }
+    ]
+  },
+  "catalogo_precedente": {
+    "agenti": [
+      "friday",
+      "edith",
+      "karen",
+      "vision",
+      "ultron"
+    ],
+    "domini": [
+      "giustiziatributaria.gov.it",
+      "finanze.gov.it",
+      "rgs.mef.gov.it",
+      "giustizia.it",
+      "infocamere.it",
+      "consiglionazionaleforense.it",
+      "governo.it",
+      "dfp.gov.it",
+      "europa.eu",
+      "echr.coe.int",
+      "oecd.org",
+      "legilux.public.lu",
+      "cc.lu",
+      "lbr.lu",
+      "legislation.gov.uk",
+      "bailii.org",
+      "sistemapenale.it",
+      "deloitte.com",
+      "taxsummaries.pwc.com",
+      "ogier.com",
+      "philippoulaw.com",
+      "costituzionesocieta.it",
+      "onelegale.wolterskluwer.it",
+      "taxnews.bloombergtax.com",
+      "thomsonreuters.com",
+      "linkedin.com",
+      "taxdome.com"
+    ]
+  },
+  "da_verificare": {
+    "nota": "Domini inseriti su richiesta ma non verificati: non è stato possibile raggiungerli dalla sessione di installazione e potrebbero non esistere o essere errati. Un dominio inesistente oggi potrebbe essere registrato da terzi domani: verificarli e correggerli o rimuoverli.",
+    "domini": [
+      "rivistoodc.eu",
+      "dfp.aib.it",
+      "dgt.mef.gov.it",
+      "giurisprudenzaimposte.it",
+      "rivistadidirittotributario.it",
+      "antonimisiani.it",
+      "alumni.pwc.it",
+      "complianceaziendale.com",
+      "ocri.it",
+      "codicedellacrisi.it",
+      "forogiurisprudenzacptp.blogspot.com",
+      "forumiuris.it",
+      "lextime.it",
+      "forum.laleggepertutti.it",
+      "mof.gov.cy/tax",
+      "adjudstice.gr",
+      "csnaef.fr",
+      "forum.raiffeisenbank.at",
+      "accountantsforum.be",
+      "forum.bapio.bg",
+      "ides.bg",
+      "cyprusaccountantsforum.com",
+      "forum.hgk.hr",
+      "debat.fsr.dk",
+      "foorum.raamatupidaja.ee",
+      "keskustelu.taloushallintoliitto.fi",
+      "forum.experts-comptables.fr",
+      "forum.datev.de",
+      "forum.taxheaven.gr",
+      "ask.cpaireland.ie",
+      "forum.lzra.lv",
+      "forum.lda.lt",
+      "forum.odc.lu",
+      "forum.miamalta.org",
+      "forum.accountant.nl",
+      "forum.kibr.org.pl",
+      "forum.occ.pt",
+      "forum.komora.cz",
+      "forum.cafr.ro",
+      "forum.skau.sk",
+      "forum.sirs.si",
+      "foro.economistas.es",
+      "forum.far.se",
+      "forum.mkvk.hu"
+    ]
+  }
+}
