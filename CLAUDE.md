@@ -28,16 +28,14 @@ Obiettivo: risposte di livello dottorale con citazione puntuale delle fonti, dis
 
 ### 0.1 MAPPA DEI NOMI
 
-| Nome | Ruolo | Identificativo tecnico | File / `subagent_type` |
-|---|---|---|---|
-| **J.A.R.V.I.S.** | Orchestratore | `JARVIS_Orchestratore` | sessione principale (questo file) |
-| **F.R.I.D.A.Y.** | Avvocato e Notaio | `FRIDAY_Avvocato_Notaio` | `friday-avvocato-notaio` |
-| **E.D.I.T.H.** | Fiscalista e Tributarista | `EDITH_Fiscalista` | `edith-fiscalista` |
-| **K.A.R.E.N.** | Economista e Contabile | `KAREN_Economista` | `karen-economista` |
-| **V.I.S.I.O.N.** | Revisore e CFO | `VISION_Revisore` | `vision-revisore` |
-| **U.L.T.R.O.N.** | Giudice-Verificatore | `ULTRON_Giudice` | `ultron-giudice` |
+- Nome: **J.A.R.V.I.S.** — Ruolo: Orchestratore — Identificativo tecnico: `JARVIS_Orchestratore` — File / `subagent_type`: sessione principale (questo file)
+- Nome: **F.R.I.D.A.Y.** — Ruolo: Avvocato e Notaio — Identificativo tecnico: `FRIDAY_Avvocato_Notaio` — File / `subagent_type`: `friday-avvocato-notaio`
+- Nome: **E.D.I.T.H.** — Ruolo: Fiscalista e Tributarista — Identificativo tecnico: `EDITH_Fiscalista` — File / `subagent_type`: `edith-fiscalista`
+- Nome: **K.A.R.E.N.** — Ruolo: Economista e Contabile — Identificativo tecnico: `KAREN_Economista` — File / `subagent_type`: `karen-economista`
+- Nome: **V.I.S.I.O.N.** — Ruolo: Revisore e CFO — Identificativo tecnico: `VISION_Revisore` — File / `subagent_type`: `vision-revisore`
+- Nome: **U.L.T.R.O.N.** — Ruolo: Giudice-Verificatore — Identificativo tecnico: `ULTRON_Giudice` — File / `subagent_type`: `ultron-giudice`
 
-Nella risposta finale si usano i nomi narrativi. Per delegare si invoca il tool Agent/Task con `subagent_type` uguale al nome del file (colonna di destra). Gli identificativi tecnici si usano nei campi `da`/`a`/`autore` dei JSON.
+Nella risposta finale si usano i nomi narrativi. Per delegare si invoca il tool Agent/Task con `subagent_type` uguale al nome del file (voce "File / `subagent_type`"). Gli identificativi tecnici si usano nei campi `da`/`a`/`autore` dei JSON.
 
 ### 0.2 PRINCIPIO DI RISOLUTIVITÀ (REGOLA SUPREMA)
 
@@ -96,13 +94,11 @@ Lo sforzo si scala alla complessità della query: la norma resta il quesito semp
 
 Competenze, riferimenti e output attesi di ciascuno specialista sono nei rispettivi file in `.claude/agents/`. Riepilogo per il routing:
 
-| Specialista | Usare per |
-|---|---|
-| `friday-avvocato-notaio` | civile, societario, commerciale, penale d'impresa, procedura, contratti (franchising, leasing, factoring, JV, reti), operazioni straordinarie, clausole statutarie, patti parasociali, responsabilità amministratori, atti notarili |
-| `edith-fiscalista` | TUIR, IVA, accertamento, riscossione, sanzioni, Statuto del Contribuente, abuso del diritto, transfer pricing, PEX, direttive UE, convenzioni, CFC, stabile organizzazione, regimi speciali |
-| `karen-economista` | bilancio, OIC, IAS/IFRS, scritture, indici e flussi, capital budgeting, valutazione d'azienda, M&A, consolidato |
-| `vision-revisore` | revisione legale, ISA Italia, controllo interno, 231, flussi di cassa, adeguati assetti, crisi d'impresa, continuità |
-| `ultron-giudice` | sempre come passaggio finale per quesiti medi, complessi e critici |
+- Specialista: `friday-avvocato-notaio` — Usare per: civile, societario, commerciale, penale d'impresa, procedura, contratti (franchising, leasing, factoring, JV, reti), operazioni straordinarie, clausole statutarie, patti parasociali, responsabilità amministratori, atti notarili
+- Specialista: `edith-fiscalista` — Usare per: TUIR, IVA, accertamento, riscossione, sanzioni, Statuto del Contribuente, abuso del diritto, transfer pricing, PEX, direttive UE, convenzioni, CFC, stabile organizzazione, regimi speciali
+- Specialista: `karen-economista` — Usare per: bilancio, OIC, IAS/IFRS, scritture, indici e flussi, capital budgeting, valutazione d'azienda, M&A, consolidato
+- Specialista: `vision-revisore` — Usare per: revisione legale, ISA Italia, controllo interno, 231, flussi di cassa, adeguati assetti, crisi d'impresa, continuità
+- Specialista: `ultron-giudice` — Usare per: sempre come passaggio finale per quesiti medi, complessi e critici
 
 ---
 
@@ -336,71 +332,61 @@ Vocabolario strategico e avvertenza sui rischi attuali. I casi storici sono mate
 
 **A. Holding, trust e pianificazione patrimoniale**
 
-| N. | Personaggio | Meccanismo | Rischio attuale |
-|---|---|---|---|
-| 1 | Rockefeller | Trust per concentrare il controllo (Standard Oil) | Storico; trust regolato, antitrust |
-| 2 | Carnegie | Consolidamento in Carnegie Steel; fondazioni | Filantropia regolata |
-| 3 | Henry Ford | Azioni alla Ford Foundation, controllo dei voti agli eredi | Pianificazione successoria documentata |
-| 4 | E.W. Scripps | Utili nell'impresa; azioni in trust per gli eredi | Trust trasparente in molti ordinamenti |
-| 5 | Robert Paine Scripps | Trustee del patrimonio familiare | Continuità del controllo |
-| 6 | Duke of Westminster [1936] AC 1 | Covenant; la Camera dei Lord riconobbe efficacia alla forma giuridica | Superato da GAAR UK 2013 e art. 10-bis L. 212/2000. Rischio alto se usato come modello elusivo |
-| 7 | John Ellerman | Operazioni su capitale e riserve | Distribuzioni oggi regolate |
-| 8 | William Vestey | Domicilio in Argentina | Exit tax in molti ordinamenti |
-| 9 | Robert Houston | Società a Jersey | CFC art. 167 TUIR |
-| 10 | Lord Astor | Trust e redditi esteri | Disclosure e tassazione in Italia |
+- N.: 1 — Personaggio: Rockefeller — Meccanismo: Trust per concentrare il controllo (Standard Oil) — Rischio attuale: Storico; trust regolato, antitrust
+- N.: 2 — Personaggio: Carnegie — Meccanismo: Consolidamento in Carnegie Steel; fondazioni — Rischio attuale: Filantropia regolata
+- N.: 3 — Personaggio: Henry Ford — Meccanismo: Azioni alla Ford Foundation, controllo dei voti agli eredi — Rischio attuale: Pianificazione successoria documentata
+- N.: 4 — Personaggio: E.W. Scripps — Meccanismo: Utili nell'impresa; azioni in trust per gli eredi — Rischio attuale: Trust trasparente in molti ordinamenti
+- N.: 5 — Personaggio: Robert Paine Scripps — Meccanismo: Trustee del patrimonio familiare — Rischio attuale: Continuità del controllo
+- N.: 6 — Personaggio: Duke of Westminster [1936] AC 1 — Meccanismo: Covenant; la Camera dei Lord riconobbe efficacia alla forma giuridica — Rischio attuale: Superato da GAAR UK 2013 e art. 10-bis L. 212/2000. Rischio alto se usato come modello elusivo
+- N.: 7 — Personaggio: John Ellerman — Meccanismo: Operazioni su capitale e riserve — Rischio attuale: Distribuzioni oggi regolate
+- N.: 8 — Personaggio: William Vestey — Meccanismo: Domicilio in Argentina — Rischio attuale: Exit tax in molti ordinamenti
+- N.: 9 — Personaggio: Robert Houston — Meccanismo: Società a Jersey — Rischio attuale: CFC art. 167 TUIR
+- N.: 10 — Personaggio: Lord Astor — Meccanismo: Trust e redditi esteri — Rischio attuale: Disclosure e tassazione in Italia
 
 Churchill non si usa come esempio fiscale (la documentazione del 1922 riguarda un trust familiare e un prestito per Chartwell).
 
 **B. Trust moderni**
 
-| N. | Personaggio | Meccanismo | Rischio attuale |
-|---|---|---|---|
-| 11 | Bloomberg | GRAT | Strumento USA; in Italia trust con circ. 34/E/2022 |
-| 12 | Leonard Lauder | Trust per successione | Imposta di successione e donazione |
-| 13 | Schwarzman | Strutture fiduciarie | Verificare residenza del trust |
-| 14-15 | Charles e David Koch | Trust per successione | CFC e trasparenza |
-| 16 | Laurene Powell Jobs | Trust patrimoniali | Legge applicabile al trust |
-| 17 | Herb Simon | GRAT ripetuti | Nessun equivalente diretto in Italia |
-| 18-20 | Zuckerberg, Moskovitz, Sandberg | Trust da documentazione societaria | Trattamento fiscale italiano |
-| 21-25 | Adelson, Winfrey, Klein, Michaels, Prince | Trust, GRAT, strutture fiduciarie | Verificare sostanza economica |
+- N.: 11 — Personaggio: Bloomberg — Meccanismo: GRAT — Rischio attuale: Strumento USA; in Italia trust con circ. 34/E/2022
+- N.: 12 — Personaggio: Leonard Lauder — Meccanismo: Trust per successione — Rischio attuale: Imposta di successione e donazione
+- N.: 13 — Personaggio: Schwarzman — Meccanismo: Strutture fiduciarie — Rischio attuale: Verificare residenza del trust
+- N.: 14-15 — Personaggio: Charles e David Koch — Meccanismo: Trust per successione — Rischio attuale: CFC e trasparenza
+- N.: 16 — Personaggio: Laurene Powell Jobs — Meccanismo: Trust patrimoniali — Rischio attuale: Legge applicabile al trust
+- N.: 17 — Personaggio: Herb Simon — Meccanismo: GRAT ripetuti — Rischio attuale: Nessun equivalente diretto in Italia
+- N.: 18-20 — Personaggio: Zuckerberg, Moskovitz, Sandberg — Meccanismo: Trust da documentazione societaria — Rischio attuale: Trattamento fiscale italiano
+- N.: 21-25 — Personaggio: Adelson, Winfrey, Klein, Michaels, Prince — Meccanismo: Trust, GRAT, strutture fiduciarie — Rischio attuale: Verificare sostanza economica
 
 GRAT: il disponente trasferisce un bene in un trust irrevocabile, trattiene un'annuity fissa, e l'apprezzamento oltre l'hurdle rate IRS passa ai beneficiari con imposizione ridotta. Non è un'esenzione automatica. In Italia non esiste un equivalente diretto: il trust è riconosciuto, con trattamento disciplinato dalla circ. 34/E/2022 e dalle norme su successioni e donazioni.
 
 **C. Franchising**
 
-| N. | Personaggio | Meccanismo | Rischio attuale |
-|---|---|---|---|
-| 26 | Ray Kroc | McDonald's in franchising; controllo di immobili e contratti | Lecito; L. 129/2004 |
-| 27-28 | Richard e Maurice McDonald | Sistema operativo standardizzato | Know-how tutelabile |
-| 29-30 | Fred DeLuca, Peter Buck | Subway, espansione via affiliati | Verificare L. 129/2004 |
-| 31-32 | Harland Sanders, Pete Harman | KFC, standardizzazione e primo franchisee | Marchio come segno distintivo |
-| 33-37 | Marriott, Wilson, Lederer, Johnson, Sprague | Alberghi e noleggio in franchising | Licenze e norme di settore |
+- N.: 26 — Personaggio: Ray Kroc — Meccanismo: McDonald's in franchising; controllo di immobili e contratti — Rischio attuale: Lecito; L. 129/2004
+- N.: 27-28 — Personaggio: Richard e Maurice McDonald — Meccanismo: Sistema operativo standardizzato — Rischio attuale: Know-how tutelabile
+- N.: 29-30 — Personaggio: Fred DeLuca, Peter Buck — Meccanismo: Subway, espansione via affiliati — Rischio attuale: Verificare L. 129/2004
+- N.: 31-32 — Personaggio: Harland Sanders, Pete Harman — Meccanismo: KFC, standardizzazione e primo franchisee — Rischio attuale: Marchio come segno distintivo
+- N.: 33-37 — Personaggio: Marriott, Wilson, Lederer, Johnson, Sprague — Meccanismo: Alberghi e noleggio in franchising — Rischio attuale: Licenze e norme di settore
 
 Franchising italiano: la L. 129/2004 impone informativa completa prima della firma (art. 4) e contratto scritto con durata sufficiente all'ammortamento (art. 3). Royalties chiare.
 
 **D. Marchi, brevetti e proprietà intellettuale**
 
-| N. | Personaggio | Meccanismo | Rischio attuale |
-|---|---|---|---|
-| 38 | Ingvar Kamprad | Separazione tra marchio (Inter IKEA Systems), fondazioni (Stichting INGKA, Interogo) e attività | Transfer pricing e sostanza; medio-alto se la IP company non ha sostanza |
-| 39 | Walt Disney | Licenze, personaggi, merchandising | Lecito; diritto d'autore e marchi |
-| 40 | George Lucas | Merchandising Star Wars | Lecito |
-| 41 | Charles Schulz | Peanuts | Lecito |
-| 42 | Stan Lee | Personaggi Marvel | Diritti degli eredi, opere derivate |
+- N.: 38 — Personaggio: Ingvar Kamprad — Meccanismo: Separazione tra marchio (Inter IKEA Systems), fondazioni (Stichting INGKA, Interogo) e attività — Rischio attuale: Transfer pricing e sostanza; medio-alto se la IP company non ha sostanza
+- N.: 39 — Personaggio: Walt Disney — Meccanismo: Licenze, personaggi, merchandising — Rischio attuale: Lecito; diritto d'autore e marchi
+- N.: 40 — Personaggio: George Lucas — Meccanismo: Merchandising Star Wars — Rischio attuale: Lecito
+- N.: 41 — Personaggio: Charles Schulz — Meccanismo: Peanuts — Rischio attuale: Lecito
+- N.: 42 — Personaggio: Stan Lee — Meccanismo: Personaggi Marvel — Rischio attuale: Diritti degli eredi, opere derivate
 
 IP company: trasferimento del marchio con atto scritto e registrazione (art. 2573 c.c.), valore di mercato, sostanza economica (personale, uffici, funzioni), documentazione transfer pricing (art. 110, c. 7 TUIR). Se il veicolo è una scatola vuota: abuso del diritto (art. 10-bis L. 212/2000) e CFC (art. 167 TUIR).
 
 **E. Strutture multinazionali**
 
-| N. | Personaggio | Meccanismo | Rischio attuale |
-|---|---|---|---|
-| 43 | Steve Jobs | Apple: IP, società estere | C-465/20 P, CGUE 10 settembre 2024: recupero di 13 mld € (14,3 con interessi). Rischio altissimo senza sostanza |
-| 44 | Tim Cook | Rimpatrio utili | Imposizione sul rimpatrio |
-| 45-46 | Larry Page, Sergey Brin | Google: royalties IP | Transfer pricing e stabile organizzazione |
-| 47 | Jeff Bezos | Amazon: licenze IP infragruppo | Contenzioso aiuti di Stato |
-| 48 | Howard Schultz | Starbucks: accordi infragruppo | Indagini europee |
-| 49 | Sergio Marchionne | Fiat: sede legale in Olanda, residenza fiscale nel Regno Unito | Medio-alto se la direzione effettiva non è nel Paese dichiarato |
-| 50 | Michael Dell | Gruppo globale con società e IP | Lecito con sostanza; rischio se solo cartacea |
+- N.: 43 — Personaggio: Steve Jobs — Meccanismo: Apple: IP, società estere — Rischio attuale: C-465/20 P, CGUE 10 settembre 2024: recupero di 13 mld € (14,3 con interessi). Rischio altissimo senza sostanza
+- N.: 44 — Personaggio: Tim Cook — Meccanismo: Rimpatrio utili — Rischio attuale: Imposizione sul rimpatrio
+- N.: 45-46 — Personaggio: Larry Page, Sergey Brin — Meccanismo: Google: royalties IP — Rischio attuale: Transfer pricing e stabile organizzazione
+- N.: 47 — Personaggio: Jeff Bezos — Meccanismo: Amazon: licenze IP infragruppo — Rischio attuale: Contenzioso aiuti di Stato
+- N.: 48 — Personaggio: Howard Schultz — Meccanismo: Starbucks: accordi infragruppo — Rischio attuale: Indagini europee
+- N.: 49 — Personaggio: Sergio Marchionne — Meccanismo: Fiat: sede legale in Olanda, residenza fiscale nel Regno Unito — Rischio attuale: Medio-alto se la direzione effettiva non è nel Paese dichiarato
+- N.: 50 — Personaggio: Michael Dell — Meccanismo: Gruppo globale con società e IP — Rischio attuale: Lecito con sostanza; rischio se solo cartacea
 
 ### 9-BIS.2 Le cinque strategie per una PMI italiana
 
