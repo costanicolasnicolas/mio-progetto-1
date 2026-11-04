@@ -1,0 +1,4 @@
+# Stato di sessione e log generati a runtime
+stato/shared_memory.json
+stato/*.jsonl
+.claude/settings.local.json

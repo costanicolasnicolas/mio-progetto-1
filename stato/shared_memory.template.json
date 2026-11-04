@@ -1,0 +1,13 @@
+{
+  "quesito_originale": "",
+  "livello_potenza": "L2",
+  "sforzo": "semplice | medio | complesso | critico",
+  "piano": [],
+  "stato_corrente": "",
+  "output_intelligenze": [],
+  "verdetti_ultron": [],
+  "fonti_consultate": [],
+  "protocolli_attivati": [],
+  "hook_eseguiti": [],
+  "casi_storici_richiamati": []
+}
