@@ -1064,7 +1064,7 @@
   },
   "_verifica": "Tutte le voci controllate il 2026-11-04 (raggiungibilità e titolo della pagina).",
   "formazione_ecm_sicilia": {
-    "nota": "Provider ECM e formazione sanitaria in Sicilia. Soggetti PRIVATI o ordini professionali, non fonti del diritto: l'accreditamento dichiarato sul sito va sempre riscontrato su agenas.gov.it (ECM) o regione.sicilia.it (formazione regionale).",
+    "nota": "Provider ECM ed enti di formazione in Sicilia: soggetti privati od ordini professionali, non fonti del diritto. Molti sono accreditati dalla Regione Siciliana ed erogano corsi FINANZIATI dalla Regione, gratuiti per inoccupati e disoccupati (a volte con indennità di frequenza), accanto a corsi AUTOFINANZIATI a pagamento. Il codice di accreditamento (C.I.R.) dichiarato dall'ente va riscontrato su regione.sicilia.it; per gli ECM l'accreditamento come provider si riscontra su agenas.gov.it.",
     "agenti": [
       "edith",
       "karen",
@@ -1100,16 +1100,32 @@
       "opipalermo.it",
       "ordinemedicipa.it",
       "oficataniaragusasiracusa.it"
-    ]
+    ],
+    "schede_enti": {
+      "dtn.it": {
+        "nome": "DTN Group",
+        "sedi": [
+          "Catania",
+          "Acireale",
+          "San Cataldo"
+        ],
+        "accreditamento_dichiarato": "Ente accreditato Regione Siciliana, C.I.R. ACA082",
+        "offerta": "Corsi gratuiti finanziati dalla Regione Siciliana (es. con indennità di 5 euro al giorno) e corsi autofinanziati; qualifiche regionali riconosciute e stage",
+        "fonte": "https://dtn.it/ (home page)",
+        "data_rilevazione": "2026-11-04",
+        "da_confermare": "C.I.R. ACA082 sull'elenco degli enti accreditati di regione.sicilia.it"
+      }
+    }
   },
   "formazione_enti_sicilia": {
-    "nota": "Enti di formazione professionale operanti in Sicilia. Soggetti PRIVATI: lo stato di accreditamento va riscontrato su regione.sicilia.it.",
+    "nota": "Enti di formazione professionale in Sicilia, spesso accreditati dalla Regione Siciliana per corsi finanziati (gratuiti per inoccupati e disoccupati). Soggetti privati: il codice C.I.R. va riscontrato su regione.sicilia.it.",
     "agenti": [
       "edith",
       "karen",
       "vision"
     ],
     "domini": [
+      "dtn.it",
       "formalabsrl.it",
       "archeimpresa.it",
       "cnosfap.sicilia.it",

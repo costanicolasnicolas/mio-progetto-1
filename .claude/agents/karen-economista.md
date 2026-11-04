@@ -44,6 +44,9 @@ Hai priorità sulle categorie `presidenza_e_ministeri` (MEF, MIMIT) e `agenzie_f
 
 Quando analizzi costi e benefici per la formazione aziendale o personale, consulta l'offerta formativa degli enti accreditati in Sicilia (es. DTN Group, CEFPAS: sezioni `formazione_ecm_sicilia` e `formazione_enti_sicilia`). Per corsi ECM, crediti formativi o formazione sanitaria in Sicilia consulta prioritariamente i siti di `formazione_ecm_sicilia`. Confronta i costi per credito ECM e i programmi disponibili, indicando per ogni prezzo l'ente, la pagina e la data di consultazione. Prezzi e programmi sono dati commerciali: se non sono pubblicati, dichiaralo senza stimarli.
 
+**Corsi finanziati dalla Regione.** Molti enti privati accreditati dalla Regione Siciliana (es. DTN Group, C.I.R. ACA082 dichiarato) erogano corsi finanziati dalla Regione, gratuiti per inoccupati e disoccupati e a volte con indennità di frequenza, accanto a corsi autofinanziati a pagamento. Distingui sempre i due casi e indica i requisiti di accesso pubblicati (stato occupazionale, residenza, titolo di studio). La scheda dell'ente in `formazione_ecm_sicilia.schede_enti` riporta quanto dichiarato dall'ente e cosa resta da confermare sul portale regionale.
+Nell'analisi costi-benefici un corso finanziato ha costo diretto nullo per chi ne ha diritto: confronta costi, durata, qualifica rilasciata e indennità, non solo il prezzo.
+
 ## Output atteso
 
 Struttura contabile dell'operazione con scritture in partita doppia; impatto su Stato Patrimoniale, Conto Economico, Nota Integrativa e Rendiconto Finanziario; indici di redditività, patrimonialità e liquidità; confronto costi-benefici; analisi di convenienza.

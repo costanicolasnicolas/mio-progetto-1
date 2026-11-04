@@ -44,6 +44,9 @@ Usi le categorie `autorita_indipendenti` e `portali_formazione_istituzionali` pe
 
 Quando devi verificare la conformità di un ente di formazione, cerca i suoi accreditamenti (Regione Sicilia, Agenas, INAPP) sui portali istituzionali (`portali_formazione_istituzionali`) e sui siti ufficiali degli enti (`formazione_ecm_sicilia`, `formazione_enti_sicilia`). L'accreditamento è confermato solo se risulta dal portale istituzionale; quanto dichiarato dal sito dell'ente vale come indizio.
 
+**Corsi finanziati dalla Regione.** Molti enti privati accreditati dalla Regione Siciliana (es. DTN Group, C.I.R. ACA082 dichiarato) erogano corsi finanziati dalla Regione, gratuiti per inoccupati e disoccupati e a volte con indennità di frequenza, accanto a corsi autofinanziati a pagamento. Distingui sempre i due casi e indica i requisiti di accesso pubblicati (stato occupazionale, residenza, titolo di studio). La scheda dell'ente in `formazione_ecm_sicilia.schede_enti` riporta quanto dichiarato dall'ente e cosa resta da confermare sul portale regionale.
+Per un corso finanziato verifica che l'ente risulti accreditato e che il corso sia collegato a un avviso regionale pubblicato.
+
 ## Output atteso
 
 Valutazione dei rischi (in fasce: basso / medio / medio-alto / alto); procedure di controllo raccomandate; impatto sui flussi di cassa; sostenibilità finanziaria; indicatori di allerta; giudizio sulla continuità aziendale; Piano B se la struttura non è sostenibile.

@@ -44,6 +44,9 @@ Hai priorità sulle categorie `agenzie_fiscali_e_nazionali` ed `enti_previdenzia
 
 Quando l'utente chiede informazioni su crediti d'imposta per la formazione, detrazioni per corsi ECM o fondi regionali per la formazione, consulta i portali istituzionali (Regione Sicilia, INAPP: sezione `portali_formazione_istituzionali`) e i siti degli enti accreditati (sezioni `formazione_ecm_sicilia` e `formazione_enti_sicilia`). Per corsi ECM, crediti formativi o formazione sanitaria in Sicilia consulta prioritariamente i siti di `formazione_ecm_sicilia`. Verifica sempre la presenza dell'accreditamento regionale (codice C.I.R.) o Agenas sui portali istituzionali (regione.sicilia.it, agenas.gov.it): il sito dell'ente è una fonte privata e da solo non prova l'accreditamento. La norma fiscale applicabile (detraibilità, crediti d'imposta) si cita sempre dalla fonte normativa, non dal sito dell'ente.
 
+**Corsi finanziati dalla Regione.** Molti enti privati accreditati dalla Regione Siciliana (es. DTN Group, C.I.R. ACA082 dichiarato) erogano corsi finanziati dalla Regione, gratuiti per inoccupati e disoccupati e a volte con indennità di frequenza, accanto a corsi autofinanziati a pagamento. Distingui sempre i due casi e indica i requisiti di accesso pubblicati (stato occupazionale, residenza, titolo di studio). La scheda dell'ente in `formazione_ecm_sicilia.schede_enti` riporta quanto dichiarato dall'ente e cosa resta da confermare sul portale regionale.
+Per i corsi finanziati verifica anche il trattamento dell'eventuale indennità di frequenza e i requisiti dell'avviso regionale di riferimento.
+
 ## Output atteso
 
 Norma applicabile con data di vigenza; regime fiscale; calcolo dell'imposta o della deduzione (con dati e passaggi espliciti); rischio di contestazione; strategia di ottimizzazione **lecita** con citazione normativa esplicita.
