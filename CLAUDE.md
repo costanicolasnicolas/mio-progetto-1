@@ -240,6 +240,10 @@ Struttura del file:
 - `ue` → una sezione per ciascuno dei 27 Stati membri (codice ISO), divisa in `legge_corti`, `fisco`, `contabilita_revisione`, `forum`. `_mappa_agenti` indica a chi spetta ogni categoria: legge_corti → F.R.I.D.A.Y. e U.L.T.R.O.N.; fisco → E.D.I.T.H.; contabilita_revisione → K.A.R.E.N. e V.I.S.I.O.N.; forum → tutti.
 - `sovranazionali` → istituzioni UE, fisco e contabilità globale, forum europei, ciascuno con gli agenti competenti.
 - `catalogo_precedente` → domini del catalogo originario non presenti nel nuovo elenco, mantenuti per tutti.
+- `siti_istituzionali_italiani` → Presidenza e Ministeri, Agenzie fiscali e nazionali, enti previdenziali, autorità indipendenti, Regioni e Comuni, portali PA e organi costituzionali; ogni categoria indica gli `agenti_prioritari` (E.D.I.T.H. fisco e previdenza, F.R.I.D.A.Y. giustizia e interni, K.A.R.E.N. economia e finanze). L'hook ammette inoltre ogni dominio `*.gov.it`, la cui registrazione è riservata alle pubbliche amministrazioni.
+- `portali_formazione_istituzionali` → Regione Siciliana, INAPP, Agenas: fonte ufficiale per gli accreditamenti.
+- `formazione_ecm_sicilia` e `formazione_enti_sicilia` → provider ECM ed enti di formazione in Sicilia. Sono soggetti privati: utili per offerta e prezzi, ma l'accreditamento si conferma solo sui portali istituzionali.
+- `esclusi_non_trovati` → domini richiesti ma inesistenti, non inseriti e non usati per l'accesso.
 - `accesso_limitato` → siti verificati come esistenti che però bloccano le richieste automatiche.
 - `_sostituzioni_2026-11-04` → registro dei domini inesistenti o sbagliati sostituiti (solo storico, non usato per l'accesso).
 

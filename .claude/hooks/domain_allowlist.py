@@ -4,6 +4,7 @@
 Unica fonte dei domini consentiti: stato/whitelist_fonti.json.
 - Voce senza percorso (es. "normattiva.it"): vale per il dominio e tutti i sottodomini.
 - Voce con percorso (es. "reddit.com/r/Avvocati"): vale solo per quel percorso.
+- Voce con suffisso (es. "*.gov.it"): vale per ogni dominio che termina con quel suffisso.
 - WebFetch: l'URL deve corrispondere a una voce.
 - WebSearch: la ricerca deve indicare "allowed_domains", tutti presenti in whitelist
   come voci senza percorso (o loro sottodomini).
@@ -15,7 +16,7 @@ import sys
 from urllib.parse import urlparse
 
 WHITELIST = os.path.join(os.environ.get("CLAUDE_PROJECT_DIR", "."), "stato", "whitelist_fonti.json")
-SKIP_KEYS = {"agenti", "_mappa_agenti"}
+SKIP_KEYS = {"agenti", "_mappa_agenti", "agenti_prioritari", "esclusi_non_trovati"}
 
 
 def deny(reason: str) -> None:
@@ -64,6 +65,8 @@ def strip_www(host: str) -> str:
 
 
 def host_match(host: str, dom: str) -> bool:
+    if dom.startswith("*."):
+        return host.endswith(dom[1:])
     return host == dom or host.endswith("." + dom)
 
 

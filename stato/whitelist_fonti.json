@@ -1,6 +1,6 @@
 {
   "_descrizione": "Whitelist unica delle fonti del sistema J.A.R.V.I.S. Letta dall'hook .claude/hooks/domain_allowlist.py per WebFetch e WebSearch. Una voce senza percorso (es. normattiva.it) vale anche per i sottodomini; una voce con percorso (es. reddit.com/r/Avvocati) vale solo per quel percorso.",
-  "_versione": "2026-11-04c",
+  "_versione": "2026-11-04d",
   "italia": {
     "friday": {
       "ufficiali": [
@@ -930,6 +930,51 @@
       ],
       "dfp.gov.it": [
         "aib.it"
+      ],
+      "www2.ospedalegiglio.it": [
+        "ospedalegiglio.it"
+      ],
+      "lnx.newtecna.com": [
+        "newtecna.com"
+      ],
+      "agenzia del demanio.gov.it": [
+        "agenziademanio.it"
+      ],
+      "agenziaterritorio.gov.it": [
+        "agenziaentrate.gov.it"
+      ],
+      "inpdap.it": [
+        "inps.it"
+      ],
+      "servizipst.giustizia.it": [
+        "pst.giustizia.it"
+      ],
+      "turismo.gov.it": [
+        "ministeroturismo.gov.it"
+      ],
+      "politicheagricole.it": [
+        "masaf.gov.it"
+      ],
+      "disabilita.gov.it": [
+        "disabilita.governo.it"
+      ],
+      "famiglia.gov.it": [
+        "famiglia.governo.it"
+      ],
+      "affariregionali.gov.it": [
+        "affariregionali.it"
+      ],
+      "agenzianazionalegiovani.it": [
+        "agenziagioventu.gov.it"
+      ],
+      "anpr.interno.gov.it": [
+        "anagrafenazionale.interno.it"
+      ],
+      "cometa.it": [
+        "cometafondo.it"
+      ],
+      "fonte.it": [
+        "fondofonte.it"
       ]
     }
   },
@@ -938,28 +983,45 @@
     "domini": [
       "aade.gr",
       "accountancyboard.gov.mt",
+      "agenziacoesione.gov.it",
+      "archeimpresa.it",
+      "arnascivico.it",
       "assonime.it",
       "at.gov.lv",
       "bailii.org",
       "bundesfinanzministerium.de",
       "ccr.ro",
       "cfr.gov.mt",
+      "cometafondo.it",
+      "comune.catania.it",
+      "covip.it",
       "cro.ie",
       "datacvr.virk.dk",
       "dati.igsg.cnr.it",
       "e-justice.europa.eu",
       "e-seimas.lrs.lt",
+      "ecmfinder.it",
+      "enea.it",
       "hoejesteret.dk",
       "icpac.org.cy",
+      "inail.it",
+      "inapp.gov.it",
       "infogreffe.fr",
+      "ipaf.it",
       "italgiure.giustizia.it",
       "italgiure.giustizia.it/sncase",
+      "italia.gov.it",
       "judiciary.mt",
       "lat.lt",
       "legifrance.gouv.fr",
       "legislatie.just.ro",
       "linkedin.com",
       "lrkt.lt",
+      "mimit.gov.it",
+      "ministerosalute.it",
+      "ministeroturismo.gov.it",
+      "mise.gov.it",
+      "mit.gov.it",
       "mof.gov.cy/tax",
       "nap.bg",
       "njt.hu",
@@ -969,12 +1031,24 @@
       "oecd.org/tax",
       "onelegale.it",
       "onrc.ro",
+      "opipalermo.it",
+      "quirinale.it",
       "raadvanstate.nl",
+      "regione.abruzzo.it",
+      "regione.basilicata.it",
+      "regione.campania.it",
+      "regione.marche.it",
+      "regione.molise.it",
+      "regione.piemonte.it",
+      "regione.puglia.it",
+      "regione.umbria.it",
+      "regione.vda.it",
       "registrucentras.lt",
       "registry.mt",
       "revisionelegale.mef.gov.it",
       "rirea.it",
       "ris.bka.gv.at",
+      "salute.gov.it",
       "scj.ro",
       "sede.agenciatributaria.gob.es",
       "sn.pl",
@@ -988,5 +1062,251 @@
       "wolterskluwer.it"
     ]
   },
-  "_verifica": "Tutte le voci controllate il 2026-11-04 (raggiungibilità e titolo della pagina)."
+  "_verifica": "Tutte le voci controllate il 2026-11-04 (raggiungibilità e titolo della pagina).",
+  "formazione_ecm_sicilia": {
+    "nota": "Provider ECM e formazione sanitaria in Sicilia. Soggetti PRIVATI o ordini professionali, non fonti del diritto: l'accreditamento dichiarato sul sito va sempre riscontrato su agenas.gov.it (ECM) o regione.sicilia.it (formazione regionale).",
+    "agenti": [
+      "edith",
+      "karen",
+      "vision"
+    ],
+    "provider_e_enti": [
+      "dtn.it",
+      "cefpas.it",
+      "cfssicilia.it",
+      "sgaformazione.it",
+      "formazione-corsiecm.it",
+      "ipaf.it",
+      "asnor.it",
+      "civitasrl.it",
+      "civitasrl.com",
+      "trova-ecm.it",
+      "finivestcongressi.it",
+      "newtecna.com",
+      "ospedalegiglio.it",
+      "arnascivico.it",
+      "eapfedarcom.it",
+      "myeap.it",
+      "centrostudiathena.it",
+      "icotea.it",
+      "agriconsultingsnc.it",
+      "primasalute.it",
+      "cebsrl.org",
+      "ecmfinder.it",
+      "digitalacademy.uno",
+      "samotcatania.it"
+    ],
+    "ordini_professionali_sanitari": [
+      "opipalermo.it",
+      "ordinemedicipa.it",
+      "oficataniaragusasiracusa.it"
+    ]
+  },
+  "formazione_enti_sicilia": {
+    "nota": "Enti di formazione professionale operanti in Sicilia. Soggetti PRIVATI: lo stato di accreditamento va riscontrato su regione.sicilia.it.",
+    "agenti": [
+      "edith",
+      "karen",
+      "vision"
+    ],
+    "domini": [
+      "formalabsrl.it",
+      "archeimpresa.it",
+      "cnosfap.sicilia.it",
+      "endofap-sicilia.it",
+      "iripasicilia.com",
+      "ciaforam.it",
+      "eurobic.eu",
+      "ascomsicilia.it",
+      "qualificagroup.it",
+      "acwildschool.it"
+    ]
+  },
+  "portali_formazione_istituzionali": {
+    "nota": "Portali istituzionali per accreditamento e formazione: fonte ufficiale per verificare gli accreditamenti.",
+    "agenti": [
+      "friday",
+      "edith",
+      "karen",
+      "vision",
+      "ultron"
+    ],
+    "domini": [
+      "regione.sicilia.it",
+      "inapp.gov.it",
+      "agenas.gov.it",
+      "agenas.it"
+    ]
+  },
+  "siti_istituzionali_italiani": {
+    "nota": "Siti istituzionali italiani. In più l'hook consente tutti i domini *.gov.it (registrazione riservata alle pubbliche amministrazioni). Autorizzati per tutti gli agenti; 'agenti_prioritari' indica chi li usa per primo.",
+    "regola_suffissi": [
+      "*.gov.it"
+    ],
+    "presidenza_e_ministeri": {
+      "agenti_prioritari": [
+        "friday",
+        "karen"
+      ],
+      "domini": [
+        "governo.it",
+        "esteri.it",
+        "interno.gov.it",
+        "interno.it",
+        "giustizia.it",
+        "pst.giustizia.it",
+        "mef.gov.it",
+        "tesoro.it",
+        "finanze.gov.it",
+        "mimit.gov.it",
+        "mise.gov.it",
+        "lavoro.gov.it",
+        "cliclavoro.gov.it",
+        "salute.gov.it",
+        "ministerosalute.it",
+        "mim.gov.it",
+        "istruzione.it",
+        "mur.gov.it",
+        "mit.gov.it",
+        "mase.gov.it",
+        "cultura.gov.it",
+        "ministeroturismo.gov.it",
+        "masaf.gov.it",
+        "difesa.it",
+        "funzionepubblica.gov.it",
+        "disabilita.governo.it",
+        "famiglia.governo.it",
+        "pariopportunita.gov.it",
+        "affariregionali.it"
+      ]
+    },
+    "agenzie_fiscali_e_nazionali": {
+      "agenti_prioritari": [
+        "edith",
+        "karen"
+      ],
+      "domini": [
+        "agenziaentrate.gov.it",
+        "agenziaentrateriscossione.gov.it",
+        "adm.gov.it",
+        "agenziademanio.it",
+        "agid.gov.it",
+        "agenziacoesione.gov.it",
+        "agenziagioventu.gov.it",
+        "asi.it",
+        "enea.it"
+      ]
+    },
+    "enti_previdenziali_e_assistenziali": {
+      "agenti_prioritari": [
+        "edith"
+      ],
+      "domini": [
+        "inps.it",
+        "inail.it",
+        "dati.inail.it",
+        "sportellounicoprevidenziale.it",
+        "inarcassa.it",
+        "enpam.it",
+        "cnpr.it",
+        "cassaforense.it",
+        "inpgi.it",
+        "enpapi.it",
+        "enpab.it",
+        "enpav.it",
+        "enpaia.it",
+        "cometafondo.it",
+        "fondofonte.it"
+      ]
+    },
+    "autorita_indipendenti": {
+      "agenti_prioritari": [
+        "friday",
+        "edith",
+        "karen",
+        "vision"
+      ],
+      "domini": [
+        "agcm.it",
+        "agcom.it",
+        "arera.it",
+        "autorita-trasporti.it",
+        "garanteprivacy.it",
+        "anticorruzione.it",
+        "consob.it",
+        "bancaditalia.it",
+        "ivass.it",
+        "covip.it",
+        "agenas.gov.it",
+        "aifa.gov.it",
+        "iss.it",
+        "istat.it",
+        "cnel.it"
+      ]
+    },
+    "regioni_province_comuni": {
+      "agenti_prioritari": [
+        "friday",
+        "edith"
+      ],
+      "domini": [
+        "regione.piemonte.it",
+        "regione.vda.it",
+        "regione.lombardia.it",
+        "regione.veneto.it",
+        "provincia.tn.it",
+        "provincia.bz.it",
+        "regione.fvg.it",
+        "regione.liguria.it",
+        "regione.emilia-romagna.it",
+        "regione.toscana.it",
+        "regione.umbria.it",
+        "regione.marche.it",
+        "regione.lazio.it",
+        "regione.abruzzo.it",
+        "regione.molise.it",
+        "regione.campania.it",
+        "regione.puglia.it",
+        "regione.basilicata.it",
+        "regione.calabria.it",
+        "regione.sicilia.it",
+        "regione.sardegna.it",
+        "comune.paterno.ct.it",
+        "comune.catania.it"
+      ]
+    },
+    "portali_pa_e_organi_costituzionali": {
+      "agenti_prioritari": [
+        "friday",
+        "ultron"
+      ],
+      "domini": [
+        "italia.gov.it",
+        "pagopa.gov.it",
+        "spid.gov.it",
+        "cartaidentita.interno.gov.it",
+        "anagrafenazionale.interno.it",
+        "inipec.gov.it",
+        "indicepa.gov.it",
+        "quirinale.it",
+        "parlamento.it",
+        "camera.it",
+        "senato.it",
+        "cortecostituzionale.it",
+        "corteconti.it",
+        "giustizia-amministrativa.it",
+        "consiglionazionaleforense.it",
+        "commercialisti.it"
+      ]
+    }
+  },
+  "esclusi_non_trovati": {
+    "nota": "Domini richiesti il 2026-11-04 ma inesistenti (nessun sito risponde) e senza un sostituto certo: NON inseriti. Vanno forniti gli indirizzi corretti.",
+    "domini": [
+      "centrostudielios.it",
+      "ecapmessina.it",
+      "formazioneeta.eu",
+      "omniaeducation.it"
+    ]
+  }
 }
