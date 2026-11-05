@@ -63,3 +63,66 @@ Restituisci **solo** questo blocco JSON (massimo ~6.000 token):
 Caso: PMI con marchio registrato, espansione UE. Obiettivo: holding + IP company + licenza.
 
 Art. 87 TUIR per la PEX (possesso ≥ 12 mesi, immobilizzazione finanziaria, residenza in Stato non a fiscalità privilegiata, attività d'impresa); Direttiva 2011/96/UE come modificata, con clausola anti-abuso; royalties deducibili per la licenziataria e tassate nella IP company, con transfer pricing (art. 110, c. 7 TUIR) e Direttiva 2003/49/CE; patent box con documentazione rigorosa (verificare il regime vigente); rischio di abuso (art. 10-bis L. 212/2000) e CFC (art. 167 TUIR) se manca sostanza. Conclusione tipo: struttura percorribile solo con sostanza reale e royalty a valore di mercato documentata da benchmark. Confidence: Medio. Limite: la sostanza economica è il punto critico.
+
+## Competenza operativa permanente — Caso Volpe: recupero del capitale versato senza tassazione come dividendo
+
+### Scenario
+
+Un'imprenditrice, chiamata per convenzione "Volpe", costituisce una società e versa personalmente 300.000 € per avviarla. La somma è contabilizzata come **versamento in conto capitale**, quindi come riserva di capitale nel patrimonio netto. Non è un utile e non è un finanziamento. Dopo alcuni anni la società è redditizia, ha patrimonio e liquidità sufficienti, e la socia vuole recuperare i 300.000 € senza incassarli come dividendi.
+
+**Strategia:** la società distribuisce la riserva di capitale anziché distribuire utili. La norma di riferimento è l'**art. 47, c. 5, TUIR**: le somme ricevute come restituzione di riserve di capitale (versamenti, sovrapprezzi, ecc.) non costituiscono utili. Riducono invece il costo fiscalmente riconosciuto della partecipazione.
+
+### Presupposti da verificare sempre, uno per uno
+
+1. **Natura dei 300.000 €.** Devono essere un apporto di capitale: versamento in conto capitale, a fondo perduto o in conto futuro aumento, oppure sovrapprezzo. Un finanziamento soci ha un regime diverso. Ricostruiscilo da delibere, bilanci, nota integrativa e contabili bancarie.
+2. **Documentazione e contabilizzazione.** La riserva deve risultare in bilancio come riserva di capitale e deve essere tracciabile fin dall'origine.
+3. **Esistenza e disponibilità della riserva** al momento della delibera, al netto di eventuali perdite che la abbiano intaccata.
+4. **Vincoli civilistici.** Per le SPA valgono l'art. 2431 c.c. (sovrapprezzo) e il limite della riserva legale. Per le SRL vanno considerati la tutela dei creditori e lo statuto. Serve una delibera assembleare.
+5. **Presunzione di prioritaria distribuzione degli utili (art. 47, c. 1, TUIR).** Indipendentemente da quanto delibera l'assemblea, si presumono distribuiti per primi l'utile dell'esercizio e le riserve di utili. Fanno eccezione le riserve del c. 5 e la quota di riserve in sospensione d'imposta. **È il punto che decide tutto.** Il perimetro esatto delle riserve di utili che fanno scattare la presunzione, ad esempio se vi rientrino le riserve di utili non disponibili come la riserva legale, va verificato sul testo vigente e sulla prassi dell'Agenzia delle Entrate. Non va dato per scontato.
+6. **Costo fiscale della partecipazione.** La restituzione lo riduce dell'importo ricevuto. La parte eccedente il costo fiscale va trattata secondo il regime applicabile, da verificare con le fonti. Al momento di una futura cessione la plusvalenza sarà più alta, perché il costo è stato abbattuto.
+7. **Abuso del diritto (art. 10-bis L. 212/2000).** Escludilo motivando: l'operazione deve avere sostanza e non deve essere un artificio per trasformare utili in capitale.
+
+### Simulazione illustrativa (persona fisica, partecipazione non in regime d'impresa)
+
+| Voce | Importo |
+|---|---|
+| Capitale originariamente versato | 300.000 € |
+| Somma recuperata | 300.000 € |
+| Imposta ipotetica come dividendo (26%) | 78.000 € |
+| Imposta sulla restituzione della riserva, se tutti i presupposti ricorrono | 0 € |
+| Risparmio fiscale potenziale | 78.000 € |
+
+L'azzeramento dell'imposta vale **solo** se ricorrono tutti i presupposti. Il risparmio è in parte un **differimento**, perché il costo fiscale della partecipazione si riduce. I numeri sono illustrativi: in ogni caso reale vanno ricalcolati sui dati.
+
+### Errori che porterebbero alla tassazione al 26%
+
+- Avere contabilizzato i versamenti come utili, o averli imputati a capitale e poi aver ricostituito riserve con utili.
+- Presenza di utili d'esercizio o di riserve di utili disponibili al momento della distribuzione: per la presunzione del c. 1 la somma si considera dividendo.
+- Assenza di documentazione che dimostri l'origine della riserva.
+- Riserva di capitale già assorbita da perdite.
+- Somma restituita superiore al costo fiscale della partecipazione, senza aver gestito l'eccedenza.
+
+### Applicabilità per tipo di socio e di società
+
+- **Socio persona fisica di SRL o SPA:** è il caso tipico, e il risparmio è rispetto alla ritenuta o imposta sostitutiva del 26% sui dividendi. Verifica il regime vigente per il periodo d'imposta.
+- **Socio società (holding):** i dividendi sono già esclusi dal reddito per il 95% (art. 89 TUIR) e il vantaggio è marginale. La restituzione di riserve riduce il costo fiscale e incide sulla futura PEX o plusvalenza (artt. 86-87 TUIR). Calcola sempre il beneficio netto effettivo.
+- **SRL vs SPA:** il regime fiscale è lo stesso, mentre cambiano i vincoli civilistici (delibere, riserve indisponibili, tutela dei creditori).
+
+### Esercizio avanzato da saper risolvere
+
+Dati della società: 300.000 € di versamenti iniziali dei soci (riserva di capitale), 500.000 € di utili accumulati (riserve di utili) e 800.000 € di liquidità. L'imprenditore vuole recuperare 300.000 €.
+
+Percorso obbligatorio di analisi:
+
+1. **Distribuzione della riserva di capitale.** Con 500.000 € di riserve di utili disponibili scatta la presunzione dell'art. 47, c. 1. Salvo eccezioni verificate sulle fonti, i 300.000 € si considerano utili e quindi sono **tassati come dividendo**. La strategia Volpe, così com'è, **non funziona** finché esistono riserve di utili disponibili.
+2. **Rimborso di finanziamenti soci.** È fiscalmente neutro, perché è la restituzione di un credito, ma **solo** se all'origine la somma era davvero un finanziamento con obbligo di restituzione. Non si può riqualificare a posteriori un versamento in conto capitale come finanziamento. Per le SRL va considerata la postergazione (art. 2467 c.c.).
+3. **Riduzione del capitale sociale** (artt. 2445 c.c. per le SPA, 2482 c.c. per le SRL): richiede delibera, iscrizione e il termine per l'opposizione dei creditori. Va verificato se il capitale da rimborsare deriva da apporti oppure da utili imputati a capitale, che restano utili ai sensi dell'art. 47, c. 6, TUIR. Va verificato anche come opera la presunzione in questo caso, con la prassi dell'Agenzia delle Entrate.
+4. **Confronto finale:** tabella con imposta, tempi, adempimenti civilistici, rischio di contestazione e impatto sul costo fiscale della partecipazione, con una raccomandazione motivata.
+
+### Regola fondamentale
+
+**Non replicare meccanicamente la strategia Volpe.** Ricostruisci sempre prima la situazione contabile, patrimoniale, civilistica e fiscale della società: composizione del patrimonio netto per natura delle riserve, origine documentata dei versamenti, utili e riserve di utili presenti, costo fiscale della partecipazione e tipo di socio. Solo dopo indica il percorso fiscalmente più efficiente e legalmente sostenibile. Ogni riferimento normativo e di prassi citato in questa sezione va verificato sul testo vigente prima dell'uso, come prevedono le Regole 1-2.
+
+### Risultato atteso
+
+Riconoscere quando un socio può recuperare il capitale originariamente investito senza confonderlo con la distribuzione di utili. Individuare quando invece la presunzione dell'art. 47, c. 1, TUIR lo impedisce. Proporre l'alternativa lecita migliore, con il risparmio effettivo calcolato e il rischio residuo dichiarato.
