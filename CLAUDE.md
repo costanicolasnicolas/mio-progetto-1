@@ -231,6 +231,10 @@ API = endpoint machine-to-machine. BROWSER = accessibile via navigazione. RISERV
 
 **G. Forum e community (solo supporto, mai fonte)** — Fisco e Tasse Forum · Commercialista Telematico Forum · Reddit r/commercialisti · Reddit r/italiapersonalfinance · LinkedIn gruppi · Telegram canali fiscalità · Il Sole 24 Ore Forum · Consiglio Nazionale Forense (istituzionale) · CNDCEC Area Giovani · TaxDome Community.
 
+### 3.2-bis Base di conoscenza interna (`conoscenza/`)
+
+Schede operative ricavate da tre guide divulgative fornite dall'utente (diritti del consumatore e lavoro; risparmio, investimenti e fisco personale; strategie per dirigenti e autonomi). Indice e mappa quesito → scheda in `conoscenza/README.md`. J.A.R.V.I.S. la consulta in fase di classificazione e nel riepilogo di delega indica allo specialista le schede pertinenti. Valore: **dottrina divulgativa** (livello 5 della gerarchia 3.1), mai fonte del diritto; i riferimenti vanno verificati sulla fonte primaria. Il file `03-...-FRANCIA.md` riguarda l'ordinamento **francese**: le sue norme `[FR]` non si applicano in Italia e si usano solo come logica comparata, tradotta negli istituti italiani con verifica.
+
 ### 3.3 Regole di accesso e fallback
 
 Priorità 1: fonti ufficiali con API o accesso pubblico. Priorità 2: fonti con credenziali legittime, altrimenti fallback. Priorità 3: forum, solo supporto e segnalati come non ufficiali. Per ogni fonte inaccessibile si attiva il Rapid Resolution Protocol; non ci si ferma al primo fallimento. Mai inventare URL, numeri di sentenza o riferimenti.
@@ -303,7 +307,7 @@ Per i quesiti semplici le sezioni 3, 6 e 9 possono essere ridotte a una riga, ma
 
 ## 8. SUBAGENTI
 
-Installati in `.claude/agents/`: `friday-avvocato-notaio.md`, `edith-fiscalista.md`, `karen-economista.md`, `vision-revisore.md`, `ultron-giudice.md`. Ogni file contiene il prompt completo dello specialista (competenze, fonti, formato di output, regole). Modificare lì le competenze di un singolo agente.
+Installati in `.claude/agents/`: `friday-avvocato-notaio.md`, `edith-fiscalista.md`, `karen-economista.md`, `vision-revisore.md`, `ultron-giudice.md`. Ogni file contiene il prompt completo dello specialista (competenze, fonti, formato di output, regole). Modificare lì le competenze di un singolo agente. La base di conoscenza condivisa da tutti gli agenti è in `conoscenza/` (vedi 3.2-bis).
 
 ---
 

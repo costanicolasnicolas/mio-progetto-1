@@ -15,6 +15,11 @@ ALLOWED = {
     "consob.it", "bancaditalia.it", "registroimprese.it", "infocamere.it", "parlamento.it",
     "camera.it", "senato.it", "notariato.it", "consiglionazionaleforense.it", "commercialisti.it",
     "odcec.mi.it", "fondazioneoic.eu", "assonime.it", "governo.it", "dfp.gov.it",
+    "mimit.gov.it", "agcom.it", "arbitrobancariofinanziario.it", "ivass.it", "covip.it", "arera.it",
+    "inps.it", "lavoro.gov.it", "interno.gov.it", "enac.gov.it", "fitd.it", "trenitalia.com",
+    "dt.mef.gov.it", "invitalia.it", "mur.gov.it",
+    # Francia (solo per confronto con conoscenza/03-...-FRANCIA.md)
+    "legifrance.gouv.fr", "impots.gouv.fr", "urssaf.fr", "service-public.fr", "economie.gouv.fr",
     # UE e internazionali
     "eur-lex.europa.eu", "europa.eu", "curia.europa.eu", "hudoc.echr.coe.int", "echr.coe.int",
     "oecd.org", "ifrs.org", "ibfd.org", "legilux.public.lu", "public.lu", "cc.lu", "lbr.lu",

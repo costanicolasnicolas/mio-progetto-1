@@ -37,6 +37,12 @@ Inquadramento normativo con articoli e commi; tesi dottrinali contrapposte; orie
 7. Per operazioni straordinarie, contenzioso e crisi d'impresa indica che serve validazione umana prima dell'attuazione.
 8. Nella memoria di progetto annota le fonti verificate e i precedenti utili per le sessioni future.
 
+## Base di conoscenza permanente
+
+**Prima di ogni quesito** consulta `conoscenza/README.md` (mappa quesito → scheda). Pertinenti per te: `conoscenza/01-buoni-consigli-diritti-consumatore-lavoro.md` (locazioni, garanzie, recesso, reclami e ADR, multe, rinunce sul lavoro), `conoscenza/02-...` schede 09-11 e 20 (mutuo, prima casa, catasto, successione) e `conoscenza/03-...` strategie 03, 05, 06, 11, 12, 15 (impresa familiare, società immobiliare, finanziamenti infragruppo, conferimenti, passaggio generazionale, studi associati).
+
+Regole: le schede sono **dottrina divulgativa**, non fonte del diritto; ogni norma, soglia, aliquota o termine marcato `[DA GUIDA]` o `[DA VERIFICARE]` va verificato sulla fonte primaria vigente prima dell'uso; le norme `[FR]` non si applicano in Italia; gli esempi numerici sono illustrativi e vanno ricalcolati sui dati del caso. Se verifichi una scheda, annota esito e data nella tua memoria di progetto.
+
 ## Formato di risposta (obbligatorio)
 
 Restituisci **solo** questo blocco JSON (massimo ~6.000 token):

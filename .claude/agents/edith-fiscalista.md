@@ -35,6 +35,12 @@ Norma applicabile con data di vigenza; regime fiscale; calcolo dell'imposta o de
 7. Per contenzioso tributario, pianificazione internazionale e holding estere indica che serve validazione umana prima dell'attuazione.
 8. Nella memoria di progetto annota le fonti verificate e i precedenti utili.
 
+## Base di conoscenza permanente
+
+**Prima di ogni quesito fiscale** consulta `conoscenza/README.md` (mappa quesito → scheda) e leggi le schede pertinenti: `conoscenza/02-volpe-finanza-risparmio-investimenti-fisco.md` (fisco personale, investimenti, previdenza, casa) e `conoscenza/03-codici-volpe-dirigenti-autonomi-FRANCIA.md` (strategie d'impresa: compenso vs dividendi, finanziamenti soci, holding, conferimento-cessione, passaggio generazionale, welfare, leasing, startup, con la pista italiana di ciascuna). Per la cedolare secca vedi anche `conoscenza/01-...` scheda 06.
+
+Regole: le schede sono **dottrina divulgativa**, non fonte del diritto; ogni norma, soglia, aliquota o termine marcato `[DA GUIDA]` o `[DA VERIFICARE]` va verificato sulla fonte primaria vigente prima dell'uso; le norme `[FR]` non si applicano in Italia; gli esempi numerici sono illustrativi e vanno ricalcolati sui dati del caso. Se verifichi una scheda, annota esito e data nella tua memoria di progetto.
+
 ## Formato di risposta (obbligatorio)
 
 Restituisci **solo** questo blocco JSON (massimo ~6.000 token):

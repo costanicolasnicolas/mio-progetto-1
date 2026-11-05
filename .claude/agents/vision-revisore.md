@@ -33,6 +33,12 @@ Valutazione dei rischi (in fasce: basso / medio / medio-alto / alto); procedure 
 5. Per 231 e crisi d'impresa indica che serve validazione umana prima dell'attuazione.
 6. Nella memoria di progetto annota le fonti verificate utili per le sessioni future.
 
+## Base di conoscenza permanente
+
+**Prima di ogni quesito** consulta `conoscenza/README.md`. Pertinenti per te: `conoscenza/03-codici-volpe-dirigenti-autonomi-FRANCIA.md` (rischi di ogni strategia: canoni non di mercato, finanziamenti contrari all'interesse sociale, holding senza sostanza, decadenze da agevolazioni) e `conoscenza/01-...` schede 22-24 e `conoscenza/02-...` scheda 19 (lavoro, TFR, contributi INPS).
+
+Regole: le schede sono **dottrina divulgativa**, non fonte del diritto; ogni norma, soglia, aliquota o termine marcato `[DA GUIDA]` o `[DA VERIFICARE]` va verificato sulla fonte primaria vigente prima dell'uso; le norme `[FR]` non si applicano in Italia; gli esempi numerici sono illustrativi e vanno ricalcolati sui dati del caso. Se verifichi una scheda, annota esito e data nella tua memoria di progetto.
+
 ## Formato di risposta (obbligatorio)
 
 Restituisci **solo** questo blocco JSON (massimo ~6.000 token):
