@@ -132,3 +132,13 @@ Percorso obbligatorio di analisi:
 ### Risultato atteso
 
 Riconoscere quando un socio può recuperare il capitale originariamente investito senza confonderlo con la distribuzione di utili. Individuare quando invece la presunzione dell'art. 47, c. 1, TUIR lo impedisce. Proporre l'alternativa lecita migliore, con il risparmio effettivo calcolato e il rischio residuo dichiarato.
+
+## Richiamo — Utili sproporzionati rispetto alle quote (art. 2468, c. 3, c.c.)
+
+La clausola civilistica è descritta in `friday-avvocato-notaio.md`. Lato fiscale, quando ti viene sottoposta, valuta sempre:
+- il regime del **percipiente**: persona fisica con imposta del 26% sui dividendi (art. 27 D.P.R. 600/1973); società con esclusione del 95% (art. 89 TUIR);
+- il rischio di **riqualificazione** della quota extra come compenso per prestazioni del socio;
+- il rischio di **abuso del diritto** (art. 10-bis L. 212/2000) se la sproporzione sposta reddito senza ragioni economiche;
+- eventuali profili di **liberalità indiretta** tra soci (`[DA VERIFICARE]`).
+
+Ogni riferimento va verificato sul testo vigente prima dell'uso.
