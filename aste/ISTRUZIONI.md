@@ -148,7 +148,7 @@ Per ogni livello riporta: numero di comparabili, €/m² minimo, medio e massimo
 
 Se i portali di annunci non sono raggiungibili, usa solo OMI e perizia e scrivilo; non inventare comparabili.
 
-Nota tecnica: l'hook `domain_allowlist.py` blocca il WebFetch dei subagenti verso i portali di annunci (immobiliare.it, idealista.it, casa.it). Quindi è **J.A.R.V.I.S.** a raccogliere comparabili e quotazioni OMI (con curl o con il browser) e a salvarli in `stato/aste/<id>/comparabili.json` (tipo, indirizzo, m², piano, stato, prezzo o canone, €/m², link). K.A.R.E.N. li legge da lì.
+Nota tecnica: l'hook `domain_allowlist.py` ora consente ai subagenti il WebFetch su immobiliare.it, idealista.it, casa.it e sui portali d'asta. **J.A.R.V.I.S.** raccoglie comunque una prima serie di comparabili e quotazioni OMI in `stato/aste/<id>/comparabili.json` (tipo, indirizzo, m², piano, stato, prezzo o canone, €/m², link); K.A.R.E.N. li legge e può aprire direttamente gli annunci per verificarli o aggiungerne altri. Se un sito blocca gli accessi automatici, si resta sui comparabili già raccolti.
 
 ## 6. Output
 

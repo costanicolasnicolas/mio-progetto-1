@@ -23,6 +23,10 @@ ALLOWED = {
     "diritto.it", "ilsole24ore.com", "latribuna.it", "sistemapenale.it", "aptus.ai",
     "deloitte.com", "taxsummaries.pwc.com", "ogier.com", "philippoulaw.com", "costituzionesocieta.it",
     "onelegale.wolterskluwer.it", "dejure.it", "taxnews.bloombergtax.com", "thomsonreuters.com",
+    # Aste e mercato immobiliare (radar aste: perizie, comparabili di vendita e affitto)
+    "astegiudiziarie.it", "astalegale.net", "asteannunci.it", "agenziademanio.it", "inps.it",
+    "invimit.it", "benisequestraticonfiscati.it", "agenziaentrateriscossione.gov.it",
+    "openstreetmap.org", "immobiliare.it", "idealista.it", "casa.it",
     # Community (solo supporto, mai fonte di diritto)
     "fiscoetasse.com", "commercialistatelematico.com", "reddit.com", "linkedin.com", "taxdome.com",
 }
