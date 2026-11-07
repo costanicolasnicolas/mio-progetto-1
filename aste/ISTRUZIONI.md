@@ -94,6 +94,33 @@ Pesi del punteggio:
 
 **Consigliate**: punteggio ≥ 60, ordinate per punteggio. Massimo 5. Per ognuna indica l'operazione suggerita (rivendita dopo i lavori, affitto lungo, affitto breve, box o magazzino a reddito) e l'offerta massima consigliata.
 
+## 5-bis. Collegio J.A.R.V.I.S. sulle aste migliori
+
+Dopo il punteggio del punto 5, prendi le **migliori aste candidate (massimo 5, punteggio provvisorio ≥ 50)** e falle esaminare dal Collegio definito in `CLAUDE.md` e `.claude/agents/`. La sessione principale agisce da **J.A.R.V.I.S.** (orchestratore). Le aste sotto soglia restano nella tabella con l'analisi rapida.
+
+**Preparazione (J.A.R.V.I.S.)** — i subagenti non hanno Bash e non vedono la conversazione:
+1. per ogni asta crea `stato/aste/<id_asta>/` e salvaci il testo estratto di perizia, avviso, ordinanza e allegati (`perizia.txt`, `avviso.txt`, ...), più `scheda.json` con i dati già raccolti (indirizzo, prezzi, superficie, date, link, valori OMI, calcoli provvisori);
+2. nel prompt di delega passa un riepilogo di massimo 500 token, i percorsi dei file da leggere e la checklist pertinente di `aste/MANUALE_DUE_DILIGENCE.md`.
+
+**Esame in parallelo** — lancia nello stesso messaggio, per ogni asta (o una delega per specialista con tutte le aste insieme, se sono più di 2):
+| Specialista (`subagent_type`) | Compito sull'asta | Sezioni del manuale |
+|---|---|---|
+| `friday-avvocato-notaio` | Diritto in vendita, occupazione e opponibilità dei contratti, formalità cancellate o che restano, sanabilità di abusi e difformità (DPR 380/2001, L. 47/1985, art. 40), vincoli, servitù, usi civici, contenziosi | 1, 2, 4 |
+| `edith-fiscalista` | Imposte di acquisto (registro o IVA, prima casa, prezzo-valore), ipotecaria e catastale, plusvalenza in caso di rivendita entro 5 anni, IMU, cedolare secca sull'affitto | 6 |
+| `karen-economista` | Valore di mercato (OMI e comparabili), costo totale, margine netto, ROI netto, €/m², tempo di rivendita, costo del capitale, rendimento netto da locazione, offerta massima consigliata | 5, 6 |
+| `vision-revisore` | Rischi complessivi (urbanistici, tecnici, condominiali, di liberazione), piano di cassa (cauzione, saldo, lavori), elenco dei controlli da fare al sopralluogo con geometra/avvocato | 3, 5, regola operativa |
+
+Ogni specialista restituisce il JSON della sezione 2.2 di `CLAUDE.md`, citando la pagina della perizia o il documento per ogni dato.
+
+**Verifica** — passa tutti gli output a `ultron-giudice`. U.L.T.R.O.N. controlla che ogni numero e ogni criticità venga da un documento reale o da una fonte verificata, risolve i conflitti tra specialisti ed emette per ogni asta: **APPROVATO / APPROVATO CON RISERVE / RESPINTO**.
+
+**Esito**:
+- solo le aste APPROVATE o APPROVATE CON RISERVE vanno tra le **consigliate**, con il punteggio ricalcolato sui dati del Collegio;
+- le RESPINTE vanno in tabella con il motivo del verdetto;
+- per ogni consigliata salva nel report il parere breve di ogni specialista e il verdetto con le riserve (campi `collegio` e `verdetto_ultron`).
+
+Limiti: concorrenza massima e profondità come in `CLAUDE.md` (sezione 6). Il Collegio vale solo per le aste migliori: il giro rapido sulle altre resta invariato. Se un subagente non risponde o supera i turni, J.A.R.V.I.S. completa quella parte da solo e lo segnala nel campo `collegio`.
+
 ## 6. Output
 
 Scrivi `aste/report/data.json` con questa struttura (campi esistenti in `aste/report/index.html`):
@@ -111,6 +138,8 @@ Scrivi `aste/report/data.json` con questa struttura (campi esistenti in `aste/re
     "mesi_rivendita": 0, "costo_capitale": 0,
     "documenti": [{"nome": "Perizia estimativa", "stato": "letto | citato in perizia | mancante"}],
     "da_verificare": ["controlli da fare al sopralluogo o con geometra/avvocato"],
+    "collegio": [{"agente": "F.R.I.D.A.Y.", "parere": "2-3 frasi"}, {"agente": "E.D.I.T.H.", "parere": ""}, {"agente": "K.A.R.E.N.", "parere": ""}, {"agente": "V.I.S.I.O.N.", "parere": ""}],
+    "verdetto_ultron": {"esito": "APPROVATO | APPROVATO CON RISERVE | RESPINTO", "motivazione": "", "riserve": [""]},
     "punti_forza": [""], "criticita": [""], "operazione": "",
     "link": [{"nome": "Annuncio PVP", "url": ""}, {"nome": "Perizia", "url": ""}]
   }],

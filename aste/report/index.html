@@ -65,6 +65,11 @@ td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowra
 .sources{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px}
 .src{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:8px 12px;background:var(--surface);border:1px solid var(--line);border-radius:8px}
 .src span:first-child{min-width:0}
+.verdict{display:grid;gap:6px;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.verdict ul{margin:0;padding-left:18px}
+.council{display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;margin:10px 0 0}
+.council dt{font-weight:700;color:var(--navy)}.council dd{margin:0;min-width:0}
+@media (max-width:480px){.council{grid-template-columns:1fr}.council dd{margin-bottom:6px}}
 .note{font-size:13px;color:var(--muted);max-width:75ch}
 </style>
 
@@ -132,6 +137,8 @@ function render(d){
         <div><h4>Operazione consigliata</h4><p style="margin:0">${esc(a.operazione)}</p></div>
         <div><h4>Da verificare al sopralluogo</h4><ul>${(a.da_verificare||[]).map(x=>`<li>${esc(x)}</li>`).join("")||"<li>—</li>"}</ul></div>
       </div>
+      ${a.verdetto_ultron?`<div class="verdict"><span class="chip ${/RESPINTO/.test(a.verdetto_ultron.esito)?"bad":/RISERVE/.test(a.verdetto_ultron.esito)?"warn":"good"}">U.L.T.R.O.N.: ${esc(a.verdetto_ultron.esito)}</span> <span>${esc(a.verdetto_ultron.motivazione)}</span>${(a.verdetto_ultron.riserve||[]).filter(Boolean).length?`<ul>${a.verdetto_ultron.riserve.filter(Boolean).map(r=>`<li>${esc(r)}</li>`).join("")}</ul>`:""}</div>`:""}
+      ${(a.collegio||[]).length?`<details><summary style="cursor:pointer;font-weight:600">Pareri del Collegio</summary><dl class="council">${a.collegio.map(c=>`<dt>${esc(c.agente)}</dt><dd>${esc(c.parere)}</dd>`).join("")}</dl></details>`:""}
       ${(a.documenti||[]).length?`<details><summary style="cursor:pointer;font-weight:600">Documenti della due diligence (${a.documenti.filter(x=>/letto/i.test(x.stato)).length}/${a.documenti.length} letti)</summary><div class="chips" style="margin-top:8px">${a.documenti.map(x=>`<span class="chip ${/^letto/i.test(x.stato)?"good":/mancante/i.test(x.stato)?"bad":"warn"}">${esc(x.nome)}: ${esc(x.stato)}</span>`).join("")}</div></details>`:""}
       <div class="links">${(a.link||[]).map(l=>`<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.nome)}</a>`).join("")}</div>
     </article>`).join("")}
