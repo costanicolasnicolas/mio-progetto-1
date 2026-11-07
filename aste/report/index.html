@@ -70,6 +70,7 @@ td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowra
 .reno{display:grid;gap:10px}
 .reno h4{margin:0;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 table.mini{min-width:560px;font-size:13px}
+.card.scarto{border-style:dashed}
 .verdict{display:grid;gap:6px;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
 .verdict ul{margin:0;padding-left:18px}
 .council{display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;margin:10px 0 0}
@@ -80,7 +81,7 @@ table.mini{min-width:560px;font-size:13px}
 
 <div class="wrap">
   <header class="head">
-    <div class="eyebrow">Catania · raggio 1 km da Villa Bellini · base d'asta 5.000–35.000 €</div>
+    <div class="eyebrow">Catania · raggio 1 km da Villa Bellini · base d'asta 5.000–35.000 € · costo totale fino a 80.000 €</div>
     <h1>Radar Aste Villa Bellini</h1>
     <p id="sub">Caricamento del report…</p>
     <div class="stats" id="stats"></div>
@@ -89,6 +90,12 @@ table.mini{min-width:560px;font-size:13px}
   <section class="picks" aria-labelledby="h-picks">
     <h2 id="h-picks">Aste consigliate</h2>
     <div id="picks" class="picks"><div class="empty">Nessun report ancora. La prima scansione dei portali compare qui appena è pronta.</div></div>
+  </section>
+
+  <section aria-labelledby="h-scart" style="display:grid;gap:12px">
+    <h2 id="h-scart">Scartate, con scheda completa</h2>
+    <p class="note" style="margin:0">Aste nel raggio e nel budget di prezzo che non rispettano i criteri: per ognuna lo stato dell'immobile, i lavori stimati, il valore dopo i lavori e di quanto sfora.</p>
+    <div id="scart" class="picks"></div>
   </section>
 
   <section aria-labelledby="h-all" style="display:grid;gap:12px">
@@ -160,6 +167,28 @@ function render(d){
       <div class="links">${a.url_asta?`<a class="go" href="${esc(a.url_asta)}" target="_blank" rel="noopener">Apri l'asta${a.portale?" su "+esc(a.portale):""}${a.codice_asta?" · "+esc(a.codice_asta):""} ↗</a>`:`<span class="chip bad">Link all'asta mancante</span>`}${(a.link||[]).map(l=>`<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.nome)}</a>`).join("")}</div>
     </article>`).join("")}
   else P.innerHTML=`<div class="empty">${esc(d.nessuna_consigliata||"Oggi nessuna asta supera i criteri minimi.")}</div>`;
+  const S=document.getElementById("scart"),sc=d.scartate||[];
+  S.innerHTML=sc.length?sc.map(a=>`
+    <article class="card scarto">
+      <div class="card-top"><div><h3>${esc(a.titolo||a.indirizzo)}</h3><div class="addr">${esc(a.indirizzo)}${a.distanza_m!=null?" · "+esc(a.distanza_m)+" m dalla villa":""}${a.mq?" · "+esc(a.mq)+" mq":""}</div></div>
+        <div class="chips"><span class="chip bad">Scartata</span>${a.perizia_letta===false?'<span class="chip warn">Perizia mancante</span>':""}</div></div>
+      <p style="margin:0"><b>Motivo:</b> ${esc(a.motivo_scarto)}${a.sforamento_eur?` — sfora di <b>${eur(a.sforamento_eur)}</b>${a.sforamento_pct!=null?" ("+pct(a.sforamento_pct)+")":""}`:""}</p>
+      ${a.stato_immobile?`<p class="addr" style="margin:0">${esc(a.stato_immobile)}</p>`:""}
+      <div class="nums">
+        <div><span>Base d'asta</span><b>${eur(a.prezzo_base)}</b></div>
+        <div><span>Offerta minima</span><b>${eur(a.offerta_minima)}</b></div>
+        <div><span>Data asta</span><b>${fmtDate(a.data_asta)}</b></div>
+        <div><span>Lavori${a.ristrutturazione?.livello?" · "+esc(a.ristrutturazione.livello):""}</span><b>${eur(a.ristrutturazione?.costo)}</b></div>
+        <div><span>Costo totale stimato</span><b>${eur(a.costo_totale)}</b></div>
+        <div><span>Valore dopo i lavori</span><b>${eur(a.valore_dopo_lavori)}</b></div>
+        <div><span>Margine netto · ROI</span><b>${eur(a.margine_netto)} · ${pct(a.roi_netto_pct)}</b></div>
+        <div><span>Affitto lungo / mese</span><b>${eur(a.affitto?.lungo_mese)}</b></div>
+      </div>
+      ${(a.ristrutturazione?.voci||[]).filter(Boolean).length?`<p class="addr" style="margin:0">${a.ristrutturazione.voci.filter(Boolean).map(esc).join(" · ")}</p>`:""}
+      ${(a.prezzi_zona||[]).length?`<div class="tablebox"><table class="mini"><thead><tr><th>Livello</th><th>Vendita €/m² min · medio · max</th><th>Affitto €/m² mese</th><th>Comparabili</th><th>Fonte</th></tr></thead><tbody>${a.prezzi_zona.map(z=>`<tr><td>${esc(z.livello)}</td><td class="n">${(z.vendita_eur_mq||[]).map(v=>v==null?"—":Math.round(v)).join(" · ")}</td><td class="n">${(z.affitto_eur_mq_mese||[]).map(v=>v==null?"—":String(v).replace(".",",")).join(" · ")}</td><td class="n">${esc(z.comparabili)}</td><td>${/^https?:/.test(z.fonte||"")?`<a href="${esc(z.fonte)}" target="_blank" rel="noopener">fonte</a>`:esc(z.fonte)}</td></tr>`).join("")}</tbody></table></div>`:""}
+      ${a.commento?`<p style="margin:0"><b>Quando diventerebbe interessante:</b> ${esc(a.commento)}</p>`:""}
+      <div class="links">${a.url_asta?`<a class="go" href="${esc(a.url_asta)}" target="_blank" rel="noopener">Apri l'asta${a.portale?" su "+esc(a.portale):""} ↗</a>`:`<span class="chip bad">Link all'asta mancante</span>`}${(a.link||[]).filter(l=>l.url).map(l=>`<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.nome)}</a>`).join("")}</div>
+    </article>`).join(""):`<div class="empty">Nessuna asta scartata oggi.</div>`;
   const A=document.getElementById("all"),rows=d.tutte||[];
   A.innerHTML=rows.length?`<div class="tablebox"><table><thead><tr><th>Indirizzo</th><th>Tipo</th><th>Base</th><th>Offerta min.</th><th>Data asta</th><th>Esito</th><th>Portale</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${esc(r.indirizzo)}</td><td>${esc(r.tipo)}</td><td class="n">${eur(r.prezzo_base)}</td><td class="n">${eur(r.offerta_minima)}</td><td class="n">${fmtDate(r.data_asta)}</td><td>${esc(r.esito)}</td><td>${r.url?`<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.portale)}</a>`:esc(r.portale)}</td></tr>`).join("")}</tbody></table></div>`:`<div class="empty">Nessuna asta nel raggio e nel budget.</div>`;
   document.getElementById("sources").innerHTML=(d.portali||[]).map(p=>`<div class="src"><span>${esc(p.nome)}</span><span class="chip ${p.stato==="ok"?"good":p.stato==="errore"?"bad":"warn"}">${esc(p.dettaglio||p.stato)}</span></div>`).join("");

@@ -107,7 +107,9 @@ Pesi del punteggio:
 | Liquidità della zona e qualità dell'immobile (piano, luce, ascensore) | 5 |
 | Tempistica (asta abbastanza lontana da preparare l'offerta, saldo sostenibile) | 5 |
 
-**Esclusioni automatiche** (in tabella con l'esito, mai tra le consigliate): quota indivisa senza accordo con i comproprietari, nuda proprietà, abusi o difformità non sanabili, titolo di occupazione problematico (contratto opponibile di lunga durata o a canone vile, diritto di abitazione, comodato opponibile), costo totale oltre 45.000 € (budget + 30% di costi), vendita già scaduta.
+**Esclusioni automatiche** (in tabella con l'esito, mai tra le consigliate): quota indivisa senza accordo con i comproprietari, nuda proprietà, abusi o difformità non sanabili, titolo di occupazione problematico (contratto opponibile di lunga durata o a canone vile, diritto di abitazione, comodato opponibile), costo totale oltre 80.000 € (prezzo d'asta fino a 35.000 € più lavori e costi finanziati a parte), vendita già scaduta.
+
+**Scartate con scheda completa**: ogni asta nel raggio e nel budget di prezzo che viene scartata (per costo totale, abusi, occupazione o altro) va comunque analizzata come le altre: stato dell'immobile dalla perizia, stima dei lavori, valore dopo i lavori, affitto stimato (sezione 5-ter), costo totale e **di quanto sfora** il tetto (in euro e in percentuale) o quale regola non rispetta. Va nel campo `scartate` del report, con il link diretto all'asta. Se la perizia manca, scrivilo e stima solo ciò che si può dai dati dell'avviso. Il Collegio non esamina le scartate.
 
 **Consigliate**: punteggio ≥ 60, ordinate per punteggio. Massimo 5. Per ognuna indica l'operazione suggerita (rivendita dopo i lavori, affitto lungo, affitto breve, box o magazzino a reddito) e l'offerta massima consigliata.
 
@@ -140,7 +142,7 @@ Limiti: concorrenza massima e profondità come in `CLAUDE.md` (sezione 6). Il Co
 
 ## 5-ter. Ristrutturazione e valore dopo i lavori (vendita e affitto)
 
-Lo fa J.A.R.V.I.S. nel giro rapido per tutte le aste nel raggio, e lo approfondisce **K.A.R.E.N.** per le aste del Collegio. **V.I.S.I.O.N.** controlla che le stime dei lavori siano coerenti con i difetti trovati in perizia, **U.L.T.R.O.N.** che ogni prezzo venga da una fonte citata.
+Lo fa J.A.R.V.I.S. nel giro rapido per tutte le aste nel raggio e nel budget di prezzo, **comprese quelle scartate**, e lo approfondisce **K.A.R.E.N.** per le aste del Collegio. **V.I.S.I.O.N.** controlla che le stime dei lavori siano coerenti con i difetti trovati in perizia, **U.L.T.R.O.N.** che ogni prezzo venga da una fonte citata.
 
 **1. Costo di ristrutturazione.** Parti dallo stato descritto in perizia e dalle foto, voce per voce (impianto elettrico, idrico, gas, bagno, cucina, pavimenti, infissi, intonaci e pitture, umidità, copertura o parti comuni a carico). Classifica il livello e usa questi riferimenti (Catania, €/m² di superficie interna, IVA inclusa; sono stime iniziali da sostituire con preventivi reali appena disponibili):
 | Livello | Quando | €/m² |
@@ -199,6 +201,18 @@ Scrivi `aste/report/data.json` con questa struttura (campi esistenti in `aste/re
     "link": [{"nome": "Annuncio PVP", "url": ""}, {"nome": "Perizia", "url": ""}]
   }],
   "nessuna_consigliata": "",
+  "scartate": [{
+    "titolo": "", "indirizzo": "", "distanza_m": 0, "mq": 0, "url_asta": "", "portale": "", "codice_asta": "",
+    "prezzo_base": 0, "offerta_minima": 0, "data_asta": "AAAA-MM-GG", "perizia_letta": true,
+    "motivo_scarto": "costo totale oltre il tetto / abuso non sanabile / ...", "sforamento_eur": 0, "sforamento_pct": 0,
+    "stato_immobile": "2-3 frasi dalla perizia",
+    "ristrutturazione": {"livello": "", "costo": 0, "voci": [""], "fonte": ""},
+    "costo_totale": 0, "valore_dopo_lavori": 0, "margine_netto": 0, "roi_netto_pct": 0,
+    "prezzi_zona": [{"livello": "Via", "vendita_eur_mq": [0, 0, 0], "affitto_eur_mq_mese": [0, 0, 0], "comparabili": 0, "fonte": ""}],
+    "affitto": {"lungo_mese": 0, "breve_mese_netto": 0, "rendimento_lungo_pct": 0, "rendimento_breve_pct": 0},
+    "commento": "cosa dovrebbe cambiare perché diventi interessante (prezzo a un'asta successiva, lavori più leggeri, ...)",
+    "link": [{"nome": "Perizia", "url": ""}]
+  }],
   "tutte": [{"indirizzo": "", "tipo": "", "prezzo_base": 0, "offerta_minima": 0, "data_asta": "", "esito": "Consigliata / Scartata: motivo", "portale": "", "url": ""}],
   "portali": [{"nome": "", "stato": "ok | errore | parziale", "dettaglio": "n annunci / non raggiungibile"}]
 }
