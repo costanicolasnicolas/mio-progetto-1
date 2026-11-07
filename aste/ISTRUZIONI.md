@@ -107,7 +107,7 @@ Dopo il punteggio del punto 5, prendi le **migliori aste candidate (massimo 5, p
 |---|---|---|
 | `friday-avvocato-notaio` | Diritto in vendita, occupazione e opponibilità dei contratti, formalità cancellate o che restano, sanabilità di abusi e difformità (DPR 380/2001, L. 47/1985, art. 40), vincoli, servitù, usi civici, contenziosi | 1, 2, 4 |
 | `edith-fiscalista` | Imposte di acquisto (registro o IVA, prima casa, prezzo-valore), ipotecaria e catastale, plusvalenza in caso di rivendita entro 5 anni, IMU, cedolare secca sull'affitto | 6 |
-| `karen-economista` | Valore di mercato (OMI e comparabili), costo totale, margine netto, ROI netto, €/m², tempo di rivendita, costo del capitale, rendimento netto da locazione, offerta massima consigliata | 5, 6 |
+| `karen-economista` | **Responsabile di ristrutturazione e valore dopo i lavori (sezione 5-ter)**: costo dei lavori, valore di vendita ristrutturato, canone di affitto, €/m² di via, zona e area. Poi costo totale, margine netto, ROI netto, tempo di rivendita, costo del capitale, rendimento netto da locazione, offerta massima consigliata | 3, 5, 6 |
 | `vision-revisore` | Rischi complessivi (urbanistici, tecnici, condominiali, di liberazione), piano di cassa (cauzione, saldo, lavori), elenco dei controlli da fare al sopralluogo con geometra/avvocato | 3, 5, regola operativa |
 
 Ogni specialista restituisce il JSON della sezione 2.2 di `CLAUDE.md`, citando la pagina della perizia o il documento per ogni dato.
@@ -120,6 +120,35 @@ Ogni specialista restituisce il JSON della sezione 2.2 di `CLAUDE.md`, citando l
 - per ogni consigliata salva nel report il parere breve di ogni specialista e il verdetto con le riserve (campi `collegio` e `verdetto_ultron`).
 
 Limiti: concorrenza massima e profondità come in `CLAUDE.md` (sezione 6). Il Collegio vale solo per le aste migliori: il giro rapido sulle altre resta invariato. Se un subagente non risponde o supera i turni, J.A.R.V.I.S. completa quella parte da solo e lo segnala nel campo `collegio`.
+
+## 5-ter. Ristrutturazione e valore dopo i lavori (vendita e affitto)
+
+Lo fa J.A.R.V.I.S. nel giro rapido per tutte le aste nel raggio, e lo approfondisce **K.A.R.E.N.** per le aste del Collegio. **V.I.S.I.O.N.** controlla che le stime dei lavori siano coerenti con i difetti trovati in perizia, **U.L.T.R.O.N.** che ogni prezzo venga da una fonte citata.
+
+**1. Costo di ristrutturazione.** Parti dallo stato descritto in perizia e dalle foto, voce per voce (impianto elettrico, idrico, gas, bagno, cucina, pavimenti, infissi, intonaci e pitture, umidità, copertura o parti comuni a carico). Classifica il livello e usa questi riferimenti (Catania, €/m² di superficie interna, IVA inclusa; sono stime iniziali da sostituire con preventivi reali appena disponibili):
+| Livello | Quando | €/m² |
+|---|---|---|
+| Rinfresco | pitture, piccoli ritocchi, impianti a norma | 100–200 |
+| Leggera | bagno o cucina, pavimenti in parte, impianti a norma | 250–450 |
+| Media | bagno e cucina, pavimenti, infissi, impianto elettrico | 500–750 |
+| Pesante | tutto rifatto, impianti, tramezzi, umidità | 800–1.200 |
+Aggiungi a parte: pratiche tecniche (CILA/SCIA, direzione lavori, aggiornamento catastale 1.500–3.000 €), sanatorie, smaltimento amianto, quota di lavori condominiali deliberati, imprevisti 10%. Se la perizia indica già un costo dei lavori, riportalo e confrontalo con la tua stima.
+
+**2. Prezzo di vendita dopo i lavori (€/m²), su tre livelli, dal più vicino al più ampio:**
+- **Via**: annunci in vendita e vendite note **nella stessa via** (stesso tratto e civici vicini), su immobiliare.it, idealista.it, casa.it. Usa solo immobili simili (ristrutturati o buono stato, metratura e piano comparabili). Applica uno sconto del 5–10% tra prezzo richiesto e prezzo di vendita reale.
+- **Zona**: annunci simili entro 300 m.
+- **Area OMI**: quotazioni OMI dell'Agenzia delle Entrate per la zona e la tipologia, stato "ottimo" o "normale" (ultimo semestre disponibile).
+Per ogni livello riporta: numero di comparabili, €/m² minimo, medio e massimo, link agli annunci usati. Il **valore dopo i lavori** è la media pesata (via 50%, zona 30%, OMI 20%; se in via ci sono meno di 3 comparabili, sposta il peso sulla zona). Se i tre livelli differiscono più del 20%, spiega perché.
+
+**3. Canone di affitto (€/m² al mese)**, stessi tre livelli:
+- **Affitto lungo**: annunci di affitto in via e in zona (4+4 o 3+2 concordato) e valori di locazione OMI. Canone mensile stimato e rendimento netto.
+- **Affitto breve**: solo se l'immobile è adatto (posizione, piano, luce, almeno 1 camera). Stima prudente da tariffe di annunci simili in zona, occupazione 55–65%, costi di gestione 25–30%, obbligo di CIN e delle regole del Comune di Catania. Se non ci sono dati affidabili scrivi "non stimato" invece di inventare.
+
+**4. Scelta dell'operazione**: confronta rivendita, affitto lungo e affitto breve e indica la migliore con i numeri (margine e ROI per la vendita, rendimento netto per l'affitto).
+
+Se i portali di annunci non sono raggiungibili, usa solo OMI e perizia e scrivilo; non inventare comparabili.
+
+Nota tecnica: l'hook `domain_allowlist.py` blocca il WebFetch dei subagenti verso i portali di annunci (immobiliare.it, idealista.it, casa.it). Quindi è **J.A.R.V.I.S.** a raccogliere comparabili e quotazioni OMI (con curl o con il browser) e a salvarli in `stato/aste/<id>/comparabili.json` (tipo, indirizzo, m², piano, stato, prezzo o canone, €/m², link). K.A.R.E.N. li legge da lì.
 
 ## 6. Output
 
@@ -137,6 +166,14 @@ Scrivi `aste/report/data.json` con questa struttura (campi esistenti in `aste/re
     "costo_totale": 0, "margine_netto": 0, "data_asta": "AAAA-MM-GG", "termine_offerte": "AAAA-MM-GG",
     "offerta_massima": 0, "roi_netto_pct": 0, "rendimento_locazione_pct": 0, "eur_mq": 0, "eur_mq_comparabili": 0,
     "mesi_rivendita": 0, "costo_capitale": 0,
+    "ristrutturazione": {"livello": "Rinfresco | Leggera | Media | Pesante", "costo": 0, "voci": ["bagno 6.000 €", "..."], "fonte": "perizia pag. X + stima"},
+    "valore_dopo_lavori": 0,
+    "prezzi_zona": [
+      {"livello": "Via", "vendita_eur_mq": [0, 0, 0], "affitto_eur_mq_mese": [0, 0, 0], "comparabili": 0, "fonte": "link o OMI"},
+      {"livello": "Zona 300 m", "vendita_eur_mq": [0, 0, 0], "affitto_eur_mq_mese": [0, 0, 0], "comparabili": 0, "fonte": ""},
+      {"livello": "Area OMI", "vendita_eur_mq": [0, 0, 0], "affitto_eur_mq_mese": [0, 0, 0], "comparabili": 0, "fonte": "OMI zona X, semestre"}
+    ],
+    "affitto": {"lungo_mese": 0, "breve_mese_netto": 0, "rendimento_lungo_pct": 0, "rendimento_breve_pct": 0},
     "documenti": [{"nome": "Perizia estimativa", "stato": "letto | citato in perizia | mancante"}],
     "da_verificare": ["controlli da fare al sopralluogo o con geometra/avvocato"],
     "collegio": [{"agente": "F.R.I.D.A.Y.", "parere": "2-3 frasi"}, {"agente": "E.D.I.T.H.", "parere": ""}, {"agente": "K.A.R.E.N.", "parere": ""}, {"agente": "V.I.S.I.O.N.", "parere": ""}],

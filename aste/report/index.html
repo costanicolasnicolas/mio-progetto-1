@@ -67,6 +67,9 @@ td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowra
 .sources{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px}
 .src{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:8px 12px;background:var(--surface);border:1px solid var(--line);border-radius:8px}
 .src span:first-child{min-width:0}
+.reno{display:grid;gap:10px}
+.reno h4{margin:0;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+table.mini{min-width:560px;font-size:13px}
 .verdict{display:grid;gap:6px;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
 .verdict ul{margin:0;padding-left:18px}
 .council{display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;margin:10px 0 0}
@@ -139,6 +142,18 @@ function render(d){
         <div><h4>Operazione consigliata</h4><p style="margin:0">${esc(a.operazione)}</p></div>
         <div><h4>Da verificare al sopralluogo</h4><ul>${(a.da_verificare||[]).map(x=>`<li>${esc(x)}</li>`).join("")||"<li>—</li>"}</ul></div>
       </div>
+      ${a.ristrutturazione||a.prezzi_zona?`<div class="reno">
+        <h4>Ristrutturazione e valore dopo i lavori</h4>
+        <div class="nums">
+          <div><span>Lavori${a.ristrutturazione?.livello?" · "+esc(a.ristrutturazione.livello):""}</span><b>${eur(a.ristrutturazione?.costo)}</b></div>
+          <div><span>Valore dopo i lavori</span><b>${eur(a.valore_dopo_lavori)}</b></div>
+          <div><span>Affitto lungo / mese</span><b>${eur(a.affitto?.lungo_mese)}</b></div>
+          <div><span>Affitto breve / mese netto</span><b>${a.affitto?.breve_mese_netto?eur(a.affitto.breve_mese_netto):"non stimato"}</b></div>
+          <div><span>Rendimento lungo · breve</span><b>${pct(a.affitto?.rendimento_lungo_pct)} · ${pct(a.affitto?.rendimento_breve_pct)}</b></div>
+        </div>
+        ${(a.ristrutturazione?.voci||[]).length?`<p class="addr" style="margin:0">${a.ristrutturazione.voci.map(esc).join(" · ")}${a.ristrutturazione.fonte?" — "+esc(a.ristrutturazione.fonte):""}</p>`:""}
+        ${(a.prezzi_zona||[]).length?`<div class="tablebox"><table class="mini"><thead><tr><th>Livello</th><th>Vendita €/m² min · medio · max</th><th>Affitto €/m² mese min · medio · max</th><th>Comparabili</th><th>Fonte</th></tr></thead><tbody>${a.prezzi_zona.map(z=>`<tr><td>${esc(z.livello)}</td><td class="n">${(z.vendita_eur_mq||[]).map(v=>v==null?"—":Math.round(v)).join(" · ")}</td><td class="n">${(z.affitto_eur_mq_mese||[]).map(v=>v==null?"—":String(v).replace(".",",")).join(" · ")}</td><td class="n">${esc(z.comparabili)}</td><td>${/^https?:/.test(z.fonte||"")?`<a href="${esc(z.fonte)}" target="_blank" rel="noopener">fonte</a>`:esc(z.fonte)}</td></tr>`).join("")}</tbody></table></div>`:""}
+      </div>`:""}
       ${a.verdetto_ultron?`<div class="verdict"><span class="chip ${/RESPINTO/.test(a.verdetto_ultron.esito)?"bad":/RISERVE/.test(a.verdetto_ultron.esito)?"warn":"good"}">U.L.T.R.O.N.: ${esc(a.verdetto_ultron.esito)}</span> <span>${esc(a.verdetto_ultron.motivazione)}</span>${(a.verdetto_ultron.riserve||[]).filter(Boolean).length?`<ul>${a.verdetto_ultron.riserve.filter(Boolean).map(r=>`<li>${esc(r)}</li>`).join("")}</ul>`:""}</div>`:""}
       ${(a.collegio||[]).length?`<details><summary style="cursor:pointer;font-weight:600">Pareri del Collegio</summary><dl class="council">${a.collegio.map(c=>`<dt>${esc(c.agente)}</dt><dd>${esc(c.parere)}</dd>`).join("")}</dl></details>`:""}
       ${(a.documenti||[]).length?`<details><summary style="cursor:pointer;font-weight:600">Documenti della due diligence (${a.documenti.filter(x=>/letto/i.test(x.stato)).length}/${a.documenti.length} letti)</summary><div class="chips" style="margin-top:8px">${a.documenti.map(x=>`<span class="chip ${/^letto/i.test(x.stato)?"good":/mancante/i.test(x.stato)?"bad":"warn"}">${esc(x.nome)}: ${esc(x.stato)}</span>`).join("")}</div></details>`:""}
