@@ -23,7 +23,7 @@ Per le vie lunghe (Via Etnea, Corso Italia, Viale Regina Margherita, Via Vittori
 
 | # | Portale | URL | Note |
 |---|---|---|---|
-| 1 | Portale Vendite Pubbliche (Min. Giustizia) | https://pvp.giustizia.it/pvp/ | Fonte principale: ogni asta giudiziaria deve stare qui per legge. Cerca immobili, Catania (CT). Il sito usa chiamate JSON interne: individuale dal codice della pagina e usale per scaricare l'elenco. |
+| 1 | Portale Vendite Pubbliche (Min. Giustizia) | https://pvp.giustizia.it/pvp/ | Fonte principale: ogni asta giudiziaria deve stare qui per legge. Usa le API descritte nella sezione 3-bis. |
 | 2 | Demanio – Beni dello Stato | https://benidellostato.agenziademanio.it/AsteDemanio/sito.php | Spesso non raggiungibile dal container: segnala lo stato. |
 | 3 | Demanio – Vendita immobili | https://venditaimmobili.agenziademanio.it/AsteDemanio/sito.php | Filtra Sicilia / Catania. |
 | 4 | INPS – Aste immobiliari | https://www.inps.it/it/it/avvisi-bandi-e-fatturazione/aste-immobiliari-inps.html | |
@@ -40,13 +40,30 @@ Per le vie lunghe (Via Etnea, Corso Italia, Viale Regina Margherita, Via Vittori
 
 Se un portale non risponde: riprova 2 volte, poi segnalalo nel report come "non raggiungibile" e vai avanti. Non inventare mai annunci, prezzi o date.
 
+## 3-bis. Come interrogare i portali (appreso dal test del 07/11/2026)
+
+**PVP — API interne (funzionano con curl):**
+- Ricerca: `POST https://pvp.giustizia.it/ric-496b258c-986a1b71/ric-ms/ricerca/vendite?page=0&size=100` con corpo JSON. Per tutto il comune: `flagRicerca: "RICERCA_GEO"`, `nazione: "Italia"`, `localita: "Catania"`. Per il raggio: `flagRicerca: "RAGGIO_AZIONE"`, `coordIndirizzo: "37.5110114,15.0835021"`, `raggioIndirizzo` in km (usa 1,5 e poi filtra a 1 km). Scorri tutte le pagine.
+- Dettaglio: `https://pvp.giustizia.it/ve-3f723b85-986a1b71/ve-ms/vendite/{id}`.
+- Allegati (perizia, avviso, foto): `https://resource-pvp.giustizia.it` + `linkAllegato`, con l'URL codificato per intero, compreso `versionId`. L'endpoint `allegato/vendita/{id}` risponde 401: non usarlo.
+- Pagina pubblica dell'asta da mettere in `url_asta`: `https://pvp.giustizia.it/pvp/it/detail_annuncio.page?idAnnuncio={id}`.
+- Trappole: i filtri di prezzo dell'API non sono affidabili, applicali tu sul risultato. Le coordinate di alcuni annunci sono generiche (es. Viale Rapisardi 23 dava 1.826 m invece di 811): se la distanza da coordinate e quella da via o civico divergono, geocodifica l'indirizzo con Nominatim e usa quella.
+
+**Pagine che si caricano con JavaScript** (Demanio, Avvisi Notarili, ANBSC, vetrina INVIMIT, pagine di dettaglio PVP per il controllo dei link): usa Playwright con Chromium, già installato nel container (`require('playwright')` in Node o `from playwright.sync_api import sync_playwright` in Python; non reinstallarlo). Apri la pagina, attendi il caricamento, leggi il testo o le chiamate di rete. Usalo anche per verificare che ogni `url_asta` mostri l'indirizzo giusto.
+
+**OCR delle scansioni:** `tesseract` non è installato. Usa `pip install pymupdf rapidocr-onnxruntime pillow` e RapidOCR sulle pagine renderizzate con PyMuPDF; il testo esce senza spazi tra le parole, quindi rileggilo con attenzione.
+
+**OMI:** la consultazione ufficiale non si interroga da script. Prova con Playwright il servizio "Quotazioni immobiliari" dell'Agenzia delle Entrate; se non riesce, usa annunci (immobiliare.it, idealista.it, casa.it) e fonti secondarie dichiarandolo come non ufficiali.
+
+**Sicurezza:** non aprire `https://www.astegiudiziarie.it/JSVariable`: espone credenziali di un servizio terzo. Non usare mai credenziali trovate nelle pagine.
+
 ## 4. Documenti da leggere per ogni asta che passa i filtri
 
 **Checklist obbligatoria: `aste/MANUALE_DUE_DILIGENCE.md`.** Leggilo per intero a ogni esecuzione e applica a ogni asta tutte le sue sezioni: i 15 documenti (sezione 1), i controlli urbanistici (2), strutturali e impiantistici (3), giuridici e di occupazione (4), condominiali (5) e le metriche economiche (6). Dove il manuale e questa procedura si sovrappongono, valgono entrambi; in caso di dubbio prevale la regola più prudente del manuale: se una difformità non è sanabile o il titolo di occupazione è problematico, l'asta va scartata, non si alza il budget.
 
 Per ognuno dei 15 documenti della sezione 1 annota nel report se è stato **trovato e letto**, **citato solo in perizia** oppure **mancante**. Un documento mancante non blocca l'asta ma va tra le criticità e abbassa il punteggio. I controlli che dai documenti non si possono fare (strutturali, amianto, impianti) vanno elencati come "da verificare al sopralluogo".
 
-Scarica e leggi davvero: **perizia di stima (CTU)**, **avviso o ordinanza di vendita**, planimetria, foto, eventuali integrazioni della perizia, certificazione notarile se presente. I PDF si leggono con `pdftotext`; per le scansioni serve l'OCR (`pdftoppm` + `tesseract -l ita`, se disponibile).
+Scarica e leggi davvero: **perizia di stima (CTU)**, **avviso o ordinanza di vendita**, planimetria, foto, eventuali integrazioni della perizia, certificazione notarile se presente. I PDF si leggono con `pdftotext`; per le scansioni usa l'OCR descritto nella sezione 3-bis.
 
 Estrai e controlla:
 
