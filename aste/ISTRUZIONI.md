@@ -131,6 +131,7 @@ Scrivi `aste/report/data.json` con questa struttura (campi esistenti in `aste/re
   "statistiche": {"annunci_letti": 0, "nel_raggio_budget": 0, "perizie_lette": 0},
   "consigliate": [{
     "titolo": "", "indirizzo": "", "distanza_m": 0, "mq": 0, "punteggio": 0,
+    "url_asta": "link diretto alla pagina di questa asta (obbligatorio)", "portale": "", "codice_asta": "RGE / lotto / id annuncio",
     "etichette": ["Libero", "Conforme", "Nuova", "2° ribasso"],
     "prezzo_base": 0, "offerta_minima": 0, "valore_perizia": 0, "valore_mercato": 0,
     "costo_totale": 0, "margine_netto": 0, "data_asta": "AAAA-MM-GG", "termine_offerte": "AAAA-MM-GG",
@@ -154,6 +155,8 @@ Etichetta "Nuova" per le aste che non erano nel report precedente: leggi prima i
 Pubblica con il tool Artifact sullo stesso URL (prima `action: "read"` sull'URL, poi publish con `url`, `file_path` = `aste/report/index.html` e `files` = `{"data.json": "aste/report/data.json"}`). Poi manda una notifica breve: numero di aste consigliate e la migliore, con punteggio e indirizzo.
 
 ## 7. Regole
+
+- **Link obbligatorio alla singola asta.** Ogni asta consigliata deve avere nel campo `url_asta` il collegamento diretto alla pagina di **quella** asta (per il PVP la pagina di dettaglio dell'annuncio, non la ricerca o la home del portale), e in `link` almeno anche la perizia e l'avviso di vendita. Apri ogni link prima di pubblicare e controlla che porti all'asta giusta (stesso indirizzo, stesso lotto, stessa procedura). Anche ogni riga della tabella "tutte" deve avere `url` alla sua asta. Un'asta senza link diretto funzionante non può stare tra le consigliate.
 
 - Mai inventare dati. Ogni numero viene da un documento o da un calcolo dichiarato.
 - Se una perizia non è scaricabile, scrivilo tra le criticità e abbassa il punteggio.

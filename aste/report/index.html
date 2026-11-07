@@ -51,7 +51,9 @@ h2{font-size:22px}
 .flags li{color:var(--bad)}.pros li{color:var(--good)}
 .flags li span,.pros li span{color:var(--ink)}
 .links{display:flex;flex-wrap:wrap;gap:10px}
+.links{align-items:center}
 .links a{color:var(--navy);font-weight:600;font-size:14px}
+.links a.go{background:var(--navy);color:var(--surface);text-decoration:none;padding:8px 14px;border-radius:8px;overflow-wrap:anywhere}
 a:focus-visible{outline:2px solid var(--lava);outline-offset:2px}
 .tablebox{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
 table{border-collapse:collapse;width:100%;font-size:14px;min-width:720px}
@@ -140,7 +142,7 @@ function render(d){
       ${a.verdetto_ultron?`<div class="verdict"><span class="chip ${/RESPINTO/.test(a.verdetto_ultron.esito)?"bad":/RISERVE/.test(a.verdetto_ultron.esito)?"warn":"good"}">U.L.T.R.O.N.: ${esc(a.verdetto_ultron.esito)}</span> <span>${esc(a.verdetto_ultron.motivazione)}</span>${(a.verdetto_ultron.riserve||[]).filter(Boolean).length?`<ul>${a.verdetto_ultron.riserve.filter(Boolean).map(r=>`<li>${esc(r)}</li>`).join("")}</ul>`:""}</div>`:""}
       ${(a.collegio||[]).length?`<details><summary style="cursor:pointer;font-weight:600">Pareri del Collegio</summary><dl class="council">${a.collegio.map(c=>`<dt>${esc(c.agente)}</dt><dd>${esc(c.parere)}</dd>`).join("")}</dl></details>`:""}
       ${(a.documenti||[]).length?`<details><summary style="cursor:pointer;font-weight:600">Documenti della due diligence (${a.documenti.filter(x=>/letto/i.test(x.stato)).length}/${a.documenti.length} letti)</summary><div class="chips" style="margin-top:8px">${a.documenti.map(x=>`<span class="chip ${/^letto/i.test(x.stato)?"good":/mancante/i.test(x.stato)?"bad":"warn"}">${esc(x.nome)}: ${esc(x.stato)}</span>`).join("")}</div></details>`:""}
-      <div class="links">${(a.link||[]).map(l=>`<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.nome)}</a>`).join("")}</div>
+      <div class="links">${a.url_asta?`<a class="go" href="${esc(a.url_asta)}" target="_blank" rel="noopener">Apri l'asta${a.portale?" su "+esc(a.portale):""}${a.codice_asta?" · "+esc(a.codice_asta):""} ↗</a>`:`<span class="chip bad">Link all'asta mancante</span>`}${(a.link||[]).map(l=>`<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.nome)}</a>`).join("")}</div>
     </article>`).join("")}
   else P.innerHTML=`<div class="empty">${esc(d.nessuna_consigliata||"Oggi nessuna asta supera i criteri minimi.")}</div>`;
   const A=document.getElementById("all"),rows=d.tutte||[];
