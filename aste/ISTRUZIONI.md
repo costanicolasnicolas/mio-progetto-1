@@ -42,6 +42,10 @@ Se un portale non risponde: riprova 2 volte, poi segnalalo nel report come "non 
 
 ## 4. Documenti da leggere per ogni asta che passa i filtri
 
+**Checklist obbligatoria: `aste/MANUALE_DUE_DILIGENCE.md`.** Leggilo per intero a ogni esecuzione e applica a ogni asta tutte le sue sezioni: i 15 documenti (sezione 1), i controlli urbanistici (2), strutturali e impiantistici (3), giuridici e di occupazione (4), condominiali (5) e le metriche economiche (6). Dove il manuale e questa procedura si sovrappongono, valgono entrambi; in caso di dubbio prevale la regola più prudente del manuale: se una difformità non è sanabile o il titolo di occupazione è problematico, l'asta va scartata, non si alza il budget.
+
+Per ognuno dei 15 documenti della sezione 1 annota nel report se è stato **trovato e letto**, **citato solo in perizia** oppure **mancante**. Un documento mancante non blocca l'asta ma va tra le criticità e abbassa il punteggio. I controlli che dai documenti non si possono fare (strutturali, amianto, impianti) vanno elencati come "da verificare al sopralluogo".
+
 Scarica e leggi davvero: **perizia di stima (CTU)**, **avviso o ordinanza di vendita**, planimetria, foto, eventuali integrazioni della perizia, certificazione notarile se presente. I PDF si leggono con `pdftotext`; per le scansioni serve l'OCR (`pdftoppm` + `tesseract -l ita`, se disponibile).
 
 Estrai e controlla:
@@ -66,6 +70,13 @@ Calcola per ogni asta:
 - **Margine netto (rivendita)** = VM dopo i lavori − CT − costi di rivendita (agenzia 3% + 2.000 €) − imposte sulla plusvalenza se la vendita avviene entro 5 anni.
 - **Rendimento affitto lungo** = canone OMI annuo / CT. **Rendimento affitto breve** solo se l'immobile è adatto (centro storico, vicino a Via Etnea e alla villa; serve il CIN e il rispetto delle regole locali).
 - **Sconto reale** = 1 − (prezzo previsto / VM).
+- **ROI netto** = utile netto / capitale investito (capitale investito = CT).
+- **€/m²**: costo totale / superficie commerciale, confrontato con le compravendite comparabili della zona (OMI e annunci di vendita vicini, indicando la fonte).
+- **Tempo previsto per rivendere** in mesi (asta + saldo prezzo + decreto di trasferimento + liberazione + lavori + vendita) e **costo del capitale** per quel periodo (stima 5% annuo sul capitale impegnato se non è indicato altro).
+- **Utenze e allacciamenti**: includili nel CT (stima 500–1.500 € se gli impianti sono staccati).
+- **Rendimento netto da locazione** = (canone annuo − IMU − condominio a carico del proprietario − manutenzione 5% − imposte cedolare 21%) / CT.
+
+Regola del manuale: lo sconto sul prezzo da solo non basta. Un'asta è consigliabile solo se, dopo tutti i costi e tutti i rischi giuridici, urbanistici, tecnici e finanziari, resta un margine adeguato: **ROI netto ≥ 20% per la rivendita** oppure **rendimento netto da locazione ≥ 7%**.
 
 Pesi del punteggio:
 | Fattore | Peso |
@@ -79,7 +90,7 @@ Pesi del punteggio:
 | Liquidità della zona e qualità dell'immobile (piano, luce, ascensore) | 5 |
 | Tempistica (asta abbastanza lontana da preparare l'offerta, saldo sostenibile) | 5 |
 
-**Esclusioni automatiche** (in tabella con l'esito, mai tra le consigliate): quota indivisa senza accordo con i comproprietari, nuda proprietà, abusi non sanabili che toccano la parte principale, costo totale oltre 45.000 € (budget + 30% di costi), vendita già scaduta.
+**Esclusioni automatiche** (in tabella con l'esito, mai tra le consigliate): quota indivisa senza accordo con i comproprietari, nuda proprietà, abusi o difformità non sanabili, titolo di occupazione problematico (contratto opponibile di lunga durata o a canone vile, diritto di abitazione, comodato opponibile), costo totale oltre 45.000 € (budget + 30% di costi), vendita già scaduta.
 
 **Consigliate**: punteggio ≥ 60, ordinate per punteggio. Massimo 5. Per ognuna indica l'operazione suggerita (rivendita dopo i lavori, affitto lungo, affitto breve, box o magazzino a reddito) e l'offerta massima consigliata.
 
@@ -96,6 +107,10 @@ Scrivi `aste/report/data.json` con questa struttura (campi esistenti in `aste/re
     "etichette": ["Libero", "Conforme", "Nuova", "2° ribasso"],
     "prezzo_base": 0, "offerta_minima": 0, "valore_perizia": 0, "valore_mercato": 0,
     "costo_totale": 0, "margine_netto": 0, "data_asta": "AAAA-MM-GG", "termine_offerte": "AAAA-MM-GG",
+    "offerta_massima": 0, "roi_netto_pct": 0, "rendimento_locazione_pct": 0, "eur_mq": 0, "eur_mq_comparabili": 0,
+    "mesi_rivendita": 0, "costo_capitale": 0,
+    "documenti": [{"nome": "Perizia estimativa", "stato": "letto | citato in perizia | mancante"}],
+    "da_verificare": ["controlli da fare al sopralluogo o con geometra/avvocato"],
     "punti_forza": [""], "criticita": [""], "operazione": "",
     "link": [{"nome": "Annuncio PVP", "url": ""}, {"nome": "Perizia", "url": ""}]
   }],

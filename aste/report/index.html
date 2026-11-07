@@ -96,6 +96,7 @@ td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowra
 
 <script>
 const eur=v=>v==null||v===""?"—":new Intl.NumberFormat("it-IT",{style:"currency",currency:"EUR",maximumFractionDigits:0}).format(v);
+const pct=v=>v==null||v===""?"—":new Intl.NumberFormat("it-IT",{maximumFractionDigits:1}).format(v)+"%";
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const fmtDate=s=>{if(!s)return"—";const d=new Date(s);return isNaN(d)?esc(s):d.toLocaleDateString("it-IT",{weekday:"short",day:"2-digit",month:"short",year:"numeric"})};
 function chipCls(t){t=(t||"").toLowerCase();if(/libero|conforme|nuova|ok/.test(t))return"good";if(/occupat|abus|difform|quota|nuda|vincol/.test(t))return"bad";return"warn"}
@@ -118,12 +119,20 @@ function render(d){
         <div><span>Margine netto stimato</span><b>${eur(a.margine_netto)}</b></div>
         <div><span>Data asta</span><b>${fmtDate(a.data_asta)}</b></div>
         <div><span>Termine offerte</span><b>${fmtDate(a.termine_offerte)}</b></div>
+        <div><span>Offerta massima consigliata</span><b>${eur(a.offerta_massima)}</b></div>
+        <div><span>ROI netto</span><b>${pct(a.roi_netto_pct)}</b></div>
+        <div><span>Rendimento netto affitto</span><b>${pct(a.rendimento_locazione_pct)}</b></div>
+        <div><span>€/m² · comparabili</span><b>${eur(a.eur_mq)} · ${eur(a.eur_mq_comparabili)}</b></div>
+        <div><span>Tempo per rivendere</span><b>${a.mesi_rivendita!=null?esc(a.mesi_rivendita)+" mesi":"—"}</b></div>
+        <div><span>Costo del capitale</span><b>${eur(a.costo_capitale)}</b></div>
       </div>
       <div class="cols">
         <div><h4>Perché conviene</h4><ul class="pros">${(a.punti_forza||[]).map(x=>`<li><span>${esc(x)}</span></li>`).join("")}</ul></div>
         <div><h4>Problemi trovati</h4><ul class="flags">${(a.criticita||[]).map(x=>`<li><span>${esc(x)}</span></li>`).join("")||"<li><span>Nessuno rilevato nei documenti</span></li>"}</ul></div>
         <div><h4>Operazione consigliata</h4><p style="margin:0">${esc(a.operazione)}</p></div>
+        <div><h4>Da verificare al sopralluogo</h4><ul>${(a.da_verificare||[]).map(x=>`<li>${esc(x)}</li>`).join("")||"<li>—</li>"}</ul></div>
       </div>
+      ${(a.documenti||[]).length?`<details><summary style="cursor:pointer;font-weight:600">Documenti della due diligence (${a.documenti.filter(x=>/letto/i.test(x.stato)).length}/${a.documenti.length} letti)</summary><div class="chips" style="margin-top:8px">${a.documenti.map(x=>`<span class="chip ${/^letto/i.test(x.stato)?"good":/mancante/i.test(x.stato)?"bad":"warn"}">${esc(x.nome)}: ${esc(x.stato)}</span>`).join("")}</div></details>`:""}
       <div class="links">${(a.link||[]).map(l=>`<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.nome)}</a>`).join("")}</div>
     </article>`).join("")}
   else P.innerHTML=`<div class="empty">${esc(d.nessuna_consigliata||"Oggi nessuna asta supera i criteri minimi.")}</div>`;
