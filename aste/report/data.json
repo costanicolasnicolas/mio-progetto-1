@@ -1,0 +1,21 @@
+{
+  "generato_il": "2026-11-07",
+  "ora": "12:30",
+  "nota_giornata": "Pagina creata. La prima scansione completa parte alla prossima esecuzione programmata.",
+  "statistiche": {"annunci_letti": null, "nel_raggio_budget": null, "perizie_lette": null},
+  "consigliate": [],
+  "nessuna_consigliata": "Prima scansione in attesa: qui compariranno le aste migliori con perizia letta, problemi trovati e margine stimato.",
+  "tutte": [],
+  "portali": [
+    {"nome": "Portale Vendite Pubbliche (PVP)", "stato": "ok", "dettaglio": "raggiungibile"},
+    {"nome": "Demanio – Beni dello Stato", "stato": "errore", "dettaglio": "non raggiungibile"},
+    {"nome": "Demanio – Vendita immobili", "stato": "ok", "dettaglio": "raggiungibile"},
+    {"nome": "INPS – Aste immobiliari", "stato": "ok", "dettaglio": "raggiungibile"},
+    {"nome": "Notariato – RAN", "stato": "errore", "dettaglio": "non raggiungibile"},
+    {"nome": "Avvisi Notarili", "stato": "ok", "dettaglio": "raggiungibile"},
+    {"nome": "INVIMIT", "stato": "ok", "dettaglio": "raggiungibile"},
+    {"nome": "ANBSC – Beni confiscati", "stato": "ok", "dettaglio": "raggiungibile"},
+    {"nome": "Agenzia Entrate-Riscossione", "stato": "ok", "dettaglio": "raggiungibile"},
+    {"nome": "Siti autorizzati (Min. Giustizia)", "stato": "ok", "dettaglio": "raggiungibile"}
+  ]
+}

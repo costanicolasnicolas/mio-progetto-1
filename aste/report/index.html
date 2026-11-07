@@ -1,0 +1,135 @@
+<title>Radar Aste Villa Bellini</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: testata con data e conteggi, poi schede delle aste consigliate ordinate per punteggio, poi tabella delle altre aste nel raggio, poi stato dei portali */
+:root{
+  --bg:#f5f6f8; --surface:#ffffff; --ink:#14213a; --muted:#5b6578; --line:#d9dee7;
+  --navy:#003366; --navy-soft:#d6e4f0; --lava:#b5461f;
+  --good:#1a6b3a; --good-bg:#e1f2e7; --warn:#8a5a00; --warn-bg:#fbefd2; --bad:#9b2420; --bad-bg:#f9e0de;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0d1420; --surface:#152033; --ink:#e7ecf4; --muted:#9aa6ba; --line:#2a3850;
+  --navy:#7fb0e6; --navy-soft:#1d2d47; --lava:#f08a5d;
+  --good:#7fd59c; --good-bg:#16301f; --warn:#f2c46b; --warn-bg:#33280f; --bad:#f29a94; --bad-bg:#3a1a19; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d1420; --surface:#152033; --ink:#e7ecf4; --muted:#9aa6ba; --line:#2a3850;
+  --navy:#7fb0e6; --navy-soft:#1d2d47; --lava:#f08a5d;
+  --good:#7fd59c; --good-bg:#16301f; --warn:#f2c46b; --warn-bg:#33280f; --bad:#f29a94; --bad-bg:#3a1a19; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+.wrap{max-width:1080px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:32px}
+h1,h2{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(28px,5vw,40px);color:var(--navy)}
+h2{font-size:22px}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.head{display:grid;gap:10px}
+.head p{margin:0;color:var(--muted);max-width:65ch}
+.stats{display:flex;flex-wrap:wrap;gap:24px;margin-top:6px}
+.stat b{display:block;font-family:var(--mono);font-size:26px;color:var(--ink);font-variant-numeric:tabular-nums}
+.stat span{font-size:13px;color:var(--muted)}
+.picks{display:grid;gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;display:grid;gap:14px;min-width:0}
+.card-top{display:flex;gap:16px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+.card-top>div{min-width:0}
+.card h3{margin:0;font-size:19px;font-family:var(--body);font-weight:700}
+.addr{color:var(--muted);font-size:14px}
+.score{font-family:var(--mono);font-size:30px;color:var(--navy);text-align:right;line-height:1}
+.score small{display:block;font-family:var(--body);font-size:12px;color:var(--muted);margin-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--navy-soft);color:var(--ink)}
+.chip.good{background:var(--good-bg);color:var(--good)}.chip.warn{background:var(--warn-bg);color:var(--warn)}.chip.bad{background:var(--bad-bg);color:var(--bad)}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;border-block:1px solid var(--line);padding-block:12px}
+.nums div span{display:block;font-size:12px;color:var(--muted)}
+.nums div b{font-family:var(--mono);font-size:16px;font-variant-numeric:tabular-nums}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.cols h4{margin:0 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.cols ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.flags li{color:var(--bad)}.pros li{color:var(--good)}
+.flags li span,.pros li span{color:var(--ink)}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.links a{color:var(--navy);font-weight:600;font-size:14px}
+a:focus-visible{outline:2px solid var(--lava);outline-offset:2px}
+.tablebox{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:720px}
+th{background:var(--navy);color:#fff;text-align:left;padding:9px 10px;font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+:root[data-theme="dark"] th{color:#0d1420}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) th{color:#0d1420}}
+td{padding:8px 10px;border-top:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:var(--navy-soft)}
+td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:10px;padding:24px;color:var(--muted)}
+.sources{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px}
+.src{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:8px 12px;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+.src span:first-child{min-width:0}
+.note{font-size:13px;color:var(--muted);max-width:75ch}
+</style>
+
+<div class="wrap">
+  <header class="head">
+    <div class="eyebrow">Catania · raggio 1 km da Villa Bellini · base d'asta 5.000–35.000 €</div>
+    <h1>Radar Aste Villa Bellini</h1>
+    <p id="sub">Caricamento del report…</p>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <section class="picks" aria-labelledby="h-picks">
+    <h2 id="h-picks">Aste consigliate</h2>
+    <div id="picks" class="picks"><div class="empty">Nessun report ancora. La prima scansione dei portali compare qui appena è pronta.</div></div>
+  </section>
+
+  <section aria-labelledby="h-all" style="display:grid;gap:12px">
+    <h2 id="h-all">Tutte le aste nel raggio</h2>
+    <div id="all"></div>
+  </section>
+
+  <section aria-labelledby="h-src" style="display:grid;gap:12px">
+    <h2 id="h-src">Portali controllati</h2>
+    <div id="sources" class="sources"></div>
+  </section>
+
+  <p class="note">Analisi automatica basata su perizie e avvisi pubblicati. Prima di fare un'offerta verificare con un professionista abilitato (avvocato o delegato alla vendita) e fare un sopralluogo.</p>
+</div>
+
+<script>
+const eur=v=>v==null||v===""?"—":new Intl.NumberFormat("it-IT",{style:"currency",currency:"EUR",maximumFractionDigits:0}).format(v);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmtDate=s=>{if(!s)return"—";const d=new Date(s);return isNaN(d)?esc(s):d.toLocaleDateString("it-IT",{weekday:"short",day:"2-digit",month:"short",year:"numeric"})};
+function chipCls(t){t=(t||"").toLowerCase();if(/libero|conforme|nuova|ok/.test(t))return"good";if(/occupat|abus|difform|quota|nuda|vincol/.test(t))return"bad";return"warn"}
+function render(d){
+  document.getElementById("sub").textContent=`Aggiornato ${fmtDate(d.generato_il)} alle ${d.ora||"—"} · ${d.nota_giornata||""}`;
+  const s=d.statistiche||{};
+  document.getElementById("stats").innerHTML=[["Annunci letti",s.annunci_letti],["Nel raggio e nel budget",s.nel_raggio_budget],["Perizie lette",s.perizie_lette],["Consigliate",(d.consigliate||[]).length]].map(([l,v])=>`<div class="stat"><b>${v??"—"}</b><span>${l}</span></div>`).join("");
+  const P=document.getElementById("picks");
+  if((d.consigliate||[]).length){P.innerHTML=d.consigliate.map(a=>`
+    <article class="card">
+      <div class="card-top"><div><h3>${esc(a.titolo)}</h3><div class="addr">${esc(a.indirizzo)} · ${esc(a.distanza_m)} m dalla villa · ${esc(a.mq)} mq</div></div>
+        <div class="score">${esc(a.punteggio)}<small>punteggio /100</small></div></div>
+      <div class="chips">${(a.etichette||[]).map(t=>`<span class="chip ${chipCls(t)}">${esc(t)}</span>`).join("")}</div>
+      <div class="nums">
+        <div><span>Base d'asta</span><b>${eur(a.prezzo_base)}</b></div>
+        <div><span>Offerta minima</span><b>${eur(a.offerta_minima)}</b></div>
+        <div><span>Valore perizia</span><b>${eur(a.valore_perizia)}</b></div>
+        <div><span>Valore mercato stimato</span><b>${eur(a.valore_mercato)}</b></div>
+        <div><span>Costo totale stimato</span><b>${eur(a.costo_totale)}</b></div>
+        <div><span>Margine netto stimato</span><b>${eur(a.margine_netto)}</b></div>
+        <div><span>Data asta</span><b>${fmtDate(a.data_asta)}</b></div>
+        <div><span>Termine offerte</span><b>${fmtDate(a.termine_offerte)}</b></div>
+      </div>
+      <div class="cols">
+        <div><h4>Perché conviene</h4><ul class="pros">${(a.punti_forza||[]).map(x=>`<li><span>${esc(x)}</span></li>`).join("")}</ul></div>
+        <div><h4>Problemi trovati</h4><ul class="flags">${(a.criticita||[]).map(x=>`<li><span>${esc(x)}</span></li>`).join("")||"<li><span>Nessuno rilevato nei documenti</span></li>"}</ul></div>
+        <div><h4>Operazione consigliata</h4><p style="margin:0">${esc(a.operazione)}</p></div>
+      </div>
+      <div class="links">${(a.link||[]).map(l=>`<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.nome)}</a>`).join("")}</div>
+    </article>`).join("")}
+  else P.innerHTML=`<div class="empty">${esc(d.nessuna_consigliata||"Oggi nessuna asta supera i criteri minimi.")}</div>`;
+  const A=document.getElementById("all"),rows=d.tutte||[];
+  A.innerHTML=rows.length?`<div class="tablebox"><table><thead><tr><th>Indirizzo</th><th>Tipo</th><th>Base</th><th>Offerta min.</th><th>Data asta</th><th>Esito</th><th>Portale</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${esc(r.indirizzo)}</td><td>${esc(r.tipo)}</td><td class="n">${eur(r.prezzo_base)}</td><td class="n">${eur(r.offerta_minima)}</td><td class="n">${fmtDate(r.data_asta)}</td><td>${esc(r.esito)}</td><td>${r.url?`<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.portale)}</a>`:esc(r.portale)}</td></tr>`).join("")}</tbody></table></div>`:`<div class="empty">Nessuna asta nel raggio e nel budget.</div>`;
+  document.getElementById("sources").innerHTML=(d.portali||[]).map(p=>`<div class="src"><span>${esc(p.nome)}</span><span class="chip ${p.stato==="ok"?"good":p.stato==="errore"?"bad":"warn"}">${esc(p.dettaglio||p.stato)}</span></div>`).join("");
+}
+fetch("data.json",{cache:"no-store"}).then(r=>r.ok?r.json():Promise.reject()).then(render).catch(()=>{document.getElementById("sub").textContent="Il report non è ancora disponibile.";});
+</script>

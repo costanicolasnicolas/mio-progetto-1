@@ -1,0 +1,450 @@
+via,distanza_m,tipo_osm
+Corso Italia,981,primary|residential
+Corso Martiri della Libertà,925,primary
+Corso Sicilia,492,primary
+Cortile Bellecci,565,service
+Cortile Bonsignore,891,residential
+Cortile Calamaio,995,pedestrian
+Cortile del Pettirosso,646,residential
+Cortile dell'Edera,612,residential
+Cortile della Provvidenza,550,service
+Cortile Di Mauro,277,pedestrian
+Cortile Diomede,434,pedestrian
+Cortile Licciardello,695,residential
+Cortile Oliva,239,residential
+Cortile Zeffiro,315,pedestrian
+Largo dei Vespri,333,primary|residential|secondary
+Piazza Carlo Alberto,420,pedestrian|residential
+Piazza Dante,762,pedestrian
+Piazza della Republica,783,primary
+Piazza delle Guardie,683,residential
+Piazza Ettore Majorana,534,residential
+Piazza Francesco d'Assisi,901,pedestrian
+Piazza Giovanni Bovio,895,residential|secondary
+Piazza Giovanni Verga,809,residential|secondary
+Piazza Giuseppe Sciuti,358,pedestrian
+Piazza Grenoble,643,residential
+Piazza Scammacca,949,pedestrian
+Piazza Stesicoro,412,primary
+Piazza Vincenzo Bellini,965,pedestrian
+Via Adua,487,residential
+Via Agostino De Cosmi,870,residential
+Via al Carmine,371,pedestrian
+Via Ala,565,residential|secondary
+Via Albergo,572,residential
+Via Aleardo Aleardi,685,residential
+Via Alessandro Manzoni,460,residential|secondary
+Via Alessi,807,pedestrian|residential|steps
+Via Alfonso Borelli,649,residential
+Via Aloi,696,residential
+Via Aloisio,817,residential
+Via Amba Alagi,400,residential
+Via Amore,547,residential
+Via Andrea Aradas,390,pedestrian
+Via Andrea Viglia,346,pedestrian
+Via Androne,223,secondary|tertiary
+Via Andronico,102,residential
+Via Anfiteatro,485,pedestrian
+Via Angelo Litrico,131,tertiary
+Via Antico Corso,490,tertiary
+Via Antonino di Sangiuliano,679,secondary
+Via Antonino Longo,306,primary
+Via Antonio De Curtis,979,residential
+Via Antonio Mancini,759,residential
+Via Archimede,893,residential
+Via Asmara,428,residential
+Via Aurelio Nicolodi,747,residential
+Via Balduino,818,residential
+Via Bambino,503,residential
+Via Beato Bernardo,225,residential
+Via Benedetto Guzzardi,858,residential
+Via Bertuccio,776,residential
+Via Biblioteca,725,pedestrian|tertiary
+Via Bicocca,843,residential
+Via Biondi,762,residential
+Via Bonanno,342,service
+Via Borgo,741,residential
+Via Botte dell'Acqua,705,tertiary
+Via Bruca,696,residential
+Via Buccheri,338,pedestrian
+Via Buda,902,residential
+Via Caff,625,pedestrian
+Via Calatabiano,855,residential
+Via Camillo Finocchiaro Aprile,636,residential
+Via Cancelliere,652,residential
+Via Candio,425,pedestrian
+Via Canfora,683,residential|tertiary
+Via Cantarella,258,residential
+Via Cappuccini,349,primary
+Via Cappuccini Vecchi,919,residential
+Via Carbone,300,pedestrian
+Via Carlo Ardizzone,701,residential
+Via Carlo e Nello Rosselli,723,residential
+Via Carlo Felice Gambino,504,residential
+Via Carlo Forlanini,885,tertiary
+Via Carlo Saba,862,pedestrian
+Via Carlo Sada,867,pedestrian|residential
+Via Carmelitani,568,residential
+Via Carmelo Abate,817,residential
+Via Carmelo Sciuto Patti,762,residential
+Via Caronda,184,secondary
+Via Carrata,718,pedestrian|residential
+Via Carro,891,residential
+Via Casa del Mutilato,944,pedestrian
+Via Casa Nutrizione,816,residential
+Via Caserma Carabinieri,744,residential
+Via Castromarino,533,residential
+Via Cava,840,residential
+Via Celeste,876,residential
+Via Centuripe,969,residential
+Via Cerami,522,pedestrian
+Via Cerere,987,residential
+Via Cesare Beccaria,655,secondary
+Via Cesare Lombroso,861,secondary
+Via Cesare Vivante,479,residential|secondary
+Via Cestai,831,pedestrian
+Via Chiuse Lunghe,990,residential
+Via Ciancio,842,residential
+Via Cifali,507,secondary
+Via Ciraulo,621,pedestrian
+Via Collegiata,812,residential
+Via Comitini,792,residential
+Via Consolazione,660,residential
+Via Conte di Torino,956,residential
+Via Conte Ruggero,441,residential
+Via Cordaro,457,residential
+Via Cosentino,511,pedestrian|residential
+Via Crescenzio Galatola,785,residential
+Via Crociferi,521,pedestrian
+Via Cronato,943,residential
+Via Cucinotta,899,residential
+Via Cultraro,564,pedestrian|residential
+Via D'Amico,850,residential
+Via Daniele,590,residential
+Via De Luca,796,pedestrian
+Via De Marco,866,residential|steps
+Via De Pasquale,805,pedestrian
+Via degli Invalidi di Guerra,919,pedestrian
+Via del Colosseo,457,pedestrian
+Via del Piano,662,residential
+Via del Ritiro,261,pedestrian
+Via del Toscano,360,pedestrian
+Via del Velo,969,residential
+Via dell'Esperanto,885,residential
+Via della Cipriana,950,residential|steps
+Via della Lettera,954,pedestrian
+Via della Loggetta,874,residential
+Via della Mecca,781,residential
+Via della Mercede,385,pedestrian
+Via della Palma,975,residential
+Via delle Finanze,840,residential
+Via delle Orfane,832,pedestrian
+Via delle Scale,284,pedestrian
+Via Di Bartolo,843,residential
+Via Diana,225,pedestrian
+Via Diego Pappalardo,610,residential
+Via Dolo,403,residential
+Via Domenico Cimarosa,147,tertiary
+Via Dottor Consoli,134,residential
+Via Empedocle,809,residential|tertiary
+Via Enna,862,tertiary
+Via Enrico Adolfo Pantano,432,residential
+Via Enrico Ferri,676,residential
+Via Epicarmo,613,residential
+Via Erasmo Merletta,901,residential
+Via Etnea,159,pedestrian|primary|secondary|tertiary
+Via Euplio Reina,859,pedestrian|residential
+Via Fabio Filzi,733,tertiary
+Via Faraone,360,pedestrian
+Via Federico Ciccaglione,484,residential
+Via Federico De Roberto,862,residential
+Via Ferdinando Agnini,342,residential
+Via Ferrante Aporti,904,secondary
+Via Fiamingo,580,residential
+Via Ficarazzi,504,tertiary
+Via Filadelfo e Francesco Fichera,764,residential
+Via Filippo Corridoni,328,pedestrian
+Via Filocomo,788,primary
+Via Fiorentino,532,residential
+Via Firenze,606,residential
+Via Fischetti,990,pedestrian|residential
+Via Fondaco,639,residential
+Via Formiche,975,residential
+Via Fortuna,943,residential
+Via Fragalà,823,residential
+Via Francesco Battiato,97,residential
+Via Francesco Camarda,867,pedestrian|residential
+Via Francesco Crispi,934,secondary
+Via Francesco Morabito,671,residential
+Via Francesco Paolo Frontini,832,residential
+Via Francesco Raddusa,927,residential
+Via Francesco Riso,550,residential
+Via Fulci,982,residential
+Via Furnari,844,residential
+Via Gabriele D'Annunzio,755,secondary
+Via Gaetano Sanfilippo,376,residential
+Via Gagliani,955,residential
+Via Gallina,375,pedestrian
+Via Gallo,484,secondary
+Via Galvagna,432,pedestrian
+Via Gemma,822,residential
+Via Gemmellaro,307,pedestrian
+Via Gessai,462,residential
+Via Gesualdo Clementi,680,secondary
+Via Gesuiti,740,residential
+Via Giacinto Carcaci,678,pedestrian
+Via Giacinto Platania,591,residential
+Via Giacinto Pulvirenti,959,pedestrian
+Via Giacomo Puccini,511,pedestrian|residential
+Via Giaconia,734,residential
+Via Gian Battista Caramba,780,pedestrian
+Via Gian Battista Impallomeni,555,residential
+Via Giardini,481,residential
+Via Gigi Macchi,490,secondary
+Via Gioacchino Basile,190,residential
+Via Gioacchino Biscari,759,pedestrian
+Via Giordano Bruno,500,residential
+Via Giovanni Di Prima,695,residential
+Via Giovanni Lavaggi,768,secondary
+Via Giovanni Pacini,224,pedestrian
+Via Giovanni Torti,720,residential
+Via Giulia,773,residential
+Via Giuseppe Auletta,483,secondary
+Via Giuseppe Aurelio Costanzo,423,residential
+Via Giuseppe De Felice,184,residential
+Via Giuseppe Fava,970,secondary
+Via Giuseppe Leocata,972,residential
+Via Giuseppe Perrotta,878,pedestrian
+Via Giuseppe Revere,747,residential
+Via Giuseppe Verdi,451,residential
+Via Giuseppina Turrisi Colonna,804,residential
+Via Grotte Bianche,426,residential
+Via Guglielmo,726,pedestrian|residential|steps
+Via Guglielmo Oberdan,534,pedestrian|residential|tertiary
+Via Idria,599,residential|tertiary
+Via Ipogeo,350,residential
+Via La Piana,841,pedestrian
+Via Lago di Nicito,397,secondary
+Via Landolina,994,pedestrian|residential
+Via Leonardi,972,pedestrian
+Via Luigi Calamatta,284,residential
+Via Luigi Capuana,436,residential
+Via Luigi Castiglione,620,pedestrian|residential
+Via Luigi Rizzo,614,residential
+Via Luigi Sturzo,671,residential
+Via Luna,820,residential
+Via Macallé,557,residential
+Via Maddem,713,residential
+Via Magrì,994,residential
+Via Malvarosa,715,residential
+Via Mannino,934,pedestrian
+Via Maraffino,817,residential
+Via Marchese,923,residential
+Via Maria Callas,972,pedestrian
+Via Marino,741,residential
+Via Martinez,807,pedestrian
+Via Marziano,559,pedestrian|steps
+Via Mascali,690,tertiary
+Via Massaua,263,residential
+Via Matteo Renato Imbriani,371,secondary
+Via Mavilla,868,residential
+Via Mazza,974,pedestrian
+Via Michelangelo La Rosa Buccheri,580,residential
+Via Michele Rapisardi,883,pedestrian
+Via Milo,963,secondary
+Via Mimosa,686,residential
+Via Minoritelli,684,residential
+Via Minoriti,570,pedestrian
+Via Minuta,689,pedestrian
+Via Mogadiscio,397,residential
+Via Monaca Santa,488,residential
+Via Monserrato,623,secondary
+Via Monsignor Gaetano Antonio Zito,920,pedestrian
+Via Monsignor Ventimiglia,791,secondary
+Via Monte Sant'Agata,335,pedestrian
+Via Montesano,585,pedestrian
+Via Montevergine,581,residential|steps
+Via Morosoli,160,residential
+Via Moschetti,748,pedestrian
+Via Muscatello,370,secondary
+Via Musumeci,629,residential|tertiary
+Via Napoleone Colajanni,919,residential
+Via Narciso,982,residential
+Via Neri,996,residential|steps
+Via Neve,477,pedestrian
+Via Nicola Coviello,964,residential
+Via Nicola Fabrizi,530,residential
+Via Nicola Spedalieri,269,pedestrian
+Via Nicola Zingarelli,946,residential
+Via Nicolosi,843,residential
+Via Nino Insanguine,101,tertiary
+Via Nino Martoglio,319,residential
+Via Nunzio Di Stefano,338,residential
+Via Ofelia,738,residential
+Via Opificio,967,residential
+Via Orazio Condorelli,718,residential
+Via Orchidea,665,residential
+Via Orsini,365,pedestrian
+Via Orto Carrubba,627,pedestrian
+Via Orto del Re,345,residential
+Via Orto Limoni,933,residential
+Via Orto San Clemente,281,residential
+Via Ospizio di Beneficenza,825,pedestrian
+Via Osservatorio,724,residential
+Via Papale,486,tertiary
+Via Passo di Aci,982,residential
+Via Paternò,537,residential
+Via Pavone,781,residential
+Via Penninello,522,pedestrian|steps
+Via Petriera,591,residential
+Via Pier Luigi Deodato,849,residential
+Via Pietro Antonio Coppola,695,residential
+Via Pietro Garofalo,406,secondary
+Via Pietro Mascagni,944,residential
+Via Pietro Toselli,464,residential
+Via Pietro Verri,851,residential
+Via Pistone,842,residential
+Via Plebiscito,438,secondary
+Via Politi,989,residential
+Via Pozzo Canale,978,secondary
+Via Pozzo Rotondo,587,residential
+Via Prefettura,665,residential
+Via Proserpina,998,residential
+Via Puleo,513,residential
+Via Purità,537,residential
+Via Quartarone,923,secondary
+Via Raciti,803,residential
+Via Raimondo Feletti,532,residential
+Via Raimondo Franchetti,686,residential
+Via Recalcaccia,723,residential
+Via Reclusorio del Lume,308,residential
+Via Redentore,341,residential
+Via Reggio,908,residential
+Via Rindone,585,residential
+Via Rizzari,192,pedestrian
+Via Roccaforte,897,pedestrian|residential
+Via Roccaromana,249,tertiary
+Via Rocchetti,796,pedestrian
+Via Rodi,821,residential
+Via Romeo,274,residential
+Via Rotonda,747,residential
+Via Ruggero Settimo,975,residential
+Via Salita San Camillo,598,pedestrian
+Via Salvatore Citelli,795,residential|tertiary
+Via Salvatore Paola,448,residential
+Via Salvatore Tomaselli,97,primary
+Via Samperi,894,residential
+Via San Barnabà,987,pedestrian
+Via San Benedetto,807,pedestrian
+Via San Francesco,866,residential
+Via San Gaetano alla Grotta,460,pedestrian
+Via San Giovanni Bosco,784,residential
+Via San Giuseppe al Duomo,817,residential
+Via San Martino,956,pedestrian
+Via San Michele,615,residential
+Via San Nicolò al Borgo,612,residential|secondary
+Via San Pietro,743,residential
+Via San Vincenzo dei Paoli,831,residential
+Via San Vito,393,residential
+Via Sant'Agata,954,pedestrian
+Via Sant'Agnese,922,residential
+Via Sant'Agostino,885,residential
+Via Sant'Anna,961,pedestrian
+Via Sant'Elena,579,pedestrian|secondary
+Via Sant'Euplio,97,primary|secondary
+Via Sant'Orsola,839,pedestrian
+Via Santa Barbara,954,residential
+Via Santa Caterina,352,pedestrian
+Via Santa Filomena,248,pedestrian
+Via Santa Maddalena,249,primary|secondary|tertiary
+Via Santa Maria del Rosario,927,pedestrian|residential
+Via Santa Maria delle Grazie,970,residential
+Via Santa Maria di Betlem,460,pedestrian|residential
+Via Santa Maria la Grande,209,residential
+Via Santa Marta,544,pedestrian
+Via Santa Teresa,741,residential
+Via Savoia,868,residential
+Via Scalpellini,548,residential
+Via Scandurra,795,residential
+Via Scarpanto,870,residential
+Via Sciuto,317,pedestrian
+Via Sisto,190,pedestrian|residential
+Via Solferino,983,residential
+Via Sorge,837,residential
+Via Spadaro Grassi,960,pedestrian
+Via Spampinato,330,pedestrian
+Via Squillaci,723,residential
+Via Stellata,379,residential
+Via Stramondo,988,residential
+Via Suriani,174,pedestrian
+Via Teatro Greco,866,residential
+Via Teocrito,477,pedestrian|residential
+Via Tindaro,568,residential
+Via Tineo,925,residential
+Via Tommaso Grossi,636,residential
+Via Tommaso Tedeschi,627,residential
+Via Tornabene,456,residential
+Via Torre Alessi,457,residential
+Via Torre del Vescovo,489,residential|tertiary
+Via Tremestieri,371,pedestrian
+Via Ughetti,227,tertiary
+Via Umberto Primo,164,primary
+Via Vallone,741,residential
+Via Valverde,921,residential
+Via Vanasco,476,residential
+Via Vasta,771,pedestrian
+Via Vecchia Ognina,951,residential
+Via Veniero,746,residential
+Via Verginelle,908,residential
+Via Verona,665,residential
+Via Vincenzo Costarelli,372,pedestrian
+Via Vincenzo Giuffrida,869,secondary
+Via Vitali,365,pedestrian
+Via Vittorio Emanuele Orlando,988,secondary
+Via Vittorio Emanuele Secondo,953,pedestrian|residential|secondary
+Via Zaccà-Rosolia,274,residential
+Via Zara,941,residential
+Via Zuccaro,320,residential
+Viale Mario Rapisardi,494,primary
+Viale Regina Margherita,232,primary
+Viale Venti Settembre,275,primary
+Vico Aci,964,residential
+Vico Carcara,435,residential
+Vico Castorina,928,residential
+Vico Collegio,927,pedestrian
+Vico Fabio,830,residential
+Vico Falcato,410,pedestrian
+Vico Febo,809,residential
+Vico Fonderia,819,residential
+Vico Giglio,945,service
+Vico Orto Botanico,579,pedestrian
+Vico Pallade,704,residential
+Vico Scaramuzza,402,service
+Vico Vassallo,930,residential
+Vicolo Battiati,319,pedestrian
+Vicolo Beritelli,775,pedestrian
+Vicolo Buonafè,853,residential
+Vicolo Castelletto,788,pedestrian
+Vicolo della Salute,530,residential
+Vicolo delle Belle,794,pedestrian
+Vicolo delle Camelie,898,residential
+Vicolo delle Conchiglie,892,residential
+Vicolo Eridano,326,pedestrian
+Vicolo Giacomo Zanella,677,residential
+Vicolo Giovanni Massari,571,residential
+Vicolo La Ciura,623,pedestrian
+Vicolo Magnato,690,pedestrian
+Vicolo Malabranca,696,residential
+Vicolo Maugeri,673,pedestrian
+Vicolo Maura,836,pedestrian
+Vicolo Maurolico,398,residential
+Vicolo Minaudo,799,residential
+Vicolo Ninnari,448,residential
+Vicolo Palota,681,residential
+Vicolo Papa,381,pedestrian
+Vicolo Serra,580,pedestrian
+Vicolo Strazzeri,950,residential
+Vicolo Stromboli,369,residential
+Vicolo Tosto,562,pedestrian
+Vicolo Vecchia,708,residential
+Vicolo Villermosa,642,residential
