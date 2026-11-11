@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#E8505B">
+  <title>Sintonia</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="topbar">
+      <a href="#/scopri" class="brand"><span class="logo" aria-hidden="true"></span>Sintonia</a>
+      <a href="#/notifiche" class="bell" id="bell" aria-label="Notifiche">🔔<span id="bell-count" class="badge hidden"></span></a>
+    </header>
+    <main id="view" class="view" aria-live="polite"></main>
+    <nav class="tabbar hidden" id="tabbar" aria-label="Navigazione principale">
+      <a href="#/scopri" data-tab="scopri"><span>🔥</span>Scopri</a>
+      <a href="#/like" data-tab="like"><span>💛</span>Like</a>
+      <a href="#/match" data-tab="match"><span>💬</span>Chat<span id="chat-count" class="badge hidden"></span></a>
+      <a href="#/profilo" data-tab="profilo"><span>👤</span>Profilo</a>
+    </nav>
+    <div id="toast" class="toast hidden" role="status"></div>
+    <div id="modal" class="modal hidden" role="dialog" aria-modal="true"></div>
+  </div>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

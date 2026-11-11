@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sintonia Admin</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="admin">
+    <header class="row"><h1>🛡️ Sintonia · Pannello amministratore</h1><div class="center"><a class="btn small secondary" href="/">← App</a></div></header>
+    <section id="login" class="panel hidden">
+      <form id="lf"><label>Email admin</label><input name="email" type="email" value="admin@demo.local"><label>Password</label><input name="password" type="password">
+      <br><br><button class="btn">Accedi</button></form>
+    </section>
+    <section id="dash" class="hidden">
+      <div class="kpis" id="kpis"></div>
+      <h2>Segnalazioni</h2><div class="table-wrap"><table id="reports"></table></div>
+      <h2>Verifiche profilo in attesa</h2><div class="table-wrap"><table id="verif"></table></div>
+      <h2>Foto in revisione</h2><div class="table-wrap"><table id="photos"></table></div>
+      <h2>Messaggi segnalati dall'antifrode</h2><div class="table-wrap"><table id="flagged"></table></div>
+      <h2>Utenti</h2><input id="q" placeholder="Cerca per nome o email"><br><br><div class="table-wrap"><table id="users"></table></div>
+    </section>
+  </div>
+  <div id="toast" class="toast hidden" role="status"></div>
+  <script src="/admin.js" type="module"></script>
+</body>
+</html>
