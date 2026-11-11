@@ -1,16 +1,57 @@
 {
   "hooks": {
     "SubagentStart": [
-      { "hooks": [ { "type": "command", "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/log_subagent.sh" } ] }
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/log_subagent.sh"
+          }
+        ]
+      }
     ],
     "SubagentStop": [
-      { "hooks": [ { "type": "command", "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/log_subagent.sh" } ] }
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/log_subagent.sh"
+          }
+        ]
+      }
     ],
     "PreToolUse": [
-      { "matcher": "WebFetch", "hooks": [ { "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/domain_allowlist.py" } ] }
+      {
+        "matcher": "WebFetch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/domain_allowlist.py"
+          }
+        ]
+      }
     ],
     "PostToolUseFailure": [
-      { "matcher": "WebFetch|WebSearch", "hooks": [ { "type": "command", "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/log_fetch_failure.sh" } ] }
+      {
+        "matcher": "WebFetch|WebSearch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/log_fetch_failure.sh"
+          }
+        ]
+      }
     ]
+  },
+  "extraKnownMarketplaces": {
+    "ecc": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/affaan-m/ECC.git"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "ecc@ecc": true
   }
 }
