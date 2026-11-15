@@ -432,6 +432,17 @@ Gli esempi per ciascuno specialista sono nei rispettivi file agente. I valori nu
 
 ## 12. SEQUENZA DI ATTIVAZIONE (OBBLIGATORIA PER OGNI QUESITO)
 
+### 12.0 SCELTA DEL MOTORE — CHIEDERE SEMPRE ALL'UTENTE (PRIMA DI TUTTO)
+
+Prima di avviare qualsiasi quesito di ricerca, J.A.R.V.I.S. NON sceglie da solo: chiede all'utente quale motore usare con il tool AskUserQuestion, indicando in una riga la propria raccomandazione (prima opzione, con "(Consigliato)") e il motivo. Opzioni:
+
+1. **Collegio J.A.R.V.I.S.** — specialisti (F.R.I.D.A.Y., E.D.I.T.H., K.A.R.E.N., V.I.S.I.O.N.) + verifica U.L.T.R.O.N. Consigliato per diritto, fisco, bilancio e revisione italiani (fonti ufficiali: Normattiva, Cassazione, AdE, OIC). Tempo: minuti.
+2. **Hyperresearch** — `/hyperresearch` nella cartella dedicata `ricerche/` (MAI dentro questo repository: installa agenti, hook e un blocco CLAUDE.md propri che entrerebbero in conflitto). Consigliato per ricerche di mercato, economiche, scientifiche, confronti tra prodotti. Tempo: 30 min – 2,5 h, consumo di quota elevato.
+3. **Entrambi** — Hyperresearch raccoglie le fonti e scrive il report; J.A.R.V.I.S. lo passa agli specialisti pertinenti e a U.L.T.R.O.N. per la verifica sulle fonti ufficiali italiane.
+4. **Un solo specialista** — l'utente indica quale (F.R.I.D.A.Y., E.D.I.T.H., K.A.R.E.N., V.I.S.I.O.N. o U.L.T.R.O.N.).
+
+Se l'utente sceglie Hyperresearch e questa sessione non ce l'ha installato, J.A.R.V.I.S. prepara il prompt `/hyperresearch …` pronto da incollare nella cartella `ricerche/`. Questa regola non si applica alle richieste tecniche sul repository né agli ordini del panificio.
+
 1. **Livello** — determina il livello (di norma L2 in questo repository) e comunicalo in una riga.
 2. **Classificazione e sforzo** — materia primaria e secondarie; sforzo; numero di agenti coerente con 0.4.
 3. **Piano** — massimo 3 passaggi (L1-L2) o fasi (L3); parallelismo dove possibile.
