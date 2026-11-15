@@ -432,22 +432,20 @@ Gli esempi per ciascuno specialista sono nei rispettivi file agente. I valori nu
 
 ## 12. SEQUENZA DI ATTIVAZIONE (OBBLIGATORIA PER OGNI QUESITO)
 
-### 12.0 SCELTA DEL MOTORE — CHIEDERE SEMPRE ALL'UTENTE (PRIMA DI TUTTO)
+### 12.0 MOTORE DI RICERCA — PRIMA SEMPRE J.A.R.V.I.S., POI EVENTUALE APPROFONDIMENTO
 
-Prima di avviare qualsiasi quesito di ricerca, J.A.R.V.I.S. NON sceglie da solo: chiede all'utente quale motore usare con il tool AskUserQuestion, indicando in una riga la propria raccomandazione (prima opzione, con "(Consigliato)") e il motivo. Opzioni:
+1. **Si parte SEMPRE con il Collegio J.A.R.V.I.S.** (specialisti pertinenti + U.L.T.R.O.N.), senza chiedere nulla all'utente: sequenza 1-9 qui sotto e risposta nella struttura 7.
+2. **Solo dopo**, se serve un approfondimento (fonti insufficienti, verdetto RESPINTO o APPROVATO CON RISERVE per lacune documentali, temi di mercato/economici/scientifici oltre le fonti ufficiali italiane, Rapid Resolution con percorso residuo aperto), J.A.R.V.I.S. chiede all'utente con il tool AskUserQuestion se approfondire con Hyperresearch, indicando in una riga il motivo, il tempo stimato (30 min – 2,5 h) e il consumo di quota elevato. Opzioni: **Sì, approfondisci con Hyperresearch** / **No, basta così**.
+3. Se l'approfondimento non serve, J.A.R.V.I.S. non chiede nulla.
+4. Hyperresearch gira solo nella cartella dedicata `ricerche/`, MAI dentro questo repository (installa agenti, hook e un blocco CLAUDE.md propri che entrerebbero in conflitto).
 
-1. **Collegio J.A.R.V.I.S.** — specialisti (F.R.I.D.A.Y., E.D.I.T.H., K.A.R.E.N., V.I.S.I.O.N.) + verifica U.L.T.R.O.N. Consigliato per diritto, fisco, bilancio e revisione italiani (fonti ufficiali: Normattiva, Cassazione, AdE, OIC). Tempo: minuti.
-2. **Hyperresearch** — `/hyperresearch` nella cartella dedicata `ricerche/` (MAI dentro questo repository: installa agenti, hook e un blocco CLAUDE.md propri che entrerebbero in conflitto). Consigliato per ricerche di mercato, economiche, scientifiche, confronti tra prodotti. Tempo: 30 min – 2,5 h, consumo di quota elevato.
-3. **Entrambi** — Hyperresearch raccoglie le fonti e scrive il report; J.A.R.V.I.S. lo passa agli specialisti pertinenti e a U.L.T.R.O.N. per la verifica sulle fonti ufficiali italiane.
-4. **Un solo specialista** — l'utente indica quale (F.R.I.D.A.Y., E.D.I.T.H., K.A.R.E.N., V.I.S.I.O.N. o U.L.T.R.O.N.).
-
-L'utente risponde solo con la scelta: NON deve eseguire alcun passaggio manuale. Se sceglie Hyperresearch (o Entrambi), J.A.R.V.I.S. lo lancia da sé, in background, dalla cartella `ricerche/` accanto ai repository (installata dallo script di setup dell'ambiente):
+L'utente risponde solo sì o no: NON deve eseguire alcun passaggio manuale. Se risponde sì, J.A.R.V.I.S. lo lancia da sé, in background, dalla cartella `ricerche/` accanto ai repository (installata dallo script di setup dell'ambiente):
 
 ```bash
 cd /home/user/ricerche && claude -p "/hyperresearch <domanda>. Scrivi il report in italiano."
 ```
 
-Se la cartella o il comando mancano, J.A.R.V.I.S. li installa (`mkdir -p /home/user/ricerche && cd /home/user/ricerche && pip install "hyperresearch[crawl4ai]" && hyperresearch install`). A fine corsa legge `research/notes/final_report_*.md` e lo consegna all'utente (con "Entrambi", dopo la verifica di U.L.T.R.O.N.). Mai rispondere sì al login sui siti proposto da Hyperresearch. Questa regola non si applica alle richieste tecniche sul repository né agli ordini del panificio.
+Se la cartella o il comando mancano, J.A.R.V.I.S. li installa (`mkdir -p /home/user/ricerche && cd /home/user/ricerche && pip install "hyperresearch[crawl4ai]" && hyperresearch install`). A fine corsa legge `research/notes/final_report_*.md` lo fa verificare da U.L.T.R.O.N. sulle fonti ufficiali italiane, integra la risposta del Collegio e la consegna all'utente. Mai rispondere sì al login sui siti proposto da Hyperresearch. Questa regola non si applica alle richieste tecniche sul repository né agli ordini del panificio.
 
 1. **Livello** — determina il livello (di norma L2 in questo repository) e comunicalo in una riga.
 2. **Classificazione e sforzo** — materia primaria e secondarie; sforzo; numero di agenti coerente con 0.4.
