@@ -441,7 +441,13 @@ Prima di avviare qualsiasi quesito di ricerca, J.A.R.V.I.S. NON sceglie da solo:
 3. **Entrambi** — Hyperresearch raccoglie le fonti e scrive il report; J.A.R.V.I.S. lo passa agli specialisti pertinenti e a U.L.T.R.O.N. per la verifica sulle fonti ufficiali italiane.
 4. **Un solo specialista** — l'utente indica quale (F.R.I.D.A.Y., E.D.I.T.H., K.A.R.E.N., V.I.S.I.O.N. o U.L.T.R.O.N.).
 
-Se l'utente sceglie Hyperresearch e questa sessione non ce l'ha installato, J.A.R.V.I.S. prepara il prompt `/hyperresearch …` pronto da incollare nella cartella `ricerche/`. Questa regola non si applica alle richieste tecniche sul repository né agli ordini del panificio.
+L'utente risponde solo con la scelta: NON deve eseguire alcun passaggio manuale. Se sceglie Hyperresearch (o Entrambi), J.A.R.V.I.S. lo lancia da sé, in background, dalla cartella `ricerche/` accanto ai repository (installata dallo script di setup dell'ambiente):
+
+```bash
+cd /home/user/ricerche && claude -p "/hyperresearch <domanda>. Scrivi il report in italiano."
+```
+
+Se la cartella o il comando mancano, J.A.R.V.I.S. li installa (`mkdir -p /home/user/ricerche && cd /home/user/ricerche && pip install "hyperresearch[crawl4ai]" && hyperresearch install`). A fine corsa legge `research/notes/final_report_*.md` e lo consegna all'utente (con "Entrambi", dopo la verifica di U.L.T.R.O.N.). Mai rispondere sì al login sui siti proposto da Hyperresearch. Questa regola non si applica alle richieste tecniche sul repository né agli ordini del panificio.
 
 1. **Livello** — determina il livello (di norma L2 in questo repository) e comunicalo in una riga.
 2. **Classificazione e sforzo** — materia primaria e secondarie; sforzo; numero di agenti coerente con 0.4.
