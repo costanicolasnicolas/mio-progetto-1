@@ -5,3 +5,7 @@
 - L. 199/2025 art.1 c.17: presunzione d'impresa locazioni brevi da >4 a >2 appartamenti dal 2026 (modifica art.1 c.595 L.178/2020, NON L.160/2019).
 - Airbnb host-only fee 15,5% (airbnb.it/help/article/1857).
 - LeadHost P.IVA 17750971008 = ditta individuale SOGI di Dominici Romina, Via Cogliate 135, Roma (VIES valida).
+- art. 4 c. 3 D.L. 50/2017 (vigente al 31/12/2026): regime cedolare esteso ai "corrispettivi lordi" da sublocazione e da comodatario. VERIFICATO.
+- Circ. AdE 24/E/2017 (PDF agenziaentrate.gov.it): sublocatore incluso (p.6, causa del contratto), escluse locazioni in attività d'impresa (p.5), ritenuta 21% intermediari (p.12). Base cedolare = corrispettivo lordo, canone passivo non deducibile. VERIF. PARZ.
+- NON VERIFICABILI al 16/11/2026 (testo non estraibile da Normattiva): art. 1594 c.c.; art. 1 c. 595 L. 178/2020 testo (conteggio unità sublocate); art. 207 D.Lgs. 117/2026.
+- Vazquez (BnB Academy, Forbes 2023 >3.300 studenti) e Billiani (Chiave Immobiliare, rent-to-rent, ~30 immobili autodichiarati): ricavi anche da formazione; claim "senza P.IVA" non sostenibile oltre uso occasionale.
