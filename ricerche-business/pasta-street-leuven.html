@@ -1,0 +1,389 @@
+<title>Pasta Street Leuven</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: colonna editoriale 1080px, indice in alto, sezioni numerate perché sono gli 8 deliverable richiesti */
+:root{
+  --bg:#F5F6F2; --surface:#FFFFFF; --ink:#16231C; --muted:#5B6860; --line:#D9DED6;
+  --basil:#1F5A3E; --basil-soft:#E3EEE6; --semola:#D9A21B; --semola-soft:#FBF1D6; --tomato:#B8321F; --tomato-soft:#F8E3DE;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101612; --surface:#18211B; --ink:#E8EEE9; --muted:#9AA89F; --line:#2C3830;
+  --basil:#6CC596; --basil-soft:#1D3328; --semola:#F0C04A; --semola-soft:#3A3014; --tomato:#F07C68; --tomato-soft:#3D2019; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101612; --surface:#18211B; --ink:#E8EEE9; --muted:#9AA89F; --line:#2C3830;
+  --basil:#6CC596; --basil-soft:#1D3328; --semola:#F0C04A; --semola-soft:#3A3014; --tomato:#F07C68; --tomato-soft:#3D2019; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15.5px;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 80px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.15;margin:0}
+h1{font-size:clamp(2.1rem,5vw,3.4rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:700;letter-spacing:-.01em}
+h3{font-size:1.15rem;font-weight:700;margin-top:28px}
+p{max-width:72ch;margin:10px 0}
+a{color:var(--basil);text-underline-offset:2px;word-break:break-word}
+a:focus-visible{outline:2px solid var(--semola);outline-offset:2px}
+.eyebrow{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+header.hero{display:grid;gap:14px;padding-bottom:28px;border-bottom:2px solid var(--ink)}
+.hero .lead{font-size:1.1rem;color:var(--muted);max-width:68ch}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:8px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.kpi b{display:block;font-family:var(--f-display);font-size:1.6rem;font-variant-numeric:tabular-nums}
+.kpi span{font-size:.82rem;color:var(--muted)}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 14px;margin:20px 0 6px;font-size:.88rem}
+nav.toc a{text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line)}
+section{padding-top:44px;display:grid;gap:6px}
+section>h2{display:flex;gap:12px;align-items:baseline}
+section>h2 .n{font-family:var(--f-mono);font-size:.95rem;color:var(--tomato);font-weight:500}
+.tw{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.88rem;font-variant-numeric:tabular-nums}
+th{background:var(--basil-soft);text-align:left;font-weight:600;padding:9px 10px;white-space:nowrap;border-bottom:1px solid var(--line)}
+td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+table.dense td{font-size:.82rem}
+.m{font-family:var(--f-mono);font-size:.78rem;color:var(--muted)}
+.tag{display:inline-block;font-family:var(--f-mono);font-size:.7rem;padding:1px 6px;border-radius:4px;vertical-align:1px}
+.v{background:var(--basil-soft);color:var(--basil)} .s{background:var(--semola-soft);color:var(--ink)} .x{background:var(--tomato-soft);color:var(--tomato)}
+.note{background:var(--semola-soft);border-left:4px solid var(--semola);padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.warn{background:var(--tomato-soft);border-left:4px solid var(--tomato);padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.grid2>*{min-width:0}
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;margin:12px 0}
+.chart h4{margin:0 0 8px;font-family:var(--f-display);font-size:1rem}
+.chart .box{position:relative;height:320px}
+.chart .box.tall{height:420px}
+ol,ul{padding-left:1.25rem;max-width:76ch} li{margin:4px 0}
+.hours{display:grid;grid-template-columns:110px repeat(24,1fr);gap:2px;font-size:.7rem;min-width:640px}
+.hours div{height:22px;border-radius:2px}
+.hours .lbl{background:none;font-size:.78rem;display:flex;align-items:center;height:22px}
+.hours .on{background:var(--basil)} .hours .off{background:var(--line)} .hours .cp{background:var(--tomato)}
+.hours .hh{background:none;text-align:center;color:var(--muted);height:16px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.8rem;color:var(--muted);margin-top:8px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:12px 0}
+.flow div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px}
+.flow b{font-family:var(--f-display);display:block}
+.flow small{color:var(--muted)}
+footer{margin-top:56px;padding-top:18px;border-top:2px solid var(--ink);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Business plan · Leuven, Belgio · ricerca del 21 novembre 2026</div>
+  <h1>Pasta Street &amp; Drive</h1>
+  <p class="lead">Pasta italiana espressa, solo asporto e consegna, mantecata in padella davanti al cliente. Primo negozio di 22–25 m² a Leuven, poi franchising e formato drive-thru. Questo documento raccoglie concorrenza, menu, fornitori, immobili, conti, espansione, contratti e app.</p>
+  <div class="kpis">
+    <div class="kpi"><b>€96.400</b><span>investimento iniziale stimato</span></div>
+    <div class="kpi"><b>82 bowl/giorno</b><span>punto di pareggio (49 banco + 33 delivery)</span></div>
+    <div class="kpi"><b>25–33%</b><span>food cost con packaging, al banco</span></div>
+    <div class="kpi"><b>€88.435</b><span>utile netto anno 1, scenario realistico</span></div>
+  </div>
+  <nav class="toc" aria-label="Indice">
+    <a href="#s1">1 Concorrenti</a><a href="#s2">2 Menu e food cost</a><a href="#s3">3 Fornitori</a><a href="#s4">4 Location e permessi</a><a href="#s5">5 Conti</a><a href="#s6">6 Franchising e Pasta-Drive</a><a href="#s7">7 Personale e contratti</a><a href="#s8">8 App</a><a href="#spazio">Spazi necessari</a><a href="#limiti">Limiti e verifiche</a>
+  </nav>
+</header>
+
+<div class="note"><b>Come leggere i dati.</b> <span class="tag v">V*</span> = cifra presente nella pagina della fonte indicata, letta tramite il motore di ricerca. <span class="tag s">S</span> = stima o calcolo nostro. Nessuna pagina è stata aperta direttamente: il filtro domini di questo repository blocca l'apertura dei siti belgi e delle piattaforme di delivery. Ogni prezzo va riconfermato sul link prima di firmare o ordinare.</div>
+
+<!-- 1 -->
+<section id="s1">
+<h2><span class="n">01</span>Concorrenti, prezzi e recensioni</h2>
+<p>A Leuven la pasta da asporto ha due fasce: €6–10 (Cup Pasta) e €10–12 (Boccone). Bavet e L'Inizio costano €15–17. Nessuno offre un piatto "premium express" a €8,90–11,90 con porzione dichiarata. È lì che si posiziona il nostro brand.</p>
+<div class="chart"><h4>Prezzo del piatto base, € (banco o sito proprio contro app)</h4><div class="box"><canvas id="cPrices" aria-label="Confronto prezzi concorrenti"></canvas></div></div>
+<div class="tw"><table><thead><tr><th>Brand</th><th>Sede Leuven</th><th>Piatto</th><th>Banco / sito</th><th>App</th><th>Fonte</th></tr></thead><tbody>
+<tr><td><b>Cup Pasta</b></td><td>Diestsestraat 16</td><td>Regular 200 g / Medium 300 g / Large 400 g</td><td>€5,90 / 7,90 / 9,90 <span class="tag v">V*</span></td><td>build-your-own €6,90; 4 formaggi €11,90; tortellini €12,90 <span class="tag v">V*</span></td><td><a href="https://www.cup-pasta-leuven.be/" target="_blank" rel="noopener">cup-pasta-leuven.be</a> · <a href="https://www.ubereats.com/be/store/cup-pasta-leuven/mwdOlMrBTgmd2nqvL-aBBg" target="_blank" rel="noopener">Uber Eats</a> · <a href="https://deliveroo.be/en/menu/leuven/centrum/cup-pasta" target="_blank" rel="noopener">Deliveroo</a></td></tr>
+<tr><td><b>Boccone</b></td><td>Rector De Somerplein 15A</td><td>Carbonara / Bolognese; Tartufo; Tiramisù</td><td>da €9,50 <span class="tag v">V*</span></td><td>€10,50; €11,50; €6,00 <span class="tag v">V*</span></td><td><a href="https://takeaway.com/be-en/boccone" target="_blank" rel="noopener">Takeaway</a> · <a href="https://www.ubereats.com/be-en/store/boccone/9ulA9vyqRx-XxW64z4jlFA" target="_blank" rel="noopener">Uber Eats</a></td></tr>
+<tr><td><b>Bavet</b></td><td>Tiensestraat 9 + kiosk stazione</td><td>Bolognese "The Bavet" Normal</td><td>€15,50–16,50 (altre sedi); Leuven circa €15 + €2 parmigiano <span class="tag v">V*</span></td><td>€17,90 (Deliveroo, Anversa) <span class="tag v">V*</span></td><td><a href="https://be.pricelisto.com/menu-prices/bavet-mas-be" target="_blank" rel="noopener">pricelisto</a> · <a href="https://www.tripadvisor.com/Restaurant_Review-g188669-d11954156-Reviews-Bavet_Leuven-Leuven_Flemish_Brabant_Province.html" target="_blank" rel="noopener">Tripadvisor</a></td></tr>
+<tr><td><b>L'Inizio</b></td><td>Parijsstraat 39</td><td>Gnocchi alla sorrentina e simili</td><td>€16,00 <span class="tag v">V*</span></td><td>nessuna app, ordini via WhatsApp</td><td><a href="https://www.linizio.be/" target="_blank" rel="noopener">linizio.be</a></td></tr>
+<tr><td><b>Maccheroni Broz</b> (Firenze)</td><td>Via dei Tosinghi 20/R</td><td>Cacio e pepe / Carbonara / Amatriciana, 180 g pasta fresca</td><td>€11–12 <span class="tag v">V*</span></td><td>€11,99–12,99; tartufo €14,99 <span class="tag v">V*</span></td><td><a href="https://deliveroo.it/en/menu/Firenze/centro-storico/maccheroni-broz-via-dei-tosinghi-20-r" target="_blank" rel="noopener">Deliveroo</a> · <a href="https://www.beverfood.com/maccheroni-broz-pasta-take-away-firenze/" target="_blank" rel="noopener">Beverfood</a></td></tr>
+</tbody></table></div>
+<p>Altre sedi Cup Pasta: Bruxelles (Montagne aux Herbes Potagères 9, Rue de l'Évêque 30, Rue du Midi 104), Anversa (Sint-Jacobsmarkt 92-94, gio–sab 11:00–19:30), Liège, Wavre, Mons. Charleroi è presente solo su Uber Eats e l'indirizzo non è stato trovato. Elenco: <a href="https://www.takeaway.com/be-en/takeaway/brands/cup-pasta" target="_blank" rel="noopener">Takeaway, brand Cup Pasta</a>.</p>
+
+<h3>Cosa dicono le recensioni negative</h3>
+<div class="tw"><table><thead><tr><th>Brand</th><th>Lamentela</th><th>Tema</th><th>Fonte</th></tr></thead><tbody>
+<tr><td>Cup Pasta Leuven</td><td>"almost no meat inside"</td><td>Ricetta povera</td><td><a href="https://www.cup-pasta-leuven.be/review" target="_blank" rel="noopener">recensioni sito</a></td></tr>
+<tr><td>Cup Pasta Leuven</td><td>Rider in ritardo di un'ora, cibo freddo (marzo 2026)</td><td>Delivery</td><td>idem</td></tr>
+<tr><td>Cup Pasta</td><td>Sugo "premade and added on top rather than mixed in" (attribuzione incerta)</td><td>Niente mantecatura</td><td><a href="https://wanderlog.com/place/details/1238279/boccone" target="_blank" rel="noopener">Wanderlog</a></td></tr>
+<tr><td>Bavet Leuven</td><td>"price vs quality this is absolutely not worth it!"; "bolognese sauce bland"</td><td>Prezzo e qualità</td><td><a href="https://www.tripadvisor.com/Restaurant_Review-g188669-d11954156-Reviews-Bavet_Leuven-Leuven_Flemish_Brabant_Province.html" target="_blank" rel="noopener">Tripadvisor</a></td></tr>
+<tr><td>Boccone</td><td>Menu troppo ampio, porzioni piccole per il prezzo</td><td>Identità confusa</td><td><a href="https://wanderlog.com/list/geoCategory/1517739/best-places-for-pasta-in-leuven" target="_blank" rel="noopener">Wanderlog</a></td></tr>
+<tr><td>L'Inizio</td><td>"expect to wait up to 45 mins"; chiuso nel weekend</td><td>Attesa e orari</td><td><a href="https://foursquare.com/v/pastabar-linizio/4c813868e602b1f7a7ab907a" target="_blank" rel="noopener">Foursquare</a></td></tr>
+<tr><td>Maccheroni Broz</td><td>Pasta "practically glue", carbonara debole, €12 percepiti come cari</td><td>Tenuta della pasta</td><td><a href="https://www.tripadvisor.co.uk/Restaurant_Review-g187895-d28153540-Reviews-Maccheroni_Broz-Florence_Tuscany.html" target="_blank" rel="noopener">Tripadvisor</a></td></tr>
+</tbody></table></div>
+<p class="m">Le recensioni Google Maps e i thread su Reddit non erano leggibili. Dagli estratti non si vede se il recensore è italiano o belga.</p>
+
+<h3>I 5 errori dei concorrenti e come li usiamo</h3>
+<ol>
+<li><b>Orari corti.</b> Cup Pasta chiude alle 18:00, L'Inizio alle 20:45 ed è chiuso nel weekend, Boccone chiude tra le 20:00 e le 21:15. Dopo le 21 nessuno serve pasta. <b>Noi:</b> aperti fino alle 03:00 da giovedì a sabato, unica pasta calda dopo la serata in Oude Markt.</li>
+<li><b>Pasta assemblata, non cucinata.</b> Il sugo viene versato sopra. <b>Noi:</b> mantecatura in padella a vista. Il gesto si filma e diventa contenuto TikTok. Promessa: "mantecata al momento, mai versata".</li>
+<li><b>Prezzo poco chiaro e supplementi.</b> Bavet fa pagare a parte il parmigiano (€2) e le polpette. <b>Noi:</b> grammatura dichiarata, formaggio sempre incluso, listino in app a +€2 spiegato apertamente.</li>
+<li><b>Consegna che arriva fredda o scotta.</b> <b>Noi:</b> pasta secca al bronzo precotta al 60–70%, bowl con coperchio ventilato, raggio di consegna corto (centro e Heverlee) e ordine diretto con ritiro.</li>
+<li><b>Nessuna offerta Halal e senza glutine.</b> Nessun concorrente mette in evidenza piatti Halal, e il senza glutine non ha un protocollo dichiarato. <b>Noi:</b> linea Halal certificata e senza glutine con acqua, cestello e padella dedicati.</li>
+</ol>
+
+<h3>Orari: noi contro i concorrenti</h3>
+<div class="tw" style="padding:12px">
+<div class="hours" id="hours"></div>
+<div class="legend"><span><i style="background:var(--basil)"></i>Pasta Street (proposta)</span><span><i style="background:var(--tomato)"></i>Cup Pasta Leuven (11–18)</span><span><i style="background:var(--line)"></i>chiuso</span></div>
+</div>
+<p>Orari proposti: lunedì e martedì 11:30–21:30 · mercoledì 11:30–22:30 · <b>giovedì e venerdì 11:30–03:00</b> · <b>sabato 12:00–03:00</b> · domenica 12:00–21:00. L'apertura notturna va verificata sul regolamento di polizia di Leuven (orari di chiusura e rumore). <span class="tag s">S</span></p>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+<h2><span class="n">02</span>Menu, pasta e food cost</h2>
+<h3>Pasta fresca o pasta secca?</h3>
+<p><b>Scelta: pasta secca di semola trafilata al bronzo</b> (mezze maniche, rigatoni, spaghettoni), 140 g a crudo per bowl, circa 330 g cotta. È una porzione equivalente ai 180 g di pasta fresca di Maccheroni Broz. La pasta fresca all'uovo cuoce in 1–3 minuti e dopo 20 minuti di consegna si incolla: è la stessa critica fatta a Broz ("glue"). La pasta secca ha una finestra di cottura ampia e una superficie porosa che trattiene il sugo (<a href="https://air.unimi.it/handle/2434/41184" target="_blank" rel="noopener">Lucisano et al. 2008</a>).</p>
+<div class="flow">
+<div><b>1. Precottura</b><small>60–70% del tempo indicato in etichetta, a lotti</small></div>
+<div><b>2. Raffreddamento</b><small>acqua e ghiaccio, scolatura, 1–2% di olio</small></div>
+<div><b>3. Abbattimento</b><small>da 60 °C a ≤10 °C entro 2 h, conservazione a ≤4 °C (<a href="https://favv-afsca.be/sites/default/files/autocontrole/g-044/ccp/CCP-07_nl.pdf" target="_blank" rel="noopener">FAVV CCP-07</a>)</small></div>
+<div><b>4. Rigenerazione</b><small>40–60 s nel cuocipasta con cestello porzionato</small></div>
+<div><b>5. Mantecatura</b><small>30–45 s in padella a induzione con acqua di cottura</small></div>
+<div><b>6. Chiusura</b><small>bowl e coperchio ventilato: 90–120 s dall'ordine</small></div>
+</div>
+<p><b>Senza glutine:</b> pasta cotta al momento in acqua, cestello e padella dedicati e contrassegnati. Costo in più: €0,43 a bowl. La dicitura "senza glutine" è ammessa solo sotto 20 mg/kg di glutine (<a href="https://favv-afsca.be/sites/default/files/Allergenes/2025_FAQ%20Allergenes%20Contamination%20croisee%20fr.pdf" target="_blank" rel="noopener">FAQ FAVV allergeni</a>). <b>Halal:</b> il guanciale si sostituisce con bacon di manzo o manzo affumicato certificato, e il nome nel menu lo dice chiaramente.</p>
+
+<h3>Menu (8 voci) e food cost a bowl</h3>
+<p>Prezzi delle materie prime: grossista stimato al 70–80% del prezzo al dettaglio belga trovato (guanciale €23,95/kg al dettaglio da <a href="https://www.ah.be/producten/product/wi563345/ah-guanciale-stuk" target="_blank" rel="noopener">AH.be</a>, pecorino circa €37/kg, burrata, pelati) <span class="tag s">S</span>. Packaging €0,47 a ordine (bowl kraft da 1000 ml €0,17, coperchio €0,12, posate, sacchetto). Il netto è calcolato con IVA asporto al 6%. Sulle app il prezzo è +€2 e la commissione è il 30%.</p>
+<div class="tw"><table class="dense"><thead><tr><th>Piatto</th><th>Ingredienti (costo)</th><th>Food</th><th>Packaging</th><th>Costo totale</th><th>Prezzo banco</th><th>Food cost %</th><th>Margine banco</th><th>Prezzo app</th><th>Margine app</th></tr></thead><tbody><tr><td><b>CARBONARA</b></td><td>pasta secca bronzo 140g <span class="m">€0,27</span><br>guanciale 45g <span class="m">€0,81</span><br>pecorino romano DOP 30g <span class="m">€0,84</span><br>uovo+tuorlo <span class="m">€0,40</span></td><td>€2,44</td><td>€0,47</td><td><b>€2,91</b></td><td>€9,90</td><td>31.2%</td><td>€6,43</td><td>€11,90</td><td>€4,75</td></tr><tr><td><b>CARBONARA HALAL (bacon manzo)</b></td><td>pasta secca bronzo 140g <span class="m">€0,27</span><br>bacon di manzo halal 45g <span class="m">€0,99</span><br>pecorino romano DOP 30g <span class="m">€0,84</span><br>uovo+tuorlo <span class="m">€0,40</span></td><td>€2,62</td><td>€0,47</td><td><b>€3,09</b></td><td>€9,90</td><td>33.1%</td><td>€6,25</td><td>€11,90</td><td>€4,57</td></tr><tr><td><b>CACIO E PEPE</b></td><td>pasta secca bronzo 140g <span class="m">€0,27</span><br>pecorino romano DOP 40g <span class="m">€1,12</span><br>pepe tostato <span class="m">€0,05</span></td><td>€1,56</td><td>€0,47</td><td><b>€2,03</b></td><td>€8,90</td><td>24.2%</td><td>€6,37</td><td>€10,90</td><td>€4,98</td></tr><tr><td><b>AMATRICIANA</b></td><td>pasta secca bronzo 140g <span class="m">€0,27</span><br>guanciale 40g <span class="m">€0,72</span><br>pelati 150g <span class="m">€0,53</span><br>pecorino 20g <span class="m">€0,56</span></td><td>€2,19</td><td>€0,47</td><td><b>€2,66</b></td><td>€9,90</td><td>28.5%</td><td>€6,68</td><td>€11,90</td><td>€5,00</td></tr><tr><td><b>AMATRICIANA HALAL (manzo affumicato)</b></td><td>pasta secca bronzo 140g <span class="m">€0,27</span><br>manzo affumicato halal 40g <span class="m">€0,88</span><br>pelati 150g <span class="m">€0,53</span><br>pecorino 20g <span class="m">€0,56</span></td><td>€2,35</td><td>€0,47</td><td><b>€2,82</b></td><td>€9,90</td><td>30.2%</td><td>€6,52</td><td>€11,90</td><td>€4,84</td></tr><tr><td><b>RAGU DI MANZO (halal)</b></td><td>pasta secca bronzo 140g <span class="m">€0,27</span><br>ragu 160g (60g macinato halal) <span class="m">€1,06</span><br>parmigiano 15g <span class="m">€0,45</span></td><td>€1,90</td><td>€0,47</td><td><b>€2,37</b></td><td>€9,90</td><td>25.4%</td><td>€6,97</td><td>€11,90</td><td>€5,29</td></tr><tr><td><b>PESTO & STRACCIATELLA</b></td><td>pasta secca bronzo 140g <span class="m">€0,27</span><br>pesto 60g <span class="m">€0,84</span><br>stracciatella 40g <span class="m">€0,76</span><br>pinoli/basilico <span class="m">€0,12</span></td><td>€2,11</td><td>€0,47</td><td><b>€2,58</b></td><td>€10,90</td><td>25.1%</td><td>€7,70</td><td>€12,90</td><td>€5,72</td></tr><tr><td><b>TARTUFO & PARMIGIANO</b></td><td>pasta secca bronzo 140g <span class="m">€0,27</span><br>crema tartufo 40g <span class="m">€1,20</span><br>parmigiano 20g <span class="m">€0,60</span><br>burro 15g <span class="m">€0,15</span></td><td>€2,34</td><td>€0,47</td><td><b>€2,81</b></td><td>€11,90</td><td>25.0%</td><td>€8,42</td><td>€13,90</td><td>€6,13</td></tr></tbody></table></div>
+<div class="chart"><h4>Composizione del prezzo al banco netto IVA, € per bowl</h4><div class="box tall"><canvas id="cFood" aria-label="Food cost per piatto"></canvas></div></div>
+<h3>Extra ad alto margine</h3>
+<div class="tw"><table class=""><thead><tr><th>Extra</th><th>Prezzo</th><th>Costo</th><th>Margine netto IVA</th><th>Margine %</th></tr></thead><tbody><tr><td>BURRATA/STRACCIATELLA EXTRA</td><td>€2,50</td><td>€0,95</td><td>€1,41</td><td>59.7%</td></tr><tr><td>EXTRA GUANCIALE</td><td>€1,50</td><td>€0,54</td><td>€0,88</td><td>61.8%</td></tr><tr><td>TIRAMISU IN CUP</td><td>€4,50</td><td>€1,10</td><td>€3,15</td><td>74.1%</td></tr><tr><td>SAN PELLEGRINO LATTINA</td><td>€2,80</td><td>€0,65</td><td>€1,66</td><td>71.9%</td></tr><tr><td>ACQUA 50cl</td><td>€1,80</td><td>€0,30</td><td>€1,40</td><td>82.3%</td></tr></tbody></table></div>
+<p class="m">Le bibite zuccherate hanno IVA al 21%, il cibo da asporto al 6% <span class="tag s">S</span>. Ordine medio al banco: €11,54 netti, €3,64 di costi variabili. Ordine medio in app: €14,67 lordi, €9,18 netti dopo commissione.</p>
+</section>
+
+<!-- 3 -->
+<section id="s3">
+<h2><span class="n">03</span>Fornitori in Belgio</h2>
+<div class="warn">METRO e Makro Belgio sono fallite nel 2022–2023 e 9 negozi METRO sono passati a Sligro (<a href="https://www.retaildetail.eu/news/food/all-belgian-metros-have-found-new-owner/" target="_blank" rel="noopener">RetailDetail</a>). Non vanno pianificate come fornitore.</div>
+<div class="tw"><table><thead><tr><th>Categoria</th><th>Fornitore</th><th>Cosa fornisce</th><th>Link</th><th>Note</th></tr></thead><tbody>
+<tr><td>Grossista</td><td><b>Solucious</b> (Colruyt)</td><td>Food service online, consegna in tutto il Belgio</td><td><a href="https://www.solucious.be" target="_blank" rel="noopener">solucious.be</a></td><td>Sede a Halle, portale B2B. Il più semplice per partire</td></tr>
+<tr><td>Grossista</td><td><b>JAVA Foodservice</b> / <b>Sligro-ISPC</b></td><td>Fresco, secco, non-food, consegna refrigerata</td><td><a href="https://sligrofoodgroup.nl/en/our-brands/java-foodservice" target="_blank" rel="noopener">JAVA</a> · <a href="https://sligro.be" target="_blank" rel="noopener">sligro.be</a></td><td>JAVA a Rotselaar (Wingepark 10), circa 10 km da Leuven</td></tr>
+<tr><td>Grossista</td><td>Bidfood Belgium · Hanos · Horeca Totaal</td><td>Food service e cash &amp; carry</td><td><a href="https://www.companyweb.be/en/0472877770/bidfood-belgium" target="_blank" rel="noopener">Bidfood</a> · <a href="https://www.folderz.nl/winkels/hanos/locaties" target="_blank" rel="noopener">Hanos</a> · <a href="https://horeca-totaal.be/2013/wp-content/uploads/2024/02/Nieuw_In_Assortiment_2024_editie1_mail.pdf" target="_blank" rel="noopener">Horeca Totaal</a></td><td>Hanos a Wommelgem e Hasselt; Horeca Totaal consegna nelle Fiandre il giorno dopo</td></tr>
+<tr><td>Italiano DOP</td><td><b>Sitadis / Sita Gastronomia Italiana</b></td><td>Guanciale, pecorino, parmigiano, burrata, pasta</td><td><a href="https://www.sitadis.be" target="_blank" rel="noopener">sitadis.be</a> · <a href="https://issuu.com/sitadis/docs/gazzetta_-_novembre_-_nl" target="_blank" rel="noopener">listino horeca</a></td><td>Courcelles, dal 1958, consegna in 24 h</td></tr>
+<tr><td>Italiano</td><td>Spuntini (Bella Sicilia) · Terra &amp; Tavola · Altoni</td><td>Fresco e surgelato italiano; bio; pasta artigianale</td><td><a href="https://www.oaklins.com/it/en/deals/110597/" target="_blank" rel="noopener">Spuntini</a> · <a href="https://bestfoodimporters.com/company/terra-tavola/" target="_blank" rel="noopener">Terra &amp; Tavola</a> · <a href="https://www.horecava.nl/en/exhibitors/altoni" target="_blank" rel="noopener">Altoni</a></td><td>Bella Sicilia tratta oltre 200 marchi italiani per horeca</td></tr>
+<tr><td>Halal</td><td>Marhaba · Schietse</td><td>Bacon di tacchino e manzo, salumi halal</td><td><a href="https://www.ah.be/producten/product/wi218618/marhaba-kalkoen-bacon" target="_blank" rel="noopener">Marhaba</a> · <a href="https://webshop.schietse.com/nl/charcuterie/gevogelte-bereidingen-1/halal-producten-1" target="_blank" rel="noopener">Schietse B2B</a></td><td>Per il macinato halal: chiedere a Solucious/Sligro le referenze certificate</td></tr>
+<tr><td>Certificazione halal</td><td>HFCE · IHEC · HQC Belgium</td><td>Enti di certificazione a Bruxelles</td><td><a href="https://www.companyweb.be/en/0827964482/halal-food-council-of-europe" target="_blank" rel="noopener">HFCE</a> · <a href="https://www.cicot.or.th/storages/contents/attachments/FHCBs_Recognition_of_CICOT_JULY___SEPTEMBER_2025_2.pdf" target="_blank" rel="noopener">lista enti riconosciuti</a></td><td>HFCE è uscito dalla lista JAKIM nel 2023. Nelle Fiandre la macellazione richiede lo stordimento</td></tr>
+<tr><td>Senza glutine</td><td>Barilla, Garofalo, Rummo GF</td><td>Pasta senza glutine</td><td><a href="https://www.ah.be/producten/product/wi482619/barilla-penne-rigate-glutenvrij" target="_blank" rel="noopener">Barilla GF</a></td><td>Formato horeca da chiedere al grossista</td></tr>
+<tr><td>Packaging</td><td>TakeAware · Horeca Voordeel · Bio Pack · Limepack</td><td>Bowl kraft da 1000 ml, coperchi anti-fog, box stampate col logo</td><td><a href="https://takeaware.nl/en/products/salad-bowl-1000ml-32oz-white-91032bw" target="_blank" rel="noopener">TakeAware €0,17</a> · <a href="https://horecavoordeel.com/en/salad-trays-carton-819/lid-pet-for-salad-bowl-kraft-1000ml-9249" target="_blank" rel="noopener">coperchio €0,115</a> · <a href="https://www.biopack.be/en/rpetl1515-set-anti-fog-rpet-lids-for-kraft-salad-bowls-o-150mmbundle" target="_blank" rel="noopener">Bio Pack</a> · <a href="https://www.limepack.eu/food-boxes/155-food-boxes-with-logo.html" target="_blank" rel="noopener">Limepack</a></td><td>Per pasta a 70–85 °C conviene un coperchio in PP ventilato</td></tr>
+<tr><td>Riutilizzabile</td><td>Duni ReDine</td><td>Bowl riutilizzabili</td><td><a href="https://be.duni.com/en/ReDine-Reusable-Products/Reusable-Boxes-Bowls/Reusable-Bowls/p/208045" target="_blank" rel="noopener">Duni</a></td><td>Il regolamento UE imballaggi (PPWR) si applica dal 12/8/2026; offerta di riuso obbligatoria dal 2028</td></tr>
+<tr><td>Attrezzature</td><td>Combisteel · GGM Gastro · Electrolux (dealer Core Concept)</td><td>Cuocipasta 6–9 kW</td><td><a href="https://catalogus.horeca.shop/combisteel/files/assets/common/downloads/page0015.pdf" target="_blank" rel="noopener">Combisteel €737–1.075</a> · <a href="https://www.ggmgastro.com/en-be-eur/commercial-electric-pasta-cooker-single-tank-freestanding-30l-8kw-with-drain-tap-enkb479m" target="_blank" rel="noopener">GGM</a> · <a href="https://www.electroluxprofessional.com/nl-be/" target="_blank" rel="noopener">Electrolux BE</a></td><td>Core Concept ha sede a Sint-Pieters-Leeuw</td></tr>
+<tr><td>Attrezzature</td><td>Bartscher IW35</td><td>Wok a induzione da 3,5 kW per la mantecatura</td><td><a href="https://caterboss.ie/product/bartscher-induction-wok-iw35" target="_blank" rel="noopener">da €377 IVA esclusa</a></td><td>Prezzo irlandese</td></tr>
+<tr><td>Aspirazione</td><td>Halton Reco-Air</td><td>Cappa a ricircolo senza canna fumaria</td><td><a href="https://halton.com/?p=56466" target="_blank" rel="noopener">halton.com</a></td><td>Halton ha una sede a Leuven. Da far accettare a urbanistica e vigili del fuoco</td></tr>
+</tbody></table></div>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+<h2><span class="n">04</span>Location, affitti e permessi</h2>
+<p>A Leuven ci sono circa 60.000 studenti (<a href="https://www.vrt.be/vrtnws/nl/2026/09/16/leuven-start-academiejaar-met-60-000-studenten/" target="_blank" rel="noopener">VRT, settembre 2026</a>). Un locale solo asporto vive di pranzo e notte, non dello shopping del sabato. Per questo la zona migliore è il triangolo <b>inizio Naamsestraat – inizio Tiensestraat – Oude Markt</b>. La Bondgenotenlaan costa troppo per uno scontrino da €10–14. In Diestsestraat c'è già Cup Pasta.</p>
+<div class="chart"><h4>Affitti commerciali richiesti a Leuven, €/m²/mese</h4><div class="box"><canvas id="cRent" aria-label="Affitti per via"></canvas></div></div>
+<div class="tw"><table><thead><tr><th>Indirizzo</th><th>m²</th><th>Canone/mese</th><th>€/m²/mese</th><th>Note</th><th>Annuncio</th></tr></thead><tbody>
+<tr><td><b>Naamsestraat 89</b></td><td>64</td><td>€1.500 + imposta</td><td>23,4</td><td><b>Già allestito per horeca</b>: candidato principale</td><td><a href="https://www.immoscoop.be/te-huur/3000-leuven/758335" target="_blank" rel="noopener">Immoscoop</a></td></tr>
+<tr><td>Oude Markt 11</td><td>45</td><td>€2.480 + €240</td><td>55,1</td><td>Horeca, piazza dei bar</td><td><a href="https://www.immoweb.be/nl/zoekertje/horeca/te-huur/louvain/3000/10568480" target="_blank" rel="noopener">Immoweb</a></td></tr>
+<tr><td>Diestsestraat 16</td><td>55</td><td>€2.656</td><td>48,3</td><td>Oggi ristorante di pasta, libero dal 1/7/2026</td><td><a href="https://www.immoscoop.be/te-huur/3000-leuven/1062728" target="_blank" rel="noopener">Immoscoop</a></td></tr>
+<tr><td>Bondgenotenlaan 44</td><td>110</td><td>€4.995</td><td>45,4</td><td>Vetrina di 5 m</td><td><a href="https://www.spotto.be/nl/p/te-huur/3000-leuven/commerciele-ruimte-bondgenotenlaan-44--/rBKffPe_VUahjgjc86Xr0g" target="_blank" rel="noopener">Spotto</a></td></tr>
+<tr><td>Bondgenotenlaan 130</td><td>94</td><td>€3.500</td><td>37,2</td><td></td><td><a href="https://www.immoscoop.be/te-huur/3000-leuven/1017008" target="_blank" rel="noopener">Immoscoop</a></td></tr>
+<tr><td>Brusselsestraat 53</td><td>69</td><td>€2.255</td><td>32,7</td><td></td><td><a href="https://www.zimmo.be/nl/leuven-3000/te-huur/bedrijfsvastgoed/LLFDK" target="_blank" rel="noopener">Zimmo</a></td></tr>
+<tr><td>Diestsestraat 19</td><td>139</td><td>circa €3.591</td><td>25,8</td><td>Retail</td><td><a href="https://www.cushmanwakefield.com/en/belgium/properties/for-lease/retail/vlaams-brabant/leuven/diestsestraat-19/42515-l" target="_blank" rel="noopener">C&amp;W</a></td></tr>
+<tr><td>Alfons Smetsplein 8</td><td>90</td><td>€1.950</td><td>21,7</td><td>Ex ristorante con cucina</td><td><a href="https://living-stone.be/nl/bedrijfsvastgoed/handelspand/3000-leuven/handelspand-te-huur-in-het-centrum-van-leuven/5985865" target="_blank" rel="noopener">Living Stone</a></td></tr>
+<tr><td>Naamsestraat 84</td><td>120</td><td>€1.800 + €150</td><td>15,0</td><td>Al grezzo, annuncio 2024</td><td><a href="https://www.realo.be/nl/naamsestraat-84-3000-leuven/3082548?l=2128936754" target="_blank" rel="noopener">Realo</a></td></tr>
+</tbody></table></div>
+<p>Obiettivo: 22–25 m² a €25–45/m²/mese, cioè circa €700–1.200 al mese più l'imposta immobiliare. Nel modello usiamo €1.300 tutto compreso <span class="tag s">S</span>. Dal 2026 Leuven ha alzato del 17% l'imposta comunale sugli immobili commerciali (<a href="https://www.aximas.com/en/blog/leuven-increases-property-tax-on-commercial-real-estate.html" target="_blank" rel="noopener">Aximas</a>).</p>
+
+<h3>Permessi e costi nascosti</h3>
+<div class="tw"><table><thead><tr><th>Voce</th><th>Cosa serve</th><th>Costo</th><th>Fonte</th></tr></thead><tbody>
+<tr><td>Omgevingsvergunning</td><td>Necessaria per cambio di destinazione verso horeca e per una canna fumaria in facciata o sul tetto. Un locale già horeca la evita</td><td>Diritti comunali da chiedere</td><td><a href="https://www.vlaanderen.be/omgevingsvergunning/stedenbouwkundige-handelingen/functiewijziging" target="_blank" rel="noopener">vlaanderen.be</a></td></tr>
+<tr><td>FAVV/AFSCA</td><td>Autorizzazione ("toelating") per chi cucina e serve, più il sistema di autocontrollo HACCP (guide G-023/G-044)</td><td>€202/anno nella fascia 0–4 addetti; consulente HACCP €500–1.500 <span class="tag s">S</span></td><td><a href="https://favv-afsca.be/sites/default/files/2026-06/brochure%202026%20NL%20V2.pdf" target="_blank" rel="noopener">brochure FAVV 2026</a></td></tr>
+<tr><td>Unisono (musica)</td><td>Dichiarazione obbligatoria anche senza musica</td><td>€0 senza musica; €81,64 (tariffa retail) fino a €798,28 (horeca ≤50 m²)</td><td><a href="https://www.unisono.be/hubfs/Unisono%20website/Unisono%20tarieven%20en%20gidsen/UnisonoHoreca2026_1.0_NL.pdf" target="_blank" rel="noopener">tariffe 2026</a></td></tr>
+<tr><td>Assicurazione infortuni</td><td>Obbligatoria prima di assumere chiunque, studenti compresi</td><td>Percentuale sulla massa salariale</td><td><a href="https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/instructions/obligations/obligations_branches/workaccidents.html" target="_blank" rel="noopener">socialsecurity.be</a></td></tr>
+<tr><td>RC oggettiva incendio</td><td>Obbligatoria sopra i 50 m² accessibili al pubblico: con 25 m² probabilmente no</td><td>—</td><td><a href="https://www.belfius.be/professional/nl/producten/verzekeringen/beroepswerkzaamheden/voortbestaan/responsabilite-objective-apres-incendie-et-explosion/index.aspx" target="_blank" rel="noopener">Belfius</a></td></tr>
+<tr><td>Cauzione affitto</td><td>Nessun massimo di legge per i locali commerciali. Contratto di 9 anni, recesso a ogni triennio</td><td>In pratica 3–6 mesi di canone</td><td><a href="https://www.unizo.be/ondernemersgids/bedrijfsvoering/omgeving-vestiging/vastgoed/huren/huurwaarborg" target="_blank" rel="noopener">Unizo</a></td></tr>
+<tr><td>KBO / sportello imprese</td><td>Iscrizione della sede e attivazione IVA</td><td>€111,50</td><td><a href="https://www.vlaio.be/nl/begeleiding-advies/start/opstart-van-je-onderneming/een-ondernemingsnummer-aanvragen" target="_blank" rel="noopener">VLAIO</a></td></tr>
+<tr><td>IVA</td><td>Asporto 6% (il passaggio al 12% è stato rinviato a febbraio 2026), consumo sul posto 12%, alcolici 21%</td><td>—</td><td><a href="https://www.vrt.be/vrtnws/nl/2026/02/13/btw-hervorming-uitstel-regels/" target="_blank" rel="noopener">VRT</a> · <a href="https://www.bdo.global/en-gb/insights/tax/indirect-tax/belgium-vat-and-excise-duty-changes-in-2026" target="_blank" rel="noopener">BDO</a></td></tr>
+<tr><td>Rifiuti</td><td>Raccolta differenziata obbligatoria (Vlarema), compresi gli scarti di cucina</td><td>€300–800/anno <span class="tag s">S</span></td><td><a href="https://www.vlaanderen.be/natuur-milieu-en-klimaat/afval/regels-voor-sortering-en-ophaling-van-afval-bij-bedrijven" target="_blank" rel="noopener">vlaanderen.be</a></td></tr>
+<tr><td>Nozioni di gestione d'impresa</td><td>Abolite nelle Fiandre dal 1/9/2018</td><td>€0</td><td><a href="https://www.vlaanderen.be/starten-met-een-onderneming/bedrijfsbeheer-en-beroepsbekwaamheid" target="_blank" rel="noopener">vlaanderen.be</a></td></tr>
+<tr><td>Piattaforme delivery</td><td>Uber Eats 29–30% con i loro rider, circa 13% con consegna propria; Takeaway circa 13% (dato 2020); Deliveroo 25–35% <span class="tag s">S</span></td><td>% dell'ordine + IVA 21% sulla commissione (detraibile)</td><td><a href="https://merchants.ubereats.com/be/en/pricing" target="_blank" rel="noopener">Uber Eats BE</a> · <a href="https://menuthere.com/en/delivery-app-commission/uber-eats-belgium" target="_blank" rel="noopener">menuthere</a></td></tr>
+</tbody></table></div>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+<h2><span class="n">05</span>Investimento, costi e pareggio</h2>
+<div class="grid2">
+<div><h3>CAPEX</h3><div class="tw"><table class=""><thead><tr><th>Voce</th><th>Importo</th></tr></thead><tbody><tr><td>Adeguamento locale (già horeca)</td><td>€22.000</td></tr><tr><td>Cappa a ricircolo senza canna fumaria</td><td>€12.000</td></tr><tr><td>Cuocipasta 2×9 kW + 2 wok induzione</td><td>€3.100</td></tr><tr><td>Frigo banco ×2, armadio, abbattitore</td><td>€9.000</td></tr><tr><td>Lavelli, inox, lavastoviglie</td><td>€5.500</td></tr><tr><td>Cassa, stampanti, tablet KDS</td><td>€1.500</td></tr><tr><td>Insegna e branding</td><td>€6.000</td></tr><tr><td>Primo stock e packaging</td><td>€3.500</td></tr><tr><td>Cauzione affitto (6 mesi)</td><td>€7.800</td></tr><tr><td>Notaio, BV, KBO, HACCP, permessi</td><td>€5.500</td></tr><tr><td>Assicurazioni anno 1 e varie</td><td>€1.500</td></tr><tr><td>Marketing di lancio</td><td>€4.000</td></tr><tr><td>Fondo cassa (≈1 mese costi)</td><td>€15.000</td></tr><tr><td><b>TOTALE CAPEX</b></td><td><b>€96.400</b></td></tr></tbody></table></div></div>
+<div><h3>Costi fissi mensili</h3><div class="tw"><table class=""><thead><tr><th>Voce</th><th>€/mese</th></tr></thead><tbody><tr><td>Affitto + imposta immobiliare (25 m²)</td><td>€1.300</td></tr><tr><td>Elettricità/acqua (cuocipasta 9 kW, ~3.000 kWh)</td><td>€950</td></tr><tr><td>Dipendente fisso 1° assunto (165 h)</td><td>€2.888</td></tr><tr><td>Jobstudent/flexi (465 h)</td><td>€7.672</td></tr><tr><td>Contributi sociali titolare</td><td>€300</td></tr><tr><td>Compenso netto titolare (amministratore)</td><td>€2.500</td></tr><tr><td>Commercialista + segretariato sociale</td><td>€400</td></tr><tr><td>Assicurazioni</td><td>€160</td></tr><tr><td>Marketing TikTok/Instagram</td><td>€800</td></tr><tr><td>Software, POS, app</td><td>€180</td></tr><tr><td>Rifiuti Vlarema, FAVV, Unisono</td><td>€90</td></tr><tr><td>Manutenzione e piccole spese</td><td>€250</td></tr><tr><td><b>TOTALE COSTI FISSI / MESE</b></td><td><b>€17.490</b></td></tr></tbody></table></div></div>
+</div>
+<div class="grid2">
+<div class="chart"><h4>CAPEX per voce, €</h4><div class="box tall"><canvas id="cCapex" aria-label="CAPEX"></canvas></div></div>
+<div class="chart"><h4>Costi fissi mensili, €</h4><div class="box tall"><canvas id="cFix" aria-label="Costi fissi"></canvas></div></div>
+</div>
+<p><b>Personale.</b> Il negozio è aperto 86 ore a settimana, con 2 persone in linea e una terza nei picchi: circa 830 ore al mese. Il titolare ne copre circa 200. Restano 165 ore per un dipendente fisso (CP 302, costo circa €17,5/h con la riduzione per la prima assunzione) e 465 ore per studenti e flexi (circa €16,5/h). Elettricità: circa 3.000 kWh al mese a €0,30–0,32 <span class="tag s">S</span>.</p>
+<h3>Punto di pareggio</h3>
+<p>Margine medio per ordine (mix 60% banco, 40% app, 4% di sprechi inclusi): <b>€7,08</b>. Costi fissi: €17.490 al mese. Servono <b>82 bowl al giorno</b>, cioè 49 al banco e 33 in delivery.</p>
+<div class="chart"><h4>Risultato mensile in funzione delle bowl vendute al giorno, €</h4><div class="box"><canvas id="cBE" aria-label="Break-even"></canvas></div></div>
+<h3>Tre scenari per l'anno 1</h3>
+<p>L'anno 1 tiene conto dell'avviamento: 50% delle vendite a regime nei primi 3 mesi, 75% dal 4° al 6°, 100% dopo. Imposta società: 20% sui primi €100.000 per le PMI, 25% oltre <span class="tag s">S</span>.</p>
+<div class="tw"><table class=""><thead><tr><th>Voce</th><th>Conservativo</th><th>Realistico</th><th>Ottimistico (virale)</th></tr></thead><tbody><tr><td>Bowl/giorno a regime</td><td>100</td><td>160</td><td>280</td></tr><tr><td>Ordini anno 1 (con avviamento)</td><td>29.656</td><td>47.450</td><td>83.038</td></tr><tr><td>Fatturato netto IVA</td><td>€314.315</td><td>€502.908</td><td>€880.095</td></tr><tr><td>Margine di contribuzione</td><td>€209.902</td><td>€335.846</td><td>€587.735</td></tr><tr><td>Costi fissi</td><td>€209.880</td><td>€209.880</td><td>€239.240</td></tr><tr><td>EBITDA</td><td>€22</td><td>€125.966</td><td>€348.495</td></tr><tr><td>Ammortamenti (5 anni)</td><td>€14.720</td><td>€14.720</td><td>€14.720</td></tr><tr><td>Imposta società (20%/25%)</td><td>€0</td><td>€22.812</td><td>€78.444</td></tr><tr><td>Utile netto</td><td><b>€-14.698</b></td><td><b>€88.435</b></td><td><b>€255.331</b></td></tr><tr><td>Recupero investimento</td><td>oltre 24 mesi</td><td>11.2 mesi</td><td>4.3 mesi</td></tr></tbody></table></div>
+<div class="chart"><h4>Fatturato netto e utile netto, anno 1</h4><div class="box"><canvas id="cSc" aria-label="Scenari"></canvas></div></div>
+<div class="warn"><b>Rischio principale.</b> Lo scenario conservativo (100 bowl al giorno a regime) chiude l'anno 1 in pareggio operativo e in perdita dopo gli ammortamenti. Il progetto regge se a regime si superano stabilmente le 120 bowl al giorno. Prima di firmare il contratto d'affitto, conviene un test di 2–4 settimane (pop-up o dark kitchen in affitto orario) per misurare la domanda reale. L'aliquota PMI del 20% richiede un compenso minimo all'amministratore (in genere €45.000 l'anno): da verificare con un commercialista belga.</div>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+<h2><span class="n">06</span>Franchising "stile McDonald's" e Pasta-Drive</h2>
+<h3>Struttura del gruppo</h3>
+<div class="flow">
+<div><b>HoldCo</b><small>BV belga, controllo del gruppo</small></div>
+<div><b>IP-Co / Franchisor</b><small>marchio, ricette, manuale, software. Incassa ingresso €25–35k, royalty 5–6%, fondo marketing 2–3% <span class="tag s">S</span></small></div>
+<div><b>PropCo</b><small>affitta i locali per 9 anni e li subaffitta all'affiliato con un margine del 10–20% <span class="tag s">S</span></small></div>
+<div><b>SupplyCo / laboratorio</b><small>sughi base e kit porzionati sottovuoto, margine sulla fornitura</small></div>
+<div><b>OpCo affiliato</b><small>gestisce il negozio, assume il personale, rigenera e manteca seguendo il manuale</small></div>
+</div>
+<div class="warn"><b>Il "rischio 100% all'affiliato" in Belgio è un rischio legale.</b> La legge belga del 4/4/2019 sull'abuso di dipendenza economica e sulle clausole abusive B2B (Codice di diritto economico, art. IV.2/1 e VI.91/3 e seguenti) rende nulle le clausole che danno al franchisor poteri unilaterali o che scaricano il rischio senza contropartita. Il Libro X impone di consegnare documento informativo e bozza di contratto almeno 1 mese prima della firma: altrimenti il contratto è annullabile. Il Regolamento UE 2022/720 limita la non concorrenza a 5 anni durante il contratto e a 1 anno dopo, solo nei locali dell'affiliato, e vieta di imporre il prezzo di vendita. Gli acquisti obbligatori dal franchisor devono essere giustificati dalla qualità della rete. Il controllo va costruito con immobile, know-how e fornitura, non con clausole capestro. Fonti: <a href="https://legalnews.be/handel-consument/de-precontractuele-informatieverplichting-bij-commerciele-samenwerkingsovereenkomsten-reyns-advocaten/" target="_blank" rel="noopener">Reyns Advocaten</a> · <a href="https://cms.law/nl/bel/publication/nieuwe-regels-die-van-toepassing-zijn-op-b2b-relaties-misbruik-van-economische-afhankelijkheid-en-het-verbod-op-onrechtmatige-bedingen" target="_blank" rel="noopener">CMS</a> · <a href="https://eur-lex.europa.eu/eli/reg/2022/720/oj" target="_blank" rel="noopener">Reg. 2022/720</a>.</div>
+<p><b>La leva immobiliare.</b> La PropCo firma il contratto principale e subaffitta. Attenzione: per la legge belga sulla locazione commerciale (1951, art. 10–11) il subaffittuario ha un diritto proprio al rinnovo. Il cross-default "fine del franchising = fine del subaffitto" quindi non è automatico. Più solida un'<b>opzione di riacquisto</b> del fondo e del diritto di locazione a prezzo stabilito da un perito, con prelazione (<a href="https://legalnews.be/handel-consument/onderhuur-en-overdracht-in-het-kader-van-een-handelshuurovereenkomst-mint-advocaten/" target="_blank" rel="noopener">Mint Advocaten</a>).</p>
+<p><b>Laboratorio centrale.</b> 150–300 m² in zona artigianale (per esempio Haasrode o Mechelen) con cuocitore, abbattitore e confezionatrice sottovuoto. Produce ragù, amatriciana, crema tartufo e mix carbonara in sacche monodose. Serve un'autorizzazione FAVV per la produzione e una shelf life validata da laboratorio. Con 10 negozi il laboratorio si ripaga con un margine del 15–20% sulla fornitura <span class="tag s">S</span>.</p>
+
+<h3>Pasta-Drive (fase 2)</h3>
+<p>In Belgio non abbiamo trovato nessun drive-thru di pasta. Il formato funziona solo se l'ordine viene già pagato: in app con slot orario, oppure al totem prima del finestrino. Il cliente deve trovare la bowl pronta in 120–150 secondi.</p>
+<div class="flow">
+<div><b>0–20 s</b><small>ordine al totem o check-in in app (riconoscimento targa o geofence)</small></div>
+<div><b>20–80 s</b><small>linea A: rigenerazione in cuocipasta multicestello (4–6 cestelli)</small></div>
+<div><b>80–120 s</b><small>linea B: mantecatura su 3 piastre a induzione e chiusura della bowl</small></div>
+<div><b>120–150 s</b><small>consegna al secondo finestrino; una corsia di attesa separata per gli ordini lunghi</small></div>
+</div>
+<div class="tw"><table><thead><tr><th></th><th>Negozio in città</th><th>Pasta-Drive <span class="tag s">S</span></th></tr></thead><tbody>
+<tr><td>Superficie</td><td>22–25 m²</td><td>edificio 120–180 m², lotto 1.500–2.500 m², corsia per 8–12 auto</td></tr>
+<tr><td>Investimento</td><td>€96.400</td><td>€600.000–1.200.000 su terreno in affitto (ground lease), escluso il terreno</td></tr>
+<tr><td>Bowl/giorno</td><td>100–280</td><td>400–700</td></tr>
+<tr><td>Fatturato netto annuo</td><td>€0,3–0,9 M</td><td>€1,6–2,8 M</td></tr>
+<tr><td>Posizione</td><td>centro studentesco</td><td>uscite di autostrada (E40, E314, R0), zone commerciali, campus Arenberg/Gasthuisberg</td></tr>
+<tr><td>Permessi</td><td>cambio di destinazione</td><td>permesso completo, impatto sul traffico, parcheggi: 9–18 mesi</td></tr>
+</tbody></table></div>
+<div class="note"><b>Raccomandazione.</b> Prima del drive, aprire 3–5 negozi in città e far funzionare il laboratorio. Il drive diventa sostenibile quando l'app porta almeno il 30% degli ordini già pagati: senza preordine il collo di bottiglia è la cottura, non il finestrino. Probabilità di successo del drive aperto subito dopo il primo negozio: circa 25%. Dopo 5 negozi e app già a regime: circa 55%. <span class="tag s">STIMA</span> Il motivo è che i dati su tempi di servizio e domanda serale arrivano solo dai negozi in città.</div>
+</section>
+
+<!-- 7 -->
+<section id="s7">
+<h2><span class="n">07</span>Personale, contratti e riservatezza</h2>
+<div class="tw"><table><thead><tr><th>Profilo</th><th>Regole 2026</th><th>Costo per il datore/ora (con lordo €15) <span class="tag s">S</span></th></tr></thead><tbody>
+<tr><td><b>Jobstudent</b></td><td><b>650 ore/anno</b>, non più 600 (limite reso permanente nel 2025). Contributo di solidarietà 8,13% (2,71% a carico dello studente, 5,42% del datore). Il contatore delle ore è unico per tutti i datori di lavoro</td><td>circa €16,0</td></tr>
+<tr><td><b>Flexi-job</b> (CP 302)</td><td>Minimo €12,11/h, cioè €13,04 con le ferie flexi. Massimo €21/h dal 1/7/2026. Contributo del datore 28%. Il lavoratore deve avere un altro impiego almeno a 4/5 o essere in pensione</td><td>circa €16,7–20,7</td></tr>
+<tr><td><b>Dipendente ordinario</b></td><td>Contributi circa 25% più tredicesima e doppia indennità di ferie. La riduzione horeca per 5 dipendenti fissi è abolita dal 1/7/2026</td><td>circa €21,5</td></tr>
+<tr><td><b>Primo assunto</b></td><td>Riduzione fino a €2.000 a trimestre senza limite di tempo (dal 1/7/2026)</td><td>circa €17,5</td></tr>
+<tr><td><b>Titolare autonomo</b></td><td>20,5% del reddito; minimo €890,42 a trimestre, €459,82 per chi inizia (primi 4 trimestri)</td><td>—</td></tr>
+</tbody></table></div>
+<p>Fonti: <a href="https://www.vlaanderen.be/informatie-voor-hr-professionals/nieuwsberichten/wijzigingen-in-de-regelgeving-rond-studentenarbeid" target="_blank" rel="noopener">studenti</a> · <a href="https://www.securex.be/nl/lex4you/werkgever/nieuws/horeca-nieuwe-regels-voor-het-flexiloon-vanaf-1-juli-2026" target="_blank" rel="noopener">flexi 2026</a> · <a href="https://www.vlaio.be/nl/subsidies-financiering/subsidiedatabank/doelgroepvermindering-eerste-aanwervingen-federaal" target="_blank" rel="noopener">prima assunzione</a> · <a href="https://socialsecurity.belgium.be/sites/default/files/content/docs/nl/sociaal-beleid-vorm-geven/zelfstandigen/bijdragennota_2026_tabel_nl.pdf" target="_blank" rel="noopener">contributi autonomi 2026</a>.</p>
+<p><b>Come organizzare i turni.</b> Un nucleo fisso di 2 persone formate (titolare e primo assunto) copre aperture e chiusure. Studenti e flexi coprono pranzo e notti del giovedì–sabato. Ogni studente ha circa 54 ore al mese: servono 8–10 studenti a rotazione. Il gestionale turni deve controllare le ore residue di ciascuno sul portale <a href="https://www.mysocialsecurity.be/student/" target="_blank" rel="noopener">Student@work</a>.</p>
+<div class="warn"><b>Il patto di non concorrenza per i dipendenti in horeca è quasi sempre nullo.</b> Sotto i €44.447 lordi l'anno è nullo per legge (legge sul contratto di lavoro del 1978, art. 65 e 86), e un cuoco guadagna meno. Non si può impedire a un ex dipendente di aprire a 500 metri. Funzionano invece: <b>NDA</b> e tutela dei segreti commerciali (legge 30/7/2018, Codice di diritto economico art. XI.332/1 e seguenti), cessione all'azienda di ricette e layout, divieto di sottrarre personale e clienti, e soprattutto <b>non concorrenza a carico dell'affiliato</b> (impresa) nei limiti del Reg. 2022/720 (<a href="https://werk.belgie.be/nl/themas/arbeidsovereenkomsten/einde-van-de-arbeidsovereenkomst/niet-concurrentiebeding" target="_blank" rel="noopener">FOD WASO</a>).</div>
+<h3>Clausole tipo (da far tradurre e verificare a un avvocato belga)</h3>
+<p><b>NDA.</b> "Sono Informazioni Riservate ricette, schede tecniche, fornitori, prezzi d'acquisto, manuale operativo e dati di vendita, protette come segreti commerciali ai sensi degli artt. I.17/1 e XI.332/1 e seguenti del Codice di diritto economico. Il Ricevente non le divulga né le utilizza fuori dal rapporto, durante e dopo la sua cessazione, finché restano riservate. Alla cessazione restituisce o distrugge ogni supporto e lo attesta per iscritto. Per ogni violazione è dovuta una penale di € [●], salvo il maggior danno."</p>
+<p><b>Non concorrenza dell'affiliato.</b> "Durante il Contratto, e comunque per non più di 5 anni salvo rinnovo con facoltà effettiva di recesso, il Franchisee non svolge attività concorrente. Per 1 anno dalla cessazione non svolge attività concorrente esclusivamente nei locali di [indirizzo]. L'obbligo di non usare il know-how riservato non ha limite di tempo."</p>
+<p><b>Subaffitto collegato al franchising.</b> "La risoluzione del Contratto di Franchising per inadempimento grave costituisce giusto motivo di risoluzione del subaffitto. Il Franchisee concede al Franchisor un'opzione irrevocabile di acquisto del fondo e dei diritti di locazione, da esercitare entro 60 giorni al valore stabilito da un perito indipendente. Restano salve le norme inderogabili della legge sulla locazione commerciale."</p>
+<p><b>Manuale a compartimenti.</b> In negozio arrivano solo le schede di rigenerazione e mantecatura, con i kit identificati da un codice. Le ricette dei sughi, le grammature di produzione e i fornitori stanno solo nel laboratorio, a cui accedono 2–3 persone con accordo di riservatezza rafforzato. I documenti sono numerati e gli accessi registrati: per la legge belga il segreto è protetto solo se l'azienda ha preso "misure ragionevoli" per custodirlo.</p>
+</section>
+
+<!-- 8 -->
+<section id="s8">
+<h2><span class="n">08</span>Sito e app propri con Claude Code</h2>
+<p><b>Architettura:</b> prima un'app web installabile (PWA) in Next.js, poi l'app nativa con Expo dallo stesso codice. Database e login con Supabase (server UE). Pagamenti con Stripe: Bancontact, carte, Apple Pay e Google Pay. Wero sostituisce Payconiq nel 2026 e si aggiunge quando il fornitore di pagamento lo rende disponibile in Belgio. Stampante comande Star mC-Print3 con CloudPRNT, senza PC in cucina, e un tablet in cucina con lo stato degli ordini.</p>
+<p><b>Funzioni:</b> ordine e ritiro senza coda con slot da 10 minuti e QR al banco · tessera fedeltà studenti (8 bowl = 1 omaggio), con punti assegnati solo dopo il pagamento · ordini programmati per il futuro drive · filtri Halal, senza glutine e 14 allergeni del Reg. UE 1169/2011 · lingue NL/FR/EN/IT · gestione multi-negozio pronta per il franchising.</p>
+<div class="tw"><table><thead><tr><th>Settimane</th><th>Fase</th><th>Contenuto</th></tr></thead><tbody>
+<tr><td>1–5</td><td>MVP</td><td>Database multi-negozio, login, menu con allergeni, carrello, pagamento Stripe</td></tr>
+<tr><td>6–11</td><td>MVP</td><td>Slot orari, QR, stampa comande, tablet cucina, fedeltà, pannello admin, GDPR, test con 30 persone</td></tr>
+<tr><td><b>12</b></td><td><b>Lancio PWA</b></td><td>QR in vetrina e su tutti i sacchetti</td></tr>
+<tr><td>13–22</td><td>App nativa</td><td>Expo, notifiche push, pagamenti nativi, preordine per il drive, revisione degli store</td></tr>
+<tr><td>25–36</td><td>Franchising</td><td>Pagamenti divisi tra franchisor e affiliati (Stripe Connect), ruoli, menu master, report</td></tr>
+</tbody></table></div>
+<p>Tempi calcolati con 15–20 ore a settimana. Conviene aggiungere un margine del 25%: MVP in circa 15 settimane.</p>
+<div class="tw"><table><thead><tr><th>€/mese</th><th>0 ordini</th><th>3.000 ordini</th><th>15.000 ordini</th></tr></thead><tbody>
+<tr><td>Infrastruttura (Supabase, Vercel Pro, Apple, Expo, SMS, Claude)</td><td>circa €140</td><td>circa €185–225</td><td>circa €400–580</td></tr>
+<tr><td>Commissioni di pagamento (Bancontact €0,35, carte 1,5% + €0,25)</td><td>€0</td><td>circa €1.170</td><td>circa €5.850</td></tr>
+<tr><td><b>Totale canale proprio</b></td><td><b>circa €140</b></td><td><b>circa €1.400 (3,5%)</b></td><td><b>circa €6.400 (3,2%)</b></td></tr>
+<tr><td>Commissioni piattaforme al 25–30%</td><td>€0</td><td>€9.750–11.700</td><td>€48.750–58.500</td></tr>
+</tbody></table></div>
+<p>Prezzi: <a href="https://stripe.com/en-be/pricing/local-payment-methods" target="_blank" rel="noopener">Stripe Bancontact</a> · <a href="https://www.mollie.com/pricing" target="_blank" rel="noopener">Mollie</a> · <a href="https://supabase.com/pricing" target="_blank" rel="noopener">Supabase</a> · <a href="https://vercel.com/docs/plans/hobby" target="_blank" rel="noopener">Vercel (il piano gratuito non vale per uso commerciale)</a> · <a href="https://expo.dev/pricing" target="_blank" rel="noopener">Expo</a> · <a href="https://developer.apple.com/help/account/membership/program-enrollment/" target="_blank" rel="noopener">Apple $99/anno</a> · Google Play $25 una tantum. Le piattaforme includono i rider: il risparmio vero si ottiene sull'ordine con ritiro, che a Leuven, città pedonale e studentesca, deve diventare il canale principale.</p>
+</section>
+
+<!-- spazio -->
+<section id="spazio">
+<h2><span class="n">+</span>Spazi necessari</h2>
+<div class="grid2">
+<div class="chart"><h4>Negozio da asporto: suddivisione di circa 24 m²</h4><div class="box"><canvas id="cSpace" aria-label="Ripartizione spazio"></canvas></div></div>
+<div><div class="tw"><table><thead><tr><th>Zona</th><th>m²</th></tr></thead><tbody>
+<tr><td>Linea di cottura (cuocipasta, 2 induzioni, cappa)</td><td>7</td></tr>
+<tr><td>Frigoriferi e abbattitore</td><td>2,5</td></tr>
+<tr><td>Preparazione e lavaggio (con lavamani separato FAVV)</td><td>3,5</td></tr>
+<tr><td>Banco e cassa</td><td>2,5</td></tr>
+<tr><td>Zona clienti e rider</td><td>3,5</td></tr>
+<tr><td>WC e spogliatoio del personale</td><td>2</td></tr>
+<tr><td>Magazzino e rifiuti differenziati</td><td>2</td></tr>
+<tr><td><b>Totale</b></td><td><b>23</b></td></tr>
+</tbody></table></div>
+<p>Sotto i 18 m² non c'è spazio per il bagno del personale. Il laboratorio centrale per 10–20 negozi richiede 150–300 m². Il Pasta-Drive richiede un lotto di 1.500–2.500 m². <span class="tag s">S</span></p></div>
+</div>
+</section>
+
+<!-- limiti -->
+<section id="limiti">
+<h2><span class="n">!</span>Limiti, verifiche e prossimi passi</h2>
+<ul>
+<li><b>Fonti:</b> 5 ricerche in parallelo (concorrenti, fornitori, immobili e permessi, diritto belga, tecnologia). Nessuna pagina belga o di delivery è stata aperta direttamente: il filtro domini del repository (<code>.claude/hooks/domain_allowlist.py</code>) le blocca e EUR-Lex non era raggiungibile. Tutti i dati vengono da estratti dei motori di ricerca, collegati al link.</li>
+<li><b>Verifica legale:</b> le citazioni di leggi belghe ed europee non sono state controllate sul testo ufficiale (ejustice / Justel / EUR-Lex). Vanno considerate <b>non verificate</b> finché un avvocato belga non le conferma.</li>
+<li><b>Food cost:</b> i prezzi all'ingrosso sono stimati dai prezzi al dettaglio. Prima di fissare il listino servono i listini di Solucious, Sligro/JAVA e Sitadis.</li>
+<li><b>Dati non trovati:</b> passaggio pedonale per via, affitto prime ufficiale per Leuven, commissioni 2026 di Deliveroo e Takeaway in Belgio, stato del rinvio IVA al 12% a novembre 2026, accettabilità della cappa a ricircolo per Leuven.</li>
+<li><b>Prossimi passi:</b> 1) chiedere i listini ai grossisti; 2) visitare Naamsestraat 89 e chiedere all'urbanistica di Leuven se la cappa a ricircolo è accettata; 3) test pop-up di 2–4 settimane; 4) commercialista belga per BV, piano finanziario obbligatorio e aliquota PMI; 5) avvocato belga per il pacchetto franchising (Libro X, legge B2B 2019, Reg. 2022/720) prima di aprire il secondo negozio.</li>
+</ul>
+<div class="warn"><b>Da verificare con professionisti abilitati in Belgio</b> (avvocato, commercialista, consulente HACCP, architetto). La struttura holding con IP-Co, l'eventuale sede estera e il contratto d'affitto di 9 anni richiedono una validazione umana prima di essere attuati.</div>
+</section>
+
+<footer>Ricerca e modello del 21 novembre 2026. Le cifre <span class="tag s">S</span> sono stime e vanno ricalcolate sui preventivi reali.</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+const D={"dishes": ["Carbonara", "Carbonara Halal Halal", "Cacio E Pepe", "Amatriciana", "Amatriciana Halal Halal", "Ragu Di Manzo", "Pesto & Stracciatella", "Tartufo & Parmigiano"], "food": [2.44, 2.62, 1.56, 2.19, 2.35, 1.9, 2.11, 2.34], "pack": [0.47, 0.47, 0.47, 0.47, 0.47, 0.47, 0.47, 0.47], "mb": [6.43, 6.25, 6.37, 6.68, 6.52, 6.97, 7.7, 8.42], "mapp": [4.75, 4.57, 4.98, 5.0, 4.84, 5.29, 5.72, 6.13], "capexL": ["Adeguamento locale (già horeca)", "Cappa a ricircolo senza canna fumaria", "Cuocipasta 2×9 kW + 2 wok induzione", "Frigo banco ×2, armadio, abbattitore", "Lavelli, inox, lavastoviglie", "Cassa, stampanti, tablet KDS", "Insegna e branding", "Primo stock e packaging", "Cauzione affitto (6 mesi)", "Notaio, BV, KBO, HACCP, permessi", "Assicurazioni anno 1 e varie", "Marketing di lancio", "Fondo cassa (≈1 mese costi)"], "capexV": [22000, 12000, 3100, 9000, 5500, 1500, 6000, 3500, 7800, 5500, 1500, 4000, 15000], "fixL": ["Affitto + imposta immobiliare (25 m²)", "Elettricità/acqua (cuocipasta 9 kW, ~3.000 kWh)", "Dipendente fisso 1° assunto (165 h)", "Jobstudent/flexi (465 h)", "Contributi sociali titolare", "Compenso netto titolare (amministratore)", "Commercialista + segretariato sociale", "Assicurazioni", "Marketing TikTok/Instagram", "Software, POS, app", "Rifiuti Vlarema, FAVV, Unisono", "Manutenzione e piccole spese"], "fixV": [1300, 950, 2888, 7672, 300, 2500, 400, 160, 800, 180, 90, 250], "curveX": [0, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360], "curveY": [-17490, -13243, -8997, -4750, -503, 3744, 7990, 12237, 16484, 20731, 24977, 29224, 33471, 37718, 41964, 46211, 50458, 54705, 58951], "be": 82.4, "scN": ["Conservativo", "Realistico", "Ottimistico (virale)"], "scRev": [314315, 502908, 880095], "scNet": [-14698, 88435, 255331], "scEb": [22, 125966, 348495]};
+// orari
+(function(){
+  const days=[['Lun',[11.5,21.5]],['Mar',[11.5,21.5]],['Mer',[11.5,22.5]],['Gio',[11.5,27]],['Ven',[11.5,27]],['Sab',[12,27]],['Dom',[12,21]]];
+  const g=document.getElementById('hours'); let h='<div class="hh"></div>';
+  for(let i=0;i<24;i++){const hr=(i+6)%24;h+='<div class="hh">'+(i%3===0?hr:'')+'</div>';}
+  days.forEach(([d,[a,b]],di)=>{
+    ['P','C'].forEach(k=>{
+      h+='<div class="lbl">'+(k==='P'?d+' · noi':d+' · Cup Pasta')+'</div>';
+      for(let i=0;i<24;i++){const t=i+6; let on;
+        if(k==='P') on=t>=a&&t<b; else on=di<5&&t>=11&&t<18;
+        h+='<div class="'+(on?(k==='P'?'on':'cp'):'off')+'"></div>';}
+    });
+  });
+  g.innerHTML=h;
+})();
+// charts
+if(window.Chart){
+const css=getComputedStyle(document.documentElement), c=v=>css.getPropertyValue(v).trim();
+Chart.defaults.font.family=c('--f-body'); Chart.defaults.color=c('--muted'); Chart.defaults.borderColor=c('--line');
+Chart.defaults.maintainAspectRatio=false;
+const eur=v=>'€'+Number(v).toLocaleString('it-IT');
+new Chart(cPrices,{type:'bar',data:{labels:['Cup Pasta 200 g','Boccone carbonara','Pasta Street (noi)','Maccheroni Broz','Bavet bolognese','L\'Inizio'],
+ datasets:[{label:'Banco / sito',data:[5.9,9.5,9.9,11.5,15.5,16],backgroundColor:c('--basil')},{label:'App',data:[6.9,10.5,11.9,12.99,17.9,null],backgroundColor:c('--semola')}]},
+ options:{scales:{y:{ticks:{callback:eur}}},plugins:{tooltip:{callbacks:{label:x=>x.dataset.label+': '+eur(x.raw)}}}}});
+const net=D.dishes.map((_,i)=>D.food[i]+D.pack[i]+D.mb[i]);
+new Chart(cFood,{type:'bar',data:{labels:D.dishes,datasets:[{label:'Ingredienti',data:D.food,backgroundColor:c('--tomato')},{label:'Packaging',data:D.pack,backgroundColor:c('--semola')},{label:'Margine lordo',data:D.mb,backgroundColor:c('--basil')}]},
+ options:{indexAxis:'y',scales:{x:{stacked:true,ticks:{callback:eur}},y:{stacked:true}}}});
+new Chart(cRent,{type:'bar',data:{labels:['Bondgenotenlaan 54','Oude Markt 11','Diestsestraat 16','Bondgenotenlaan 44','Bondgenotenlaan 130','Brusselsestraat 53','Diestsestraat 19','Naamsestraat 89','Alfons Smetsplein 8','Naamsestraat 24','Naamsestraat 84'],
+ datasets:[{label:'€/m²/mese',data:[60.4,55.1,48.3,45.4,37.2,32.7,25.8,23.4,21.7,16.7,15.0],backgroundColor:[0,0,0,0,0,0,0,1,0,0,0].map(x=>x?c('--basil'):c('--semola'))}]},
+ options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{ticks:{callback:eur}}}}});
+new Chart(cCapex,{type:'bar',data:{labels:D.capexL,datasets:[{data:D.capexV,backgroundColor:c('--basil')}]},options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{ticks:{callback:eur}}}}});
+new Chart(cFix,{type:'bar',data:{labels:D.fixL,datasets:[{data:D.fixV,backgroundColor:c('--tomato')}]},options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{ticks:{callback:eur}}}}});
+new Chart(cBE,{type:'line',data:{labels:D.curveX,datasets:[{label:'Risultato mensile',data:D.curveY,borderColor:c('--basil'),backgroundColor:c('--basil-soft'),fill:'origin',pointRadius:2,tension:.1}]},
+ options:{plugins:{legend:{display:false},tooltip:{callbacks:{title:x=>x[0].label+' bowl/giorno',label:x=>eur(x.raw)}}},scales:{x:{title:{display:true,text:'bowl al giorno (pareggio ≈ '+Math.round(D.be)+')'}},y:{ticks:{callback:eur},grid:{color:ctx=>ctx.tick.value===0?c('--ink'):c('--line')}}}}});
+new Chart(cSc,{type:'bar',data:{labels:D.scN,datasets:[{label:'Fatturato netto',data:D.scRev,backgroundColor:c('--semola')},{label:'EBITDA',data:D.scEb,backgroundColor:c('--basil-soft'),borderColor:c('--basil'),borderWidth:1},{label:'Utile netto',data:D.scNet,backgroundColor:c('--basil')}]},
+ options:{scales:{y:{ticks:{callback:eur}}}}});
+new Chart(cSpace,{type:'doughnut',data:{labels:['Linea cottura','Frigo e abbattitore','Preparazione e lavaggio','Banco e cassa','Zona clienti e rider','WC personale','Magazzino e rifiuti'],
+ datasets:[{data:[7,2.5,3.5,2.5,3.5,2,2],backgroundColor:[c('--tomato'),c('--semola'),c('--basil'),c('--ink'),c('--muted'),c('--line'),c('--semola-soft')],borderColor:c('--surface')}]},options:{plugins:{legend:{position:'right'}}}});
+}
+</script>
