@@ -445,7 +445,7 @@ L'utente risponde solo sì o no: NON deve eseguire alcun passaggio manuale. Se r
 cd /home/user/ricerche && claude -p "/hyperresearch <domanda>. Scrivi il report in italiano."
 ```
 
-Se la cartella o il comando mancano, J.A.R.V.I.S. li installa (`mkdir -p /home/user/ricerche && cd /home/user/ricerche && pip install "hyperresearch[crawl4ai]" && hyperresearch install`). A fine corsa legge `research/notes/final_report_*.md` lo fa verificare da U.L.T.R.O.N. sulle fonti ufficiali italiane, integra la risposta del Collegio e la consegna all'utente. Mai rispondere sì al login sui siti proposto da Hyperresearch. Questa regola non si applica alle richieste tecniche sul repository né agli ordini del panificio.
+Se la cartella o il comando mancano, J.A.R.V.I.S. li installa (`mkdir -p /home/user/ricerche && cd /home/user/ricerche && pip install "hyperresearch[crawl4ai]" && hyperresearch install`). A fine corsa legge `research/notes/final_report_*.md` lo fa verificare da U.L.T.R.O.N. sulle fonti ufficiali italiane, integra la risposta del Collegio e la consegna all'utente. Mai rispondere sì al login sui siti proposto da Hyperresearch. Questa regola non si applica alle richieste tecniche sul repository.
 
 1. **Livello** — determina il livello (di norma L2 in questo repository) e comunicalo in una riga.
 2. **Classificazione e sforzo** — materia primaria e secondarie; sforzo; numero di agenti coerente con 0.4.
