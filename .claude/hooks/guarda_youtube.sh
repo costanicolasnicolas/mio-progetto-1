@@ -13,7 +13,7 @@ done
 [ -z "$WATCH" ] && { echo "Skill watch non trovata."; exit 2; }
 
 export PYTHONDONTWRITEBYTECODE=1   # niente file __pycache__ nel repository SKILL
-MODELLI="gemini-3.8-flash gemini-3.7-flash gemini-3.6-flash gemini-flash-latest gemini-3.5-flash"
+MODELLI="gemini-3.8-flash gemini-3.7-flash gemini-3.6-flash gemini-flash-latest gemini-3.5-flash gemini-3.5-flash-lite"
 
 for giro in 1 2 3; do
   for m in $MODELLI; do
