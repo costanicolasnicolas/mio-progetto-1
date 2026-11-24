@@ -25,6 +25,27 @@ ALLOWED = {
     "onelegale.wolterskluwer.it", "dejure.it", "taxnews.bloombergtax.com", "thomsonreuters.com",
     # Community (solo supporto, mai fonte di diritto)
     "fiscoetasse.com", "commercialistatelematico.com", "reddit.com", "linkedin.com", "taxdome.com",
+    # Ricerca lavoro Belgio (autorizzati dall'utente, non fonti giuridiche)
+    "vdab.be", "indeed.com", "jobat.be", "actiris.brussels", "actiris.be", "leforem.be", "manpower.be",
+    "randstad.be", "adecco.be", "startpeople.be", "asap.be", "jobbird.com", "glassdoor.be",
+    "havenjobs.com", "jobs-met-drive.be", "poppy.recruitee.com", "poppy.be", "cambio.be", "zity.eu",
+    "hiflow.com", "ayvens.com", "athlon.com", "arval.com", "arval.be", "talentfinder.be", "sixt.be",
+    "hertz.be", "avis.be", "europcar.be", "synergie.be", "trixxojobs.be", "vivaldis.be",
+    "actiefinterim.be", "talent.com", "stepstone.be", "monster.be", "jobrapido.com", "careerjet.be",
+    "jobsinbrussels.com", "konvert.be", "unique.be", "ago.jobs", "chauffeurjobs.be", "jooble.org",
+    "accentjobs.be", "absolutejobs.be", "dieteren.be", "d-ieteren.be", "cvw.io", "adzuna.be",
+    "simplyhired.be", "studentjob.be", "vindazo.be", "joblum.com", "northseaporttalent.eu",
+    "werkenbijdeleyn.be", "ico.be", "wwlsolutions.com", "walleniuswilhelmsen.com",
+    # Ricerca lavoro Paesi Bassi (autorizzati dall'utente, non fonti giuridiche)
+    "werk.nl", "nationalevacaturebank.nl", "werkzoeken.nl", "randstad.nl", "randstad.com",
+    "youngcapital.nl", "olympia.nl", "timing.nl", "luba.nl", "easyway.nl", "werkenbijkoopman.nl",
+    "teamtailor.com", "nationaleberoepengids.nl", "glassdoor.nl", "glassdoor.com", "pon.com",
+    "cldn.com", "grensinfopunt.nl", "djops.nl", "spuigroep.nl", "avisbudgetgroup.com", "sixt.nl",
+    "hertz.nl", "europcar.nl", "enterprise.nl", "alphabet.nl", "vanmossel.nl", "louwman.com",
+    "udenhout.nl", "careerjet.nl", "stepstone.nl", "monsterboard.nl", "trovit.nl", "adzuna.nl",
+    "logistiek.com", "transportwerkt.nl", "techniekwerkt.nl", "productie24.nl", "werkgevers.nl",
+    "vacaturebank.nl", "banen.nl", "zeeuwsevacaturebank.nl", "zeelandnet.nl", "autoreset.nl",
+    "jobmotive.nl", "inqar.nl", "werkenbijtb.nl", "recruitastudent.nl", "drimble.nl", "werkenbijpon.nl",
 }
 
 
