@@ -2,3 +2,8 @@
 stato/shared_memory.json
 stato/*.jsonl
 .claude/settings.local.json
+
+# Ricevute di verifica generate da archify
+schemi/*.finalize*.json
+schemi/*.browser-check.json
+schemi/*.delivery.json
