@@ -1,0 +1,6 @@
+clienti/*
+!clienti/.gitkeep
+musica/*
+!musica/.gitkeep
+font/
+__pycache__/

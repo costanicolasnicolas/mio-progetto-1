@@ -1,0 +1,23 @@
+{
+  "_nota": "Chiave API: variabile d'ambiente FAL_KEY (mai scriverla qui). Nomi dei campi e prezzi DA VERIFICARE sulla pagina del modello su fal.ai prima del primo uso reale.",
+  "provider": "fal",
+  "budget_max_usd": 30.0,
+  "tentativi_max_per_scena": 2,
+  "modelli": {
+    "standard": {
+      "id": "fal-ai/kling-video/v2.6/pro/image-to-video",
+      "prezzo_usd_secondo": 0.07,
+      "campo_immagine": "image_url",
+      "durate_ammesse": [5, 10],
+      "parametri_extra": {}
+    },
+    "premium": {
+      "id": "fal-ai/veo3.1/fast/image-to-video",
+      "prezzo_usd_secondo": 0.10,
+      "campo_immagine": "image_url",
+      "durate_ammesse": [8],
+      "parametri_extra": {"generate_audio": false}
+    }
+  },
+  "uscita": {"larghezza": 1920, "altezza": 1080, "fps": 30}
+}
