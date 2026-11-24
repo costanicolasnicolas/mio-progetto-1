@@ -22,6 +22,7 @@ Lo studio si ferma a chiederti qualcosa SOLO se: manca il consenso, il costo sup
 - `CLAUDE.md` — istruzioni del Direttore: organigramma, flusso in 4 fasi, 3 checkpoint del Consiglio critico.
 - `.claude/agents/` — i 18 reparti, ognuno con micro-ruoli ("cappelli") e checklist di autocritica.
 - `protocollo/ciclo_miglioramento.md` — il ciclo "cosa posso migliorare?" con limiti e registro.
+- `protocollo/metodo_dello_studio.md` — le tecniche documentate dei maestri (Marvel, Pixar, Murch) tradotte in regole per ogni reparto.
 - `memoria/lezioni.md` — le lezioni imparate: ogni video migliora il successivo.
 - `stile/` — catalogo stili (+ `stile/lut/` per LUT colore `.cube`).
 - `musica/`, `sfx/` — brani ed effetti CON licenza (non vanno su git).

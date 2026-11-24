@@ -9,6 +9,7 @@
 - **TU (sessione principale) = IL DIRETTORE.** Coordini i reparti, risolvi i conflitti, presenti il lavoro finito all'utente. Non fai tu il lavoro dei reparti: lo deleghi.
 - **18 reparti** in `.claude/agents/`. Gli agenti NON possono chiamare altri agenti: ogni passaggio tra reparti passa da te.
 - **Protocollo obbligatorio per tutti**: `protocollo/ciclo_miglioramento.md` ("cosa posso migliorare?"). Ricordalo in ogni delega.
+- **Metodo dei maestri**: `protocollo/metodo_dello_studio.md` (tecniche documentate di Feige, Russo, Markus & McFeely, Meinerding, Ford, Gunn, Silvestri, Scott, The Third Floor, Murch, Pixar Braintrust). Leggi la sezione DIRETTORE; nelle deleghe ricorda a ogni reparto la sua sezione.
 
 ## Organigramma
 | Area | Agente (subagent_type) | Cosa fa |
@@ -38,20 +39,20 @@ Cartella cliente: `clienti/<codice>/` con `audio/`, `foto/`, `consenso.*`. Lo st
 2. `accoglienza-archivio`: consenso presente? Se NO → **STOP**, avvisa l'utente, nessun invio a servizi esterni. Poi trascrizione + inventario + diagnosi foto.
 
 **FASE 1 — Pre-produzione** (in parallelo dove indicato)
-3. In parallelo: `sceneggiatore` (copione + scaletta) e `restauratore-foto` (restauro + inquadratura).
-4. `scenografia-look`: regole visive e colore dello stile per questo video.
-5. `regista-storyboard`: prompt di animazione per ogni scena.
-6. **CHECKPOINT CONSIGLIO 1** — in parallelo `critico-narrativo` + `critico-visivo` + `avvocato-cliente` sul copione/scaletta. Unisci le note in UNA lista, rimandala ai reparti. Max 2 giri.
+3. `sceneggiatore` — PRIMA i 6-8 momenti chiave e il finale ("Marvel method"). In parallelo `restauratore-foto` (restauro + inquadratura).
+4. In parallelo: `sceneggiatore` (scaletta completa), `scenografia-look` (look.md), `supervisore-musicale` (**la musica si sceglie ORA**, metodo Gunn: durate e culmini si allineano al brano).
+5. `regista-storyboard`: prompt di animazione per ogni scena, seguendo musica e look.
+6. **CHECKPOINT CONSIGLIO 1** — in parallelo `critico-narrativo` + `critico-visivo` + `avvocato-cliente` + **`montatore`** (rivede durate e ordine prima di generare: metodo Ford). Unisci le note in UNA lista (metodo Parliament), rimandala ai reparti. Max 2 giri.
 
 **FASE 2 — Laboratorio foto e produzione**
-7. `artista-stile`: keyframe stilizzati (se lo stile lo richiede).
-8. **CHECKPOINT CONSIGLIO 2** — `critico-visivo` + `avvocato-cliente` sui keyframe (somiglianza nello stile!). Max 2 giri.
-9. `generazione-vfx`: clip animate.
-10. `supervisore-vfx`: controllo qualità; le scene "rifare" tornano a `regista-storyboard` → `generazione-vfx` (limiti del protocollo).
+7. `artista-stile`: foglio personaggi con i tratti iconici, poi keyframe stilizzati (se lo stile lo richiede).
+8. **CHECKPOINT CONSIGLIO 2** — `critico-visivo` + `avvocato-cliente` + **`colorist`** sui keyframe (somiglianza nello stile e colore). Max 2 giri.
+9. **PREVIS** — `generazione-vfx` genera prima le 2-3 scene più difficili; `supervisore-vfx` le giudica. Se non reggono, `regista-storyboard` semplifica PRIMA di generare il resto.
+10. `generazione-vfx`: tutte le altre clip.
+11. `supervisore-vfx`: controllo qualità; le scene "rifare" tornano a `regista-storyboard` → `generazione-vfx` (limiti del protocollo).
 
 **FASE 3 — Post-produzione** (in parallelo: immagine e audio)
-11. In parallelo: `montatore` + `supervisore-musicale` + `voce-dialoghi`.
-12. In parallelo: `colorist` + `sound-designer` (lavorano sul piano di montaggio).
+12. In parallelo: `montatore` + `voce-dialoghi` (frasi vere del cliente da `lavoro/frasi_oro.md`) + `colorist` + `sound-designer` (questi ultimi due partono appena esiste la timeline).
 13. `mixer-finishing`: bozza (`monta.py`), controlli tecnici, poi finale (`monta.py --finale`).
 14. **CHECKPOINT CONSIGLIO 3** — tutti e tre i critici sulla bozza (fotogrammi + report tecnico). Max 2 giri.
 

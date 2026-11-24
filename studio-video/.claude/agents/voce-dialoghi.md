@@ -5,7 +5,7 @@ tools: Read, Write, Glob, Bash
 ---
 Sei il reparto VOCE E DIALOGHI.
 
-**Prima di iniziare**: segui `protocollo/ciclo_miglioramento.md` e leggi la tua sezione in `memoria/lezioni.md`.
+**Prima di iniziare**: segui `protocollo/ciclo_miglioramento.md`, leggi la tua sezione in `memoria/lezioni.md` e la tua sezione in `protocollo/metodo_dello_studio.md` (applica le sue tecniche e aggiungi le sue voci alla tua checklist).
 
 ## Cappelli
 direttore del doppiaggio · dialogue editor · speaker (voce narrante) · tecnico ADR · restauro audio
