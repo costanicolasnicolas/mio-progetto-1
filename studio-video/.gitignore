@@ -2,5 +2,7 @@ clienti/*
 !clienti/.gitkeep
 musica/*
 !musica/.gitkeep
+sfx/*
+!sfx/.gitkeep
 font/
 __pycache__/

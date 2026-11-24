@@ -1,9 +1,8 @@
 {
-  "_nota": "Chiave API: variabile d'ambiente FAL_KEY (mai scriverla qui). Nomi dei campi e prezzi DA VERIFICARE sulla pagina del modello su fal.ai prima del primo uso reale.",
-  "provider": "fal",
-  "budget_max_usd": 30.0,
-  "tentativi_max_per_scena": 2,
-  "modelli": {
+  "_nota": "Chiavi API solo come variabili d'ambiente (FAL_KEY, ELEVENLABS_API_KEY), mai in questo file. Id dei modelli, nomi dei campi e prezzi sono DA VERIFICARE sulla pagina di ogni modello prima del primo uso reale.",
+  "budget_max_usd": 40.0,
+  "tentativi_max_per_elemento": 2,
+  "modelli_video": {
     "standard": {
       "id": "fal-ai/kling-video/v2.6/pro/image-to-video",
       "prezzo_usd_secondo": 0.07,
@@ -19,5 +18,24 @@
       "parametri_extra": {"generate_audio": false}
     }
   },
-  "uscita": {"larghezza": 1920, "altezza": 1080, "fps": 30}
+  "modelli_immagine": {
+    "stile": {
+      "id": "fal-ai/flux-pro/kontext",
+      "prezzo_usd_immagine": 0.04,
+      "campo_immagine": "image_url",
+      "parametri_extra": {}
+    },
+    "restauro": {
+      "id": "fal-ai/flux-pro/kontext",
+      "prezzo_usd_immagine": 0.04,
+      "campo_immagine": "image_url",
+      "prompt": "Restore this old photograph: remove scratches, dust, stains and noise, fix faded colors, improve sharpness. Do NOT change the people: keep exactly the same faces, facial features, expressions, age, clothing, pose and composition. Natural, realistic result.",
+      "parametri_extra": {}
+    }
+  },
+  "audio_ai": {
+    "voce_id": "DA_IMPOSTARE",
+    "modello_voce": "eleven_multilingual_v2"
+  },
+  "uscita": {"larghezza": 1920, "altezza": 1080, "fps": 30, "loudness_lufs": -16}
 }

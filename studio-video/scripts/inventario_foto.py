@@ -38,6 +38,10 @@ def main():
             "orientamento": None if not w else ("orizzontale" if w >= h else "verticale"),
             "bassa_risoluzione": bool(w and min(w, h) < 720),
             "descrizione": "",
+            "persone": None,
+            "diagnosi": "",
+            "utilizzabile": True,
+            "priorita": 2,
         })
     scrivi_json(cli / "lavoro" / "foto_indice.json", indice)
     basse = sum(1 for x in indice if x["bassa_risoluzione"])
