@@ -27,3 +27,11 @@
 - DA RIFORMULARE: SU 31022/2015 riguarda sequestro e nozione di stampa (testate registrate); non art. 57 c.p. come principio di diritto.
 - NON RISCONTRATI: DSA art. 16; GDPR art. 35; AI Act art. 50 par. 4 eccezione editoriale; numero Digital Omnibus 2026/1744.
 - EUR-Lex e CURIA: ENOTFOUND (rete della sessione), istat.it bloccato dall'allowlist.
+
+## 25-11-2026 – Marketplace avvocati tipo Unobravo (ULTRON: APPROVATO CON RISERVE)
+- VERIFICATO Normattiva: L. 247/2012 art. 2 c.6 (consulenza riservata se connessa a giurisdizione e continuativa/sistematica/organizzata); art. 4-bis c.2 lett. a (2/3 capitale e voti avvocati); art. 10 (pubblicità informativa, vietata comparativa/suggestiva); art. 13 c.4 (divieto quota lite); art. 348 c.p. come sostituito da art. 12 L. 3/2018 (6 mesi-3 anni, multa 10-50k).
+- VERIF. PARZ.: CDF art. 37 c.1-2 (accaparramento; c.2 vietate provvigioni a terzi per presentazione clienti); art. 35 (modif. 2016); art. 25 quota lite.
+- RESPINTO: "art. 29 CDF divieto dividere compensi" -> usare art. 37 c.2 CDF.
+- VERIF. PARZ.: AGCM provv. 25154/2014 (sanzione CNF per parere 48/2012 Amica Card), CdS VI n. 1164/2016. Non citare "I773".
+- Unobravo: VERIFICATO Series A 17 mln (Insight Partners, 21-7-2022), exit CDP VC 13-12-2023; ricavi 2023 77,7 mln (solo Open).
+- Censis 2025: 233.260 iscritti, reddito medio 47.678 €; superato da Rapporto 2026 (228.641 iscritti Cassa 2025).
