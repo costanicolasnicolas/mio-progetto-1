@@ -18,3 +18,12 @@
 - Chai: VERIF. PARZ.: 100 mln $ ARR lug-2026 dichiarato dalla società.
 - Forbes 2026: 45 nuovi miliardari AI; Mercor 3 fondatori 22enni 2,2 mld ciascuno (al 01-03-2026).
 - RESPINGERE: "Lovable >13,3 mld secondo Forbes 2026" -> corretto: 13,3 mld Series C 12-08-2026 (prima 6,6 mld).
+
+## 25-11-2026 – Piattaforma recensioni datori di lavoro (ULTRON: RESPINTO formale, merito ok)
+- VERIFICATO: art. 603-bis c.p. come sostituito da art. 1 L. 199/2016 (Normattiva ELI).
+- VERIFICATO: ISTAT ENO 2021-2024 (16-10-2026): 218,2 mld, 9,9% PIL, irregolarità ULA 13,1% (2024).
+- VERIFICATO: Recruit HR Technology FY apr-2025/mar-2026: 1.458,4 mld yen.
+- VERIF. PARZ.: art. 595 c.3 c.p. (fonte Corte cost.); DSA art. 6.2, art. 7, applicazione 17-2-2024 (AGCOM 283/24/CONS); L'Oréal C-324/09; GDPR art. 10 (+ art. 2-octies D.Lgs. 196/2003); AI Act art. 50 dal 2-8-2026 non rinviato; CGUE C-492/23 Russmedia, Grande Sezione 2-12-2025, ECLI:EU:C:2025:935 (gestore titolare GDPR).
+- DA RIFORMULARE: SU 31022/2015 riguarda sequestro e nozione di stampa (testate registrate); non art. 57 c.p. come principio di diritto.
+- NON RISCONTRATI: DSA art. 16; GDPR art. 35; AI Act art. 50 par. 4 eccezione editoriale; numero Digital Omnibus 2026/1744.
+- EUR-Lex e CURIA: ENOTFOUND (rete della sessione), istat.it bloccato dall'allowlist.
