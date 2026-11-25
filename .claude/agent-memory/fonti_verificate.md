@@ -35,3 +35,9 @@
 - VERIF. PARZ.: AGCM provv. 25154/2014 (sanzione CNF per parere 48/2012 Amica Card), CdS VI n. 1164/2016. Non citare "I773".
 - Unobravo: VERIFICATO Series A 17 mln (Insight Partners, 21-7-2022), exit CDP VC 13-12-2023; ricavi 2023 77,7 mln (solo Open).
 - Censis 2025: 233.260 iscritti, reddito medio 47.678 €; superato da Rapporto 2026 (228.641 iscritti Cassa 2025).
+
+## 25-11-2026 – Modelli di ricavo marketplace avvocati (ULTRON: APPROVATO CON RISERVE)
+- Art. 37 CDF: c.1 agenzie/procacciatori; c.2 provvigioni a terzi per presentazione cliente; c.4 offerta non richiesta in luoghi (domicilio, lavoro, pubblici); c.5 prestazione personalizzata non richiesta (VERIF. PARZ., fonti secondarie convergenti).
+- COA Firenze 2019 (Altalex 12-11-2019): marketplace che non si limitano a pubblicità informativa = accaparramento; siti di sola pubblicità anche con abbonamento pagato = leciti (VERIF. PARZ.).
+- CNF n. 109 del 27-3-2024: prestazioni personalizzate non richieste = accaparramento (VERIF. PARZ.).
+- RESPINTO: CNF 12-9-2018 n. 104 (non reperita). Non usare art. 37 c.4 per prestazione personalizzata.
