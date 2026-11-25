@@ -41,3 +41,12 @@
 - COA Firenze 2019 (Altalex 12-11-2019): marketplace che non si limitano a pubblicità informativa = accaparramento; siti di sola pubblicità anche con abbonamento pagato = leciti (VERIF. PARZ.).
 - CNF n. 109 del 27-3-2024: prestazioni personalizzate non richieste = accaparramento (VERIF. PARZ.).
 - RESPINTO: CNF 12-9-2018 n. 104 (non reperita). Non usare art. 37 c.4 per prestazione personalizzata.
+
+## 25-11-2026 – Piattaforma voto simulato sui DDL (ULTRON: APPROVATO CON RISERVE)
+- VERIFICATO Normattiva: art. 8 c.1 L. 28/2000 (divieto di diffondere risultati di sondaggi nei 15 gg prima delle votazioni; AGCOM/Corecom lo applicano ai referendum).
+- VERIFICATO: delibera AGCOM 256/10/CSP (regolamento sondaggi, in vigore 10-1-2011; manifestazioni di opinione non chiamabili "sondaggi").
+- VERIF. PARZ.: AI Act All. III p. 8(b) (influenzare elezioni/comportamento di voto); Digital Omnibus Reg. 2026/1744 (GUUE 24-7-2026): All. III dal 2-12-2027, art. 50 invariato dal 2-8-2026. CORREGGE la voce precedente "2026/1744 non riscontrato".
+- VERIF. PARZ.: Reg. 2024/900 pubblicità politica, applicabile dal 10-10-2025; GDPR art. 9 e art. 35.3.b.
+- VERIFICATO: Openpolis activity report 2021: >300.000 atti, >60.000 voti, 2008-2022.
+- RESPINTO: "e-Citizenship Senato italiano 15 mln partecipanti" -> è e-Cidadania del Senado Federal brasiliano (gen. 2022: 30,7 mln voti su 10.722 progetti).
+- VERIF. PARZ.: VG Köln 20-5-2019, 6 L 1056/19 (Volt): stop cautelare temporaneo del Wahl-O-Mat, non definitivo.
