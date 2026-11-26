@@ -13,3 +13,13 @@
 - Art. 6-bis DPR 633/1972 abrogato dal D.Lgs. 10/2026 con effetto 1.1.2027 (Normattiva).
 - Art. 59 c.1 lett. n) Cod. Consumo = art. 16 lett. l) Dir. 2011/83: VERIFICATO (Normattiva + legislation.gov.uk).
 - Respinti: "Breeze 10-15 EUR a persona" (non verificato); "Tinder 14,5 mln paganti" (e' il gruppo Match; Tinder 9,26 mln).
+
+## 2026-11-26 - Round 2 (lancio Italia)
+- L. 190/2014 art. 1 cc. 54-89 (forfettario): Normattiva li mostra ABROGATI dal D.Lgs. 19.6.2026 n. 117 (TU imposte sui redditi, GU 152 del 3.7.2026), applicazione dal 1.1.2027; forfettario negli artt. 231-243. Testo dei nuovi articoli NON estratto (Normattiva mostra solo indice). Da riverificare.
+- Cod. Consumo art. 23 c.1 lett. v) "gratuito o senza alcun onere": VERIFICATO. Art. 51 c.2 "ordine con obbligo di pagare": VERIFICATO. Art. 33 c.2 lett. b) VERIFICATO; la penale manifestamente eccessiva e' la lett. f) (non e).
+- CGUE C-236/09 Test-Achats: VERIFICATO (fra.europa.eu).
+- AGCOM 96/25/CONS: verifica eta' solo per siti/piattaforme con contenuti pornografici, dal 12.11.2025 (fonti secondarie). Influencer "rilevanti" AGCOM: >=500k follower o 1 mln view (fonti secondarie).
+- Resto al Sud 2.0: P.IVA da aprire nel mese precedente o nello stesso mese della domanda, inattiva (fonti secondarie). Respinto il claim "non aprire P.IVA prima".
+- Marchio UIBM 101 EUR 1 classe + 34 per classe aggiuntiva (MIMIT); EUIPO 850/50/150.
+- Breeze: partita a Delft e Leiden, poi 6 citta; 1,3 mln EUR da FJ Labs e Hype Ventures; Trustpilot 2,0/152. Known: 9,7 mln USD, solo SF, 30 USD; data lancio feb. 2026 NON confermata.
+- agcom.it e techcrunch.com bloccati dall'allowlist.
