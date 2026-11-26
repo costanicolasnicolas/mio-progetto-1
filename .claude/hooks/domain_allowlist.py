@@ -25,6 +25,8 @@ ALLOWED = {
     "onelegale.wolterskluwer.it", "dejure.it", "taxnews.bloombergtax.com", "thomsonreuters.com",
     # Community (solo supporto, mai fonte di diritto)
     "fiscoetasse.com", "commercialistatelematico.com", "reddit.com", "linkedin.com", "taxdome.com",
+    # Ricerca di mercato app di incontri (autorizzati dall'utente il 26/11/2026)
+    "known.com", "apps.apple.com", "breeze.social", "amata.ai", "techcrunch.com",
 }
 
 
