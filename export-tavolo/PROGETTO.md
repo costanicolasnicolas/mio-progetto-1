@@ -1,6 +1,6 @@
 # Progetto Tavolo: documento completo
 
-Versione del 27 novembre 2026. Il documento raccoglie le conclusioni del Collegio J.A.R.V.I.S. (round 1 e 2) e il piano tecnico per costruire sito e app con Claude Code.
+Versione del 27 novembre 2026 (aggiornata: foto e chat 1 ora prima). Il documento raccoglie le conclusioni del Collegio J.A.R.V.I.S. (round 1 e 2) e il piano tecnico per costruire sito e app con Claude Code.
 
 "Tavolo" è un nome di lavoro, da verificare nelle banche dati dei marchi prima di usarlo.
 
@@ -29,6 +29,7 @@ Report online collegati:
 - Una città apre con almeno **450 iscritti verificati**.
 
 **Cosa lo distingue da Breeze.**
+- Prima chi è, poi com'è: la foto si svela solo 1 ora prima dell'incontro.
 - Pagamento solo dopo l'incontro.
 - Garanzia: se l'altra persona non si presenta, non paghi e hai un incontro in omaggio.
 - Scelta tra 3 locali invece di uno.
@@ -58,10 +59,10 @@ Report online collegati:
    - La voce viene trascritta e l'utente rilegge e corregge il testo.
    - L'AI scrive un breve ritratto con l'etichetta "Riassunto generato da IA, modificabile da te".
    - L'audio si cancella entro 24-72 ore dalla conferma.
-5. **Proposte del giorno.** Da 1 a 3, alle 19:00. Ogni proposta contiene foto, età, zona, 2-3 righe e il motivo dell'abbinamento. Le proposte scadono e non si accumulano.
+5. **Proposte del giorno.** Da 1 a 3, alle 19:00. Ogni proposta contiene età, zona, 2-3 righe e il motivo dell'abbinamento. **Niente foto**: al suo posto una sagoma illustrata (donna, uomo o coppia). Le proposte scadono e non si accumulano.
 6. **Abbinamento.** Se entrambi dicono sì, si sceglie tra 3 locali e 3 fasce orarie.
 7. **Carta salvata.** Al momento dell'abbinamento l'utente salva la carta con autenticazione forte. Nessun addebito.
-8. **Chat.** Si apre 2 ore prima dell'incontro e si chiude dopo.
+8. **Foto e chat.** Si sbloccano insieme **1 ora prima dell'incontro**, per entrambi nello stesso momento. La chat si chiude dopo l'incontro.
 9. **Incontro.** Entrambi scansionano il QR al locale (doppio check-in). Solo a quel punto parte l'addebito di 15 EUR.
 10. **Recap il giorno dopo.** Facoltativo, massimo 3 domande, scritto o vocale. Serve per puntualità, rispetto ed eventuali segnalazioni.
 
@@ -74,6 +75,8 @@ Report online collegati:
 | Tu non ti presenti senza avvisare 24 ore prima | I 15 EUR restano dovuti, salvo giustificato motivo |
 | Due cancellazioni di fila | Pausa di 7 giorni dalle nuove proposte, con motivazione scritta e possibilità di contestare |
 | Blocchi e sospensioni | Sempre motivati e rivisti da una persona (DSA art. 17, GDPR art. 22) |
+| Foto nascosta | La foto dell'altra persona si vede solo da 1 ora prima dell'incontro, insieme alla chat. Prima: sagoma illustrata, età, zona, descrizione |
+| Annullare dopo aver visto la foto | Vale come assenza senza preavviso: i 15 EUR restano dovuti (stessa regola delle 24 ore) |
 | Reputazione visibile | Al massimo 3 segnali positivi (es. "Identità verificata", "Sempre puntuale"), mai voci negative |
 | Prenotazione al locale | A nome discreto o con un codice, mai "tavolo dell'app di incontri" |
 
@@ -293,7 +296,7 @@ La lista d'attesa è nazionale. Ogni città apre solo con **450 iscritti verific
 
 - `users`: id, telefono, email, data_nascita, genere, cerca_genere, città, zona, stato (in_attesa, verificato, attivo, sospeso), creato_il
 - `waitlist`: id, user_id, città, posizione, invitato_da, creato_il
-- `profiles`: user_id, risposte_5_domande (json), trascrizione_approvata, ritratto_ai, foto, preferenza_età_min, preferenza_età_max
+- `profiles`: user_id, risposte_5_domande (json), trascrizione_approvata, ritratto_ai, foto (visibile all'altra persona solo da 1 ora prima dell'incontro), preferenza_età_min, preferenza_età_max
 - `consents`: user_id, tipo (servizio, dati_sensibili, voce, marketing), versione, accettato_il, revocato_il
 - `venues`: id, città, nome, indirizzo, prezzo_consumazione, fasce_orarie, stripe_account_id, attivo
 - `daily_proposals`: id, user_id, proposto_user_id, data, motivo, risposta (sì, no, scaduta)
@@ -304,7 +307,7 @@ La lista d'attesa è nazionale. Ogni città apre solo con **450 iscritti verific
 
 ### 7.3 Stati dell'incontro
 
-`proposto → accettato_da_entrambi → carta_salvata → locale_scelto → confermato → chat_aperta (2 ore prima) → check-in → completato`
+`proposto → accettato_da_entrambi → carta_salvata → locale_scelto → confermato → foto_e_chat_sbloccate (1 ora prima) → check-in → completato`
 
 Rami alternativi:
 - `annullato_da_utente` (con o senza le 24 ore di preavviso)
@@ -346,7 +349,7 @@ intervallo(età) = max(3, arrotonda(0,15 * età))
 5. Ritratto: anteprima modificabile.
 6. Proposte del giorno: schede con il motivo dell'abbinamento.
 7. Abbinamento: scelta di locale e orario, salvataggio della carta.
-8. Incontro: dettagli, chat (aperta 2 ore prima), QR.
+8. Incontro: dettagli, foto e chat (sbloccate 1 ora prima), QR.
 9. Recap.
 10. Profilo e impostazioni: preferenze d'età, pausa, cancellazione dell'account (obbligatoria per Apple).
 11. Pannello del locale: incontri del giorno, scansione QR, riepilogo mensile.
@@ -383,7 +386,7 @@ Ogni riga è una sessione breve: un compito solo, poi `/clear`. Prima di scriver
 | 11 | "Algoritmo delle proposte come nella sezione 7.4, con test." | I test sull'età passano |
 | 12 | "Schermata delle proposte e risposta sì o no." | Nasce l'abbinamento |
 | 13 | "Scelta di locale e orario, tabella venues." | Incontro confermato |
-| 14 | "Chat che si apre 2 ore prima e si chiude dopo." | La chat rispetta gli orari |
+| 14 | "Foto e chat che si sbloccano 1 ora prima dell'incontro, per entrambi insieme, e si chiudono dopo." | Foto e chat rispettano gli orari |
 | 15 | "QR e pannello del locale." | Il check-in funziona |
 | 16 | "Stripe: SetupIntent, addebito al doppio check-in, rimborso." | Prova in modalità test riuscita |
 | 17 | "Segnalazioni, blocco e pannello admin." | La segnalazione arriva all'admin |

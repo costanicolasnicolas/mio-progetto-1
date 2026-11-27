@@ -27,7 +27,7 @@ Regole valide per tutte le sezioni:
 
 **Pulsante:** "Mettiti in lista", con la scelta della città.
 
-**Video consigliati:** V5, V3, V2 (in alternativa V6 o V7 se preferisci non mostrare volti).
+**Video scelto:** V5.
 
 ---
 
@@ -41,7 +41,7 @@ Regole valide per tutte le sezioni:
 > Ti iscrivi con 5 domande e, se vuoi, una nota vocale. Ogni sera ricevi una proposta pensata per te, con il motivo per cui potreste piacervi. Se il sì è reciproco, scegliete locale e orario: al resto pensiamo noi.
 
 **I tre passi**
-1. **Ti raccontiamo una persona.** Niente vetrina di foto: una proposta al giorno, spiegata.
+1. **Ti raccontiamo una persona.** Niente vetrina di foto: una proposta al giorno, spiegata. La foto si svela 1 ora prima dell'incontro.
 2. **Vi piacete? Scegliete dove.** Tre locali di Catania, l'orario che va bene a entrambi.
 3. **Vi vedete. Poi paghi.** 15 euro con una consumazione inclusa, solo a incontro avvenuto.
 
@@ -60,6 +60,15 @@ Regole valide per tutte le sezioni:
 
 ---
 
+## 3-bis. Prima chi è, poi com'è
+
+**Titolo:** Prima chi è. Poi com'è.
+
+**Testo**
+> Ti presentiamo una persona con le sue parole e il motivo per cui potreste piacervi. La foto si svela un'ora prima dell'incontro, insieme alla chat: così arrivate al tavolo curiosi, non già stanchi di scrivervi.
+
+---
+
 ## 4. Al resto pensiamo noi (sezione dell'app)
 
 **Titolo**
@@ -69,7 +78,7 @@ Regole valide per tutte le sezioni:
 **Testo**
 > Se il sì è reciproco, saltate la chat. Scegliete un locale tra tre e l'orario giusto per entrambi: noi prenotiamo il tavolo. Voi dovete solo presentarvi.
 
-**Immagine:** foto o video con il telefono sovrapposto (`mockup/sezione-app-su-foto.png`). Video consigliati: V5 oppure V13 o V14.
+**Immagine:** foto o video con il telefono sovrapposto (`mockup/sezione-app-su-foto.png`). Video scelto: V6.
 
 ---
 
@@ -130,7 +139,7 @@ Regole valide per tutte le sezioni:
 
 **Pulsante:** "Mettiti in lista".
 
-**Video consigliati:** V16, V17, V18.
+**Video scelto:** V18.
 
 ---
 

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 260" style="color:#16202A"><defs><symbol id="donna" viewBox="0 0 200 260">
+ <g fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <!-- sgabello -->
+  <rect x="48" y="166" width="64" height="9" rx="4" stroke="none"/>
+  <path d="M58 174 L50 256 M102 174 L110 256" stroke-width="5" fill="none"/>
+  <path d="M53 222 L107 222" stroke-width="4" fill="none"/>
+  <!-- capelli: chignon + coda morbida -->
+  <path d="M80 40 C84 27 104 26 108 40 C100 37 93 40 90 48 C88 62 90 84 86 100 C76 98 70 84 72 66 C73 54 75 45 80 40Z" stroke="none"/>
+  <!-- testa -->
+  <ellipse cx="93" cy="50" rx="14" ry="16" stroke="none"/>
+  <path d="M104 48 L110 54 L104 57" stroke="none"/>
+  <!-- collo -->
+  <path d="M88 62 L98 62 L99 74 L87 74Z" stroke="none"/>
+  <!-- busto -->
+  <path d="M80 74 C92 70 104 72 110 80 C114 98 110 124 106 140 C104 152 106 162 108 170 L72 170 C68 150 70 120 72 100 C73 88 74 79 80 74Z" stroke="none"/>
+  <!-- braccio con calice -->
+  <path d="M104 82 C112 100 114 116 118 124 C124 124 134 116 140 108" stroke-width="10" fill="none"/>
+  <path d="M138 86 L156 86 L151 102 L143 102Z" stroke="none"/><path d="M147 102 L147 116 M140 117 L154 117" stroke-width="3" fill="none"/>
+  <!-- gambe accavallate -->
+  <path d="M78 166 C100 164 126 162 140 168 C146 186 140 214 142 244" stroke-width="15" fill="none"/>
+  <path d="M86 170 C104 176 120 178 130 176 C140 190 152 200 160 214" stroke-width="13" fill="none"/>
+  <path d="M136 246 L154 248" stroke-width="7"/>
+  <path d="M158 214 L168 222" stroke-width="6"/>
+ </g>
+</symbol><symbol id="uomo" viewBox="0 0 200 260">
+ <g fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="88" y="166" width="64" height="9" rx="4" stroke="none"/>
+  <path d="M98 174 L90 256 M142 174 L150 256" stroke-width="5" fill="none"/>
+  <path d="M93 222 L147 222" stroke-width="4" fill="none"/>
+  <!-- testa e capelli corti -->
+  <ellipse cx="108" cy="46" rx="15" ry="17" stroke="none"/>
+  <path d="M94 40 C96 26 112 22 122 30 C126 34 124 42 120 44 C114 38 104 36 94 40Z" stroke="none"/>
+  <path d="M95 46 L88 52 L95 55" stroke="none"/>
+  <path d="M102 60 L114 60 L115 72 L101 72Z" stroke="none"/>
+  <!-- busto più largo -->
+  <path d="M90 74 C102 68 118 68 128 76 C134 96 132 126 130 146 C129 156 130 164 132 170 L92 170 C90 150 88 120 88 100 C88 88 88 80 90 74Z" stroke="none"/>
+  <!-- braccio con tazza -->
+  <path d="M94 82 C86 100 82 114 80 122 C72 122 62 114 58 106" stroke-width="12" fill="none"/>
+  <path d="M46 92 L62 92 L60 106 L48 106Z" stroke="none"/>
+  <path d="M62 95 C68 95 68 102 61 102" stroke-width="2.5" fill="none"/>
+  <!-- gambe: una appoggiata alla pedana, una a terra -->
+  <path d="M124 168 C104 166 80 164 66 168 C62 188 66 214 64 244" stroke-width="17" fill="none"/>
+  <path d="M116 170 C98 174 86 182 82 190 C80 204 90 214 100 222" stroke-width="15" fill="none"/>
+  <path d="M52 246 L72 246" stroke-width="8"/>
+  <path d="M98 222 L112 224" stroke-width="7"/>
+ </g>
+</symbol></defs>
+<g transform="translate(200 0) scale(-1 1)"><use href="#uomo" width="200" height="260"/></g><g transform="translate(400 0) scale(-1 1)"><use href="#donna" width="200" height="260"/></g>
+<g fill="currentColor" stroke="currentColor" stroke-linecap="round"><rect x="136" y="118" width="128" height="8" rx="4" stroke="none"/><path d="M200 126 L200 248" stroke-width="7"/><path d="M176 254 L224 254" stroke-width="7"/></g></svg>

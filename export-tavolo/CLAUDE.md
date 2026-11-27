@@ -20,4 +20,5 @@ App di incontri dal vivo: proposte giornaliere, incontro in un locale convenzion
 - Ogni funzione nuova ha almeno un test. Esegui i test prima di dire che hai finito.
 - Dati sensibili (trascrizioni, consensi) in tabelle separate. L'audio si cancella dopo la conferma.
 - Nei testi rivolti all'utente non usare mai la parola "gratis".
+- Foto dell'altra persona e chat: sbloccate insieme solo 1 ora prima dell'incontro; prima si mostra una sagoma.
 - Regola d'età: intervallo = max(3, round(0,15 x età)); mai 18-25 con over 35.
