@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Young+Serif&family=Bricolage+Grotesque:wght@500;700;800&family=Space+Mono&display=swap">
+<style>
+:root{--lava:#121C24;--lava2:#1C2A35;--stone:#2B3B47;--white:#F4F2EE;--muted:#A9B4BC;--citrus:#E8B04A;--lemon:#F1D36B;--sea:#2F6F7A;--ink:#18222A}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#888;font-family:Inter,system-ui,sans-serif}
+.shot{width:1440px;height:900px;position:relative;overflow:hidden;margin:0 0 40px}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+.yserif{font-family:"Young Serif",Georgia,serif}
+.grot{font-family:"Bricolage Grotesque",Inter,sans-serif}
+.mono{font-family:"Space Mono",monospace}
+.logo{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:26px;letter-spacing:-.02em}
+.logo b{color:var(--citrus)}
+.chip{position:absolute;display:flex;align-items:center;gap:8px;background:rgba(0,0,0,.45);color:#fff;font:500 12px Inter;padding:6px 12px;border-radius:99px;letter-spacing:.04em;text-transform:uppercase}
+.chip:before{content:"";width:0;height:0;border-left:8px solid #fff;border-top:5px solid transparent;border-bottom:5px solid transparent}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--citrus);color:var(--ink);font:600 17px Inter;padding:16px 26px;border-radius:12px}
+.btn.ghost{background:transparent;color:inherit;border:1.5px solid currentColor}
+.select{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.25);color:inherit;font:500 17px Inter;padding:15px 20px;border-radius:12px;min-width:220px}
+.select:after{content:"⌄";opacity:.7}
+.nav{display:flex;gap:34px;font:500 15px Inter}
+.counter b{color:var(--citrus)}
+.bar{height:8px;background:rgba(255,255,255,.12);border-radius:9px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--citrus)}
+.scene{position:absolute;overflow:hidden;background:#0b0907}
+.scene svg{width:100%;height:100%;display:block}
+.cap{position:absolute;color:var(--muted);font:12px "Space Mono",monospace}
+</style></head><body>
+
+<svg width="0" height="0" style="position:absolute">
+<defs>
+  <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FFE2B0"/><stop offset=".25" stop-color="#F6B15C" stop-opacity=".95"/><stop offset=".6" stop-color="#B8601E" stop-opacity=".35"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+  <radialGradient id="room" cx="55%" cy="55%" r="75%"><stop offset="0" stop-color="#5A3418"/><stop offset=".45" stop-color="#2A170C"/><stop offset="1" stop-color="#080605"/></radialGradient>
+  <linearGradient id="skin" x1="0" x2="1"><stop offset="0" stop-color="#3A2214"/><stop offset=".7" stop-color="#A9683A"/><stop offset="1" stop-color="#E0A06A"/></linearGradient>
+  <linearGradient id="skin2" x1="1" x2="0"><stop offset="0" stop-color="#2E1A10"/><stop offset=".7" stop-color="#9A5C32"/><stop offset="1" stop-color="#D89660"/></linearGradient>
+  <filter id="blur"><feGaussianBlur stdDeviation="6"/></filter>
+  <filter id="blur2"><feGaussianBlur stdDeviation="18"/></filter>
+  <symbol id="date" viewBox="0 0 800 900" preserveAspectRatio="xMidYMid slice">
+    <rect width="800" height="900" fill="url(#room)"/>
+    <g filter="url(#blur2)" opacity=".8">
+      <circle cx="120" cy="180" r="40" fill="#F6B15C" opacity=".5"/><circle cx="680" cy="140" r="30" fill="#F6B15C" opacity=".45"/>
+      <circle cx="560" cy="260" r="22" fill="#FFD9A0" opacity=".5"/><circle cx="260" cy="120" r="18" fill="#FFD9A0" opacity=".4"/>
+      <rect x="0" y="300" width="800" height="40" fill="#6B3D1C" opacity=".4"/>
+    </g>
+    <g filter="url(#blur)">
+      <path d="M90 900 C90 700 140 590 230 560 C210 520 200 470 215 430 C235 370 330 360 355 430 C370 475 355 530 330 560 C410 590 450 690 450 900Z" fill="url(#skin)" opacity=".92"/>
+      <path d="M760 900 C760 690 700 600 610 575 C640 540 650 480 630 440 C605 385 520 390 505 450 C495 495 510 545 540 572 C460 600 420 700 420 900Z" fill="url(#skin2)" opacity=".85"/>
+    </g>
+    <ellipse cx="400" cy="760" rx="330" ry="70" fill="#3B2412"/><ellipse cx="400" cy="752" rx="320" ry="60" fill="#6A4322"/>
+    <circle cx="400" cy="650" r="210" fill="url(#glow)"/>
+    <circle cx="400" cy="660" r="62" fill="#FFE6BC"/><rect x="390" y="720" width="20" height="30" fill="#7A5027"/>
+    <rect x="300" y="680" width="34" height="70" rx="5" fill="#F4C67A" opacity=".55"/><rect x="470" y="690" width="34" height="62" rx="5" fill="#F4C67A" opacity=".5"/>
+  </symbol>
+  <symbol id="door" viewBox="0 0 800 900" preserveAspectRatio="xMidYMid slice">
+    <rect width="800" height="900" fill="#0A0D11"/>
+    <rect x="250" y="120" width="300" height="680" fill="#1A120B"/>
+    <rect x="270" y="140" width="260" height="660" fill="url(#room)"/>
+    <circle cx="400" cy="420" r="260" fill="url(#glow)" opacity=".8"/>
+    <path d="M270 140 L470 190 L470 790 L270 800Z" fill="#24170D" opacity=".9"/>
+    <circle cx="450" cy="490" r="9" fill="#E8B04A"/>
+    <g filter="url(#blur)"><path d="M120 900 C130 760 170 690 220 670 C205 640 205 600 225 580 C250 555 290 570 292 610 C294 645 280 668 266 676 C300 700 320 790 320 900Z" fill="#12100E"/></g>
+    <rect x="0" y="800" width="800" height="100" fill="#1B1713"/>
+  </symbol>
+  <symbol id="street" viewBox="0 0 800 900" preserveAspectRatio="xMidYMid slice">
+    <rect width="800" height="900" fill="#0E1620"/>
+    <rect width="800" height="420" fill="#1B2A3A"/>
+    <g fill="#0A0F15"><rect x="0" y="150" width="230" height="750"/><rect x="570" y="120" width="230" height="780"/><path d="M230 260 L330 300 L330 900 L230 900Z"/><path d="M570 230 L470 280 L470 900 L570 900Z"/></g>
+    <g fill="#F2B96A" opacity=".85"><rect x="40" y="250" width="40" height="60"/><rect x="120" y="250" width="40" height="60" opacity=".4"/><rect x="40" y="380" width="40" height="60" opacity=".6"/><rect x="620" y="230" width="40" height="60" opacity=".7"/><rect x="700" y="360" width="40" height="60"/></g>
+    <g filter="url(#blur2)"><circle cx="300" cy="420" r="40" fill="#F6B15C"/><circle cx="500" cy="400" r="34" fill="#F6B15C"/><circle cx="400" cy="520" r="24" fill="#FFD9A0"/></g>
+    <path d="M330 900 L380 440 L420 440 L470 900Z" fill="#2C2620" opacity=".9"/>
+    <path d="M330 900 L380 440 L420 440 L470 900Z" fill="url(#glow)" opacity=".25"/>
+  </symbol>
+  <symbol id="toast" viewBox="0 0 800 900" preserveAspectRatio="xMidYMid slice">
+    <rect width="800" height="900" fill="url(#room)"/>
+    <g filter="url(#blur2)"><circle cx="150" cy="200" r="60" fill="#F6B15C" opacity=".5"/><circle cx="650" cy="250" r="50" fill="#F6B15C" opacity=".45"/></g>
+    <ellipse cx="400" cy="820" rx="460" ry="120" fill="#4A2E17"/>
+    <g opacity=".95"><path d="M300 380 L360 380 L350 600 L310 600Z" fill="#F7D79A" opacity=".55"/><path d="M440 360 L500 360 L490 590 L450 590Z" fill="#F7D79A" opacity=".55"/>
+    <rect x="322" y="600" width="16" height="140" fill="#F7D79A" opacity=".5"/><rect x="462" y="590" width="16" height="150" fill="#F7D79A" opacity=".5"/></g>
+    <circle cx="400" cy="380" r="90" fill="url(#glow)" opacity=".9"/>
+    <g filter="url(#blur)"><path d="M80 520 C160 500 260 480 330 470 L330 520 C260 530 170 560 90 600Z" fill="url(#skin)"/><path d="M720 500 C640 485 540 470 470 462 L470 512 C540 520 630 545 710 580Z" fill="url(#skin2)"/></g>
+  </symbol>
+</defs></svg>
+
+<!-- 1 split testo/video -->
+<section class="shot" id="v1" style="background:var(--lava);color:var(--white)">
+  <div style="position:absolute;inset:0 0 0 auto;width:52%" class="scene"><svg><use href="#date"/></svg><span class="chip" style="right:24px;bottom:24px">video in loop</span></div>
+  <div style="position:absolute;left:64px;top:40px" class="logo">tavolo<b>.</b></div>
+  <div style="position:absolute;right:48px;top:30px;background:rgba(244,242,238,.14);backdrop-filter:blur(8px);padding:18px 34px;border-radius:16px" class="nav"><span>Come funziona</span><span>Per i locali</span><span>Chi siamo</span></div>
+  <div style="position:absolute;left:64px;top:170px;width:620px">
+    <h1 class="serif" style="font-size:104px;line-height:.95">Il primo passo si fa al tavolo.</h1>
+    <p style="margin-top:30px;font-size:21px;line-height:1.5;color:#D9DEE2">Una proposta al giorno, un locale scelto da voi, un drink. Niente chat infinite. Paghi solo dopo l'incontro.</p>
+    <div class="counter grot" style="margin-top:40px;font-size:44px;font-weight:700"><b>312</b> su 450 a Catania</div>
+    <div class="bar" style="width:420px;margin-top:14px"><i style="width:69%"></i></div>
+    <div style="margin-top:34px;display:flex;gap:14px"><span class="select">Catania</span><span class="btn">Mettiti in lista</span></div>
+  </div>
+</section>
+
+<!-- 2 video a tutto schermo, testo centrale -->
+<section class="shot" id="v2" style="color:var(--white)">
+  <div class="scene" style="inset:0"><svg><use href="#date"/></svg></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,18,.55),rgba(10,14,18,.25) 40%,rgba(10,14,18,.85))"></div>
+  <div style="position:absolute;left:56px;right:56px;top:36px;display:flex;justify-content:space-between;align-items:center"><span class="logo">tavolo<b>.</b></span><span class="nav">Come funziona &nbsp; Locali &nbsp; Accedi</span></div>
+  <div style="position:absolute;left:0;right:0;top:250px;text-align:center">
+    <p class="mono" style="font-size:14px;letter-spacing:.2em;color:var(--lemon)">INCONTRI DAL VIVO · CATANIA</p>
+    <h1 class="yserif" style="font-size:88px;line-height:1.02;margin-top:20px">Una proposta.<br>Un tavolo vero.</h1>
+    <p style="font-size:22px;margin-top:22px;color:#E3E6E9">Paghi solo dopo l'incontro.</p>
+    <div style="margin-top:38px;display:inline-flex;gap:12px;background:rgba(18,28,36,.7);padding:10px;border-radius:16px;backdrop-filter:blur(6px)"><span class="select" style="border:0">La tua città</span><span class="btn">Entra in lista</span></div>
+  </div>
+  <span class="chip" style="left:56px;bottom:36px">video a tutto schermo</span>
+  <div class="grot" style="position:absolute;right:56px;bottom:36px;font-size:18px">Catania <b style="color:var(--citrus)">312</b>/450 · Milano <b style="color:var(--citrus)">188</b>/450</div>
+</section>
+
+<!-- 3 video sopra, testo sotto su chiaro -->
+<section class="shot" id="v3" style="background:var(--white);color:var(--ink)">
+  <div class="scene" style="left:0;right:0;top:0;height:520px"><svg><use href="#toast"/></svg><span class="chip" style="right:28px;bottom:24px">video</span></div>
+  <div style="position:absolute;left:56px;top:32px;color:var(--white)" class="logo">tavolo<b>.</b></div>
+  <h1 class="serif" style="position:absolute;left:56px;top:330px;font-size:112px;color:var(--white);line-height:1">Ci vediamo stasera?</h1>
+  <div style="position:absolute;left:56px;right:56px;top:575px;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:40px">
+    <div><p style="font-size:22px;line-height:1.45">Niente swipe, niente chat infinite. Una proposta al giorno e un drink in un locale di Catania.</p><div style="margin-top:26px" class="btn" >Mettiti in lista</div></div>
+    <div><p class="grot" style="font-size:54px;font-weight:800;color:var(--sea)">1</p><p style="font-weight:600;font-size:18px;margin-top:6px">Ricevi una proposta</p><p style="color:#5A666E;margin-top:6px">Con il motivo per cui potreste piacervi.</p></div>
+    <div><p class="grot" style="font-size:54px;font-weight:800;color:var(--sea)">2</p><p style="font-weight:600;font-size:18px;margin-top:6px">Scegliete il locale</p><p style="color:#5A666E;margin-top:6px">Tre posti convenzionati, voi decidete.</p></div>
+    <div><p class="grot" style="font-size:54px;font-weight:800;color:var(--sea)">3</p><p style="font-weight:600;font-size:18px;margin-top:6px">Paghi solo dopo</p><p style="color:#5A666E;margin-top:6px">15 euro con una consumazione inclusa.</p></div>
+  </div>
+</section>
+
+<!-- 4 chiaro, video in cornice arrotondata a destra -->
+<section class="shot" id="v4" style="background:#EFEBE4;color:var(--ink)">
+  <div style="position:absolute;left:64px;right:64px;top:36px;display:flex;justify-content:space-between"><span class="logo">tavolo<b style="color:var(--sea)">.</b></span><span class="nav">Come funziona &nbsp;&nbsp; Locali &nbsp;&nbsp; Domande</span></div>
+  <div class="scene" style="right:64px;top:120px;width:600px;height:700px;border-radius:300px 300px 28px 28px"><svg><use href="#date"/></svg><span class="chip" style="left:50%;transform:translateX(-50%);bottom:24px">video ad arco</span></div>
+  <div style="position:absolute;left:64px;top:190px;width:620px">
+    <p class="mono" style="color:var(--sea);letter-spacing:.14em;font-size:14px">ADULTI DAI 30 ANNI · INCONTRI DAL VIVO</p>
+    <h1 class="grot" style="font-size:86px;line-height:.98;font-weight:800;letter-spacing:-.03em;margin-top:18px">Meno schermo.<br>Più tavolo.</h1>
+    <p style="font-size:21px;line-height:1.5;margin-top:26px;color:#3C4850">Ti proponiamo una persona al giorno. Se piacete l'uno all'altra, vi prenotiamo un tavolo. Paghi 15 euro solo dopo esservi visti.</p>
+    <div style="margin-top:34px;display:flex;gap:14px"><span class="btn" style="background:var(--ink);color:var(--white)">Mettiti in lista</span><span class="btn ghost">Sono un locale</span></div>
+    <p style="margin-top:28px;font-size:15px;color:#5A666E">Già <b style="color:var(--ink)">1.204</b> persone in lista in Sicilia</p>
+  </div>
+</section>
+
+<!-- 5 scuro, video circolare centrale -->
+<section class="shot" id="v5" style="background:radial-gradient(circle at 50% 45%,#22323E,#0E151B 70%);color:var(--white)">
+  <div style="position:absolute;left:0;right:0;top:34px;text-align:center" class="logo">tavolo<b>.</b></div>
+  <div class="scene" style="left:50%;top:120px;width:470px;height:470px;margin-left:-235px;border-radius:50%;box-shadow:0 0 0 10px rgba(232,176,74,.18),0 40px 120px rgba(232,176,74,.25)"><svg><use href="#toast"/></svg></div>
+  <h1 class="serif" style="position:absolute;left:70px;top:230px;font-size:120px;font-style:italic">Un drink</h1>
+  <h1 class="serif" style="position:absolute;right:70px;top:400px;font-size:120px">vale più</h1>
+  <h1 class="serif" style="position:absolute;left:0;right:0;top:600px;text-align:center;font-size:84px">di mille messaggi.</h1>
+  <div style="position:absolute;left:0;right:0;bottom:56px;display:flex;justify-content:center;gap:14px"><span class="select">Catania</span><span class="btn">Mettiti in lista</span></div>
+  <span class="chip" style="left:50%;top:560px;transform:translateX(-50%)">video circolare</span>
+</section>
+
+<!-- 6 editoriale: titolo grande + striscia video + passi -->
+<section class="shot" id="v6" style="background:var(--white);color:var(--ink)">
+  <div style="position:absolute;left:56px;right:56px;top:32px;display:flex;justify-content:space-between;align-items:center"><span class="logo">tavolo<b>.</b></span><span class="btn" style="padding:12px 20px;font-size:15px">Mettiti in lista</span></div>
+  <h1 class="grot" style="position:absolute;left:52px;top:96px;font-size:178px;font-weight:800;letter-spacing:-.05em;line-height:.9">Ciao, ci vediamo<br><span style="color:var(--sea)">al tavolo.</span></h1>
+  <div class="scene" style="left:56px;right:56px;top:500px;height:250px;border-radius:20px"><svg><use href="#date"/></svg><span class="chip" style="left:20px;bottom:18px">striscia video</span></div>
+  <div style="position:absolute;left:56px;right:56px;top:780px;display:flex;justify-content:space-between;font-size:18px">
+    <span><b>01</b> Una proposta al giorno</span><span><b>02</b> Tre locali tra cui scegliere</span><span><b>03</b> Paghi solo dopo, 15 €</span><span style="color:var(--sea);font-weight:600">Catania · 312/450</span>
+  </div>
+</section>
+
+<!-- 7 trittico video -->
+<section class="shot" id="v7" style="background:var(--lava);color:var(--white)">
+  <div class="scene" style="left:0;top:0;width:480px;height:900px"><svg><use href="#door"/></svg></div>
+  <div class="scene" style="left:480px;top:0;width:480px;height:900px"><svg><use href="#date"/></svg></div>
+  <div class="scene" style="left:960px;top:0;width:480px;height:900px"><svg><use href="#street"/></svg></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,28,36,.2),rgba(18,28,36,.1) 45%,rgba(18,28,36,.92) 80%)"></div>
+  <div style="position:absolute;left:56px;top:36px" class="logo">tavolo<b>.</b></div>
+  <div class="mono" style="position:absolute;top:110px;left:0;width:1440px;display:grid;grid-template-columns:1fr 1fr 1fr;text-align:center;font-size:14px;letter-spacing:.2em;color:var(--lemon)"><span>LA PROPOSTA</span><span>IL TAVOLO</span><span>IL DOPO</span></div>
+  <div style="position:absolute;left:56px;bottom:70px;width:900px"><h1 class="yserif" style="font-size:80px;line-height:1.02">Tre momenti.<br>Nessuno swipe.</h1></div>
+  <div style="position:absolute;right:56px;bottom:84px;display:flex;gap:12px"><span class="select">Catania</span><span class="btn">Entra in lista</span></div>
+  <span class="chip" style="left:50%;top:420px;transform:translateX(-50%)">tre video affiancati</span>
+</section>
+
+<!-- 8 città e contatori, video a sinistra -->
+<section class="shot" id="v8" style="background:var(--lava2);color:var(--white)">
+  <div class="scene" style="left:0;top:0;width:640px;height:900px"><svg><use href="#street"/></svg><span class="chip" style="left:24px;bottom:24px">video</span></div>
+  <div style="position:absolute;left:40px;top:36px" class="logo">tavolo<b>.</b></div>
+  <div style="position:absolute;left:720px;top:110px;width:640px">
+    <h1 class="serif" style="font-size:84px;line-height:1">Apriamo una città alla volta.</h1>
+    <p style="font-size:20px;margin-top:20px;color:#CBD3D9">Quando la tua città arriva a 450 persone in lista, partono i primi inviti.</p>
+    <div style="margin-top:40px;display:grid;gap:22px;font-size:19px">
+      <div><div style="display:flex;justify-content:space-between"><b>Catania</b><span><b style="color:var(--citrus)">312</b> / 450</span></div><div class="bar" style="margin-top:8px"><i style="width:69%"></i></div></div>
+      <div><div style="display:flex;justify-content:space-between"><b>Milano</b><span><b style="color:var(--citrus)">188</b> / 450</span></div><div class="bar" style="margin-top:8px"><i style="width:42%"></i></div></div>
+      <div><div style="display:flex;justify-content:space-between"><b>Bologna</b><span><b style="color:var(--citrus)">96</b> / 450</span></div><div class="bar" style="margin-top:8px"><i style="width:21%"></i></div></div>
+      <div><div style="display:flex;justify-content:space-between"><b>Roma</b><span><b style="color:var(--citrus)">143</b> / 450</span></div><div class="bar" style="margin-top:8px"><i style="width:32%"></i></div></div>
+    </div>
+    <div style="margin-top:40px;display:flex;gap:14px"><span class="btn">Spingi la tua città</span><span class="btn ghost">Invita una persona</span></div>
+  </div>
+</section>
+
+<!-- 9 minimal: tavolo visto dall'alto -->
+<section class="shot" id="v9" style="background:#0E1419;color:var(--white)">
+  <div class="scene" style="left:50%;top:50%;width:620px;height:620px;margin:-310px 0 0 -310px;border-radius:50%;background:#3A2414"><svg><use href="#toast"/></svg></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,transparent 300px,#0E1419 330px)"></div>
+  <div style="position:absolute;left:56px;top:40px" class="logo">tavolo<b>.</b></div>
+  <div class="mono" style="position:absolute;right:56px;top:46px;font-size:13px;letter-spacing:.16em;color:var(--muted)">CATANIA · DAL MARTEDÌ AL GIOVEDÌ</div>
+  <h1 class="grot" style="position:absolute;left:56px;bottom:180px;font-size:64px;font-weight:700;line-height:1.05;width:380px">Una proposta.</h1>
+  <h1 class="grot" style="position:absolute;right:56px;top:180px;font-size:64px;font-weight:700;text-align:right;width:380px">Un tavolo.</h1>
+  <h1 class="grot" style="position:absolute;right:56px;bottom:180px;font-size:64px;font-weight:700;text-align:right;color:var(--citrus);width:420px">Paghi dopo.</h1>
+  <div style="position:absolute;left:0;right:0;bottom:56px;text-align:center"><span class="btn">Mettiti in lista</span></div>
+  <span class="chip" style="left:50%;top:76%;transform:translateX(-50%)">video visto dall'alto</span>
+</section>
+
+<!-- 10 versione telefono: tre schermate -->
+<section class="shot" id="v10" style="background:#DDE3E6;color:var(--ink)">
+  <h2 class="grot" style="position:absolute;left:64px;top:44px;font-size:34px;font-weight:800">Versione telefono</h2>
+  <p style="position:absolute;left:64px;top:92px;color:#4B5861;font-size:17px">Su telefono il video va sopra e il testo sotto: tre varianti.</p>
+  <div style="position:absolute;left:0;right:0;top:150px;display:flex;justify-content:center;gap:70px">
+    <div style="width:330px;height:700px;border-radius:44px;background:var(--lava);border:10px solid #0B0F12;overflow:hidden;position:relative;color:var(--white)">
+      <div class="scene" style="left:0;right:0;top:0;height:330px"><svg><use href="#date"/></svg></div>
+      <div style="position:absolute;left:22px;top:22px;font-size:20px" class="logo">tavolo<b>.</b></div>
+      <div style="position:absolute;left:22px;right:22px;top:350px"><h3 class="serif" style="font-size:44px;line-height:1">Il primo passo si fa al tavolo.</h3><p style="font-size:14px;margin-top:12px;color:#CDD4D9">Una proposta al giorno. Paghi solo dopo.</p><p class="grot" style="margin-top:16px;font-size:22px;font-weight:700"><b style="color:var(--citrus)">312</b> su 450 a Catania</p><div class="btn" style="margin-top:16px;width:100%;justify-content:center;font-size:15px">Mettiti in lista</div></div>
+    </div>
+    <div style="width:330px;height:700px;border-radius:44px;border:10px solid #0B0F12;overflow:hidden;position:relative;color:var(--white)">
+      <div class="scene" style="inset:0"><svg><use href="#toast"/></svg></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,18,.3),rgba(10,14,18,.9) 75%)"></div>
+      <div style="position:absolute;left:22px;top:22px;font-size:20px" class="logo">tavolo<b>.</b></div>
+      <div style="position:absolute;left:22px;right:22px;bottom:30px"><h3 class="yserif" style="font-size:38px;line-height:1.05">Una proposta.<br>Un tavolo vero.</h3><span class="select" style="margin-top:16px;width:100%;font-size:15px">Catania</span><div class="btn" style="margin-top:10px;width:100%;justify-content:center;font-size:15px">Entra in lista</div></div>
+    </div>
+    <div style="width:330px;height:700px;border-radius:44px;background:#EFEBE4;border:10px solid #0B0F12;overflow:hidden;position:relative">
+      <div style="position:absolute;left:22px;top:22px;font-size:20px" class="logo">tavolo<b style="color:var(--sea)">.</b></div>
+      <div class="scene" style="left:22px;right:22px;top:70px;height:300px;border-radius:150px 150px 18px 18px"><svg><use href="#date"/></svg></div>
+      <div style="position:absolute;left:22px;right:22px;top:390px"><h3 class="grot" style="font-size:36px;font-weight:800;line-height:1;letter-spacing:-.02em">Meno schermo.<br>Più tavolo.</h3><p style="font-size:14px;margin-top:12px;color:#3C4850">Paghi 15 euro solo dopo esservi visti.</p><div class="btn" style="margin-top:18px;width:100%;justify-content:center;font-size:15px;background:var(--ink);color:var(--white)">Mettiti in lista</div></div>
+    </div>
+  </div>
+</section>
+</body></html>
